@@ -8,8 +8,7 @@ define(['plugins/router', 'durandal/app'], function (router, app) {
         },
         activate: function () {
             router.map([
-                { route: '', title: 'Table', moduleId: app.convertModuleNameToModuleId('tableWidget'), nav: true },
-                { route: 'projects', title: 'Проекти', moduleId: app.convertModuleNameToModuleId('projects'), nav: true}
+                { route: '', title: 'Проекти', moduleId: app.convertModuleNameToModuleId('projects'), nav: true,hash:'#project'},
             ]).buildNavigationModel();
 
             return router.activate();
