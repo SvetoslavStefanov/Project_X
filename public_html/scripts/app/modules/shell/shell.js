@@ -1,16 +1,24 @@
-define(['plugins/router', 'durandal/app'], function (router, app) {
+define(['plugins/router', 'durandal/app','knockout','plugins/http'], function (router, app,ko,http) {
     return {
         router: router,
+        searchString: ko.observable(),
         search: function() {
+            var that = this;
             //It's really easy to show a message box.
             //You can add custom options too. Also, it returns a promise for the user's response.
-            app.showMessage('Search not yet implemented...');
+
+            http.get('Project/search/'+that.searchString()).then(function(response) {
+                if(JSON.parse(response).length == 0) {
+                    app.showMessage('There is no results for '+that.searchString());
+                } else {
+                    app.trigger("searchUpdate",response);
+                }
+            });
         },
         activate: function () {
             router.map([
                 { route: '', title: 'Проекти', moduleId: app.convertModuleNameToModuleId('projects'), nav: true,hash:'#project'},
             ]).buildNavigationModel();
-
             return router.activate();
         }
     };

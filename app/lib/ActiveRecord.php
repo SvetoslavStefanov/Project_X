@@ -271,11 +271,12 @@ abstract class ActiveRecord
     public static function findAll ($options = array())
     {
         $records = array();
-        foreach (self::$db->select(static::$table, $options) as $row) {
+            foreach (self::$db->select(static::$table, $options) as $row) {
             $records[] = self::buildFromRow($row);
         }
         return $records;
     }
+
 
     /**
      * Delete all records by given criteria
@@ -294,7 +295,7 @@ abstract class ActiveRecord
      * @param aray $row
      * @return ActiveRecord object
      */
-    private static function buildFromRow ($row)
+    protected static function buildFromRow ($row)
     {
         $class = get_called_class();
         $record = new $class();
