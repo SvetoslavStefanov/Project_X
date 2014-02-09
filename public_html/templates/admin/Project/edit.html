@@ -1,0 +1,27 @@
+<form action="" class="admin_project_edit" method="post" name="form">
+    <h4>Редактиране на проект</h4>
+    <div class="small-8">
+        <div class="row">
+            <div class="small-3 columns">
+                <label class="right inline" for="project_title">Име на проекта</label>
+            </div>
+            <div class="small-9 columns">
+                <input type="text" id="project_title" ng-model="project.title" required value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-3 columns">
+                <label class="right inline" for="project_content">Съдържание</label>
+            </div>
+            <div class="large-12 columns">
+                <textarea id="project_content" ng-model="project.content" required></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="sign_errors" ng-show="hasErrors" ng-repeat="error in errors">
+        <span>{{error}}</span>
+    </div>
+    <div class="small-6 large-6 columns">
+        <button class="button [radius round]" ng-click="submitForm()">Запиши</button>
+    </div>
+</form>

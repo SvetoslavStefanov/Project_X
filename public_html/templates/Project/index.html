@@ -1,0 +1,18 @@
+<h1>Проекти</h1>
+
+<ul ng-repeat="project in projects" class="list_projects">
+    <li class="panel">
+        <div class="thumbnail">
+            <a class="th [radius]" href="javascript:">
+                <img src="http://foundation.zurb.com/docs/assets/img/examples/earth-th-sm.jpg">
+            </a>
+        </div>
+        <div class="project_content">
+            <h5>{{project.attributes.title}}</h5>
+            <p>{{project.attributes.small_content}}</p>
+
+            <a href="javascript:" class="button tiny" ng-click="viewMoreInfo(project.attributes)">Виж още</a>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </li>
+</ul>

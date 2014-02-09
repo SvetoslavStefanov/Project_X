@@ -1,0 +1,8 @@
+<section>
+    <h2 data-bind="html: displayName"></h2>
+    <div class="row-fluid">
+        <ul class="thumbnails" data-bind="foreach: {data: images, as: 'image'}">
+            <li data-bind="widget: {kind: image.templateName, item:$data}"></li>
+        </ul>
+    </div>
+</section>

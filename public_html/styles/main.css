@@ -1,0 +1,123 @@
+body {
+    background-color: #4B7399;
+    font-family: Verdana, Helvetica, Arial;
+    font-size: 14px;
+    min-height:550px;;
+}
+
+img {
+    border: none;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+#error_explanation {
+    margin: 0 0 10px 30px;
+    background-color: #fdf5e6;
+    padding: 0;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    overflow: hidden;
+    font-weight: normal;
+    color: #ff0000;
+}
+#error_explanation h2 {
+    display: none;
+}
+#error_explanation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+#error_explanation li {
+    padding: 5px 5px 5px 30px;
+    margin: 0;
+    float: left;
+    background-image: url(/images/error.gif);
+    background-repeat: no-repeat;
+    background-position: left center;
+    clear: left;
+}
+
+.content {
+    margin: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.list_projects {
+    max-width:700px;
+}
+
+.list_projects .thumbnail{
+    float:left;
+    width:20%;
+}
+
+.list_projects .project_content {
+    float:left;
+    width:75%;
+    margin-left:4%;
+}
+
+.list_projects .project_content .show_more_info {
+    display:none;
+}
+
+#darkness {
+    background:rgba(0,0,0,0.7);;
+    display:none;
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:2;
+}
+
+.dialog {
+    position: relative;
+    z-index: 2;
+}
+
+.dialog_default .thumbnail {
+    display:none;
+}
+
+.dialog_default .reveal-modal {
+    visibility: visible;
+    display:block;
+}
+
+.dialog_default .show_all_images {
+    float:right;
+}
+
+.admin_login_form h4{
+    margin-left:23px;
+}
+
+.admin_login_form .small-8{
+    margin-left:-55px;
+}
+
+.sign_errors {
+    margin: 20px 0 30px 15px;
+    color: red;
+}
+
+.admin_project_edit #project_content{
+    height:300px;
+}
+
+.list_projects .project_delete{
+    margin-top: -17px !important;
+    margin-right: -10px;
+}
