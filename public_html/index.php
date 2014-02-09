@@ -20,7 +20,7 @@ function loadLayout(){
 
     return $layout;
 }
-
+//testing git commit !
 if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/" . ADMIN_DIR)){
     $dispatcher = new Dispatcher('Article', 'index');
     $dispatcher->dispatch($_SERVER['REQUEST_URI']);
