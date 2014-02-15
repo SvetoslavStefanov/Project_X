@@ -21,7 +21,7 @@ function loadLayout(){
     return $layout;
 }
 //s8uhk67th6ty
-sif (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/" . ADMIN_DIR)){
+if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/" . ADMIN_DIR)){
     $dispatcher = new Dispatcher('Article', 'index');
     $dispatcher->dispatch($_SERVER['REQUEST_URI']);
 }else{
