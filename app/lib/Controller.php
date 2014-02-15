@@ -13,10 +13,10 @@ class Controller extends Plugin
     public static $default_pic;
     public $message = null;
     protected $data = array();
-    protected $predefinedActions = [
+    protected $predefinedActions = array(
         'goToPreviousPage' => 'Redirect user to previous page',
         'goToSignInPage' => 'Redirect user to Sign in page'
-    ];
+    );
 
     public function dispatch ($controllerName, $actionName, $id)
     {

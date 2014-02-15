@@ -4,11 +4,18 @@ class ProjectController extends Controller {
          'setProject' => array(
              'index',
              'search'
-         )
+         ),
+        'getProject' => array(
+            'show'
+        )
      );
 
      protected function setProject (){
          $this->project = new Project();
+     }
+
+     protected function getProject(){
+         $this->project = admin_Project::get($this->id);
      }
 
      public function searchAction($searchString='') {
@@ -27,8 +34,8 @@ class ProjectController extends Controller {
          }
      }
 
-     public function viewAction()
+     public function showAction()
      {
-         echo $this->id;
+         $this->data = $this->project;
      }
 }
