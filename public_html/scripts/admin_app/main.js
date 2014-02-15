@@ -9,7 +9,7 @@ requirejs.config({
         'bootstrap': '../lib/bootstrap/js/bootstrap',
         'jquery': '../lib/jquery/jquery-1.9.1',
         'lodash': '../lib/lodash/lodash.min',
-        'templates': '../../templates/admin/',
+        'templates': '../../templates/admin',
         'lib': '../lib'
     },
     shim: {
@@ -44,12 +44,16 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'lodash', 'pl
         dialogsViewsPath: 'templates/dialogs/'
     };
 
+    app.extractModuleNameFromModuleControllerName = function (module){
+        return module.split(/(?=[A-Z])/)[0];
+    }
+
     //convert module's path ( modules/shell/shell ) to module's name ( shell )
-    app.convertModuleIdToModuleName = function(moduleId) {
+    app.convertModuleIdToModuleName = function(moduleId, controllerName) {
         var modulesPathArr = app.defaultPaths.modulesPath.split('/');
         var moduleIdArr = moduleId.split('/');
 
-        return _.uniq(_.remove(moduleIdArr, function(num) {
+        var module = _.uniq(_.remove(moduleIdArr, function(num) {
             var i;
             for (i = 0; i < modulesPathArr.length; i++) {
                 if (modulesPathArr[i] === num) {
@@ -58,7 +62,15 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'lodash', 'pl
             }
 
             return true;
-        })).join('');
+        }));
+
+        if (module.length > 1){
+            controllerName.name = module.shift();
+        }else{
+            controllerName.name = module[0];
+        }
+
+        return module.join("");
     };
 
     //convert module's name ( shell ) to module's path ( modules/shell/shell )
@@ -66,12 +78,20 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'lodash', 'pl
         return this.defaultPaths.modulesPath + moduleName + "/" + moduleName;
     };
 
+    app.convertModuleNameToModuleId = function(module) {
+        var moduleFolder = this.extractModuleNameFromModuleControllerName(module),
+            moduleName = module;
+
+        return this.defaultPaths.modulesPath + moduleFolder + "/" + moduleName + "/" + moduleName;
+    };
+
     app.start().then(function() {
         //convert module's path ( modules/shell/shell ) to module's view path
         viewLocator.convertModuleIdToViewId = function(moduleId) {
-            var moduleName = app.convertModuleIdToModuleName(moduleId);
+            var controllerName = {name: ''},
+                moduleName = app.convertModuleIdToModuleName(moduleId, controllerName);
 
-            return app.defaultPaths.modulesViewsPath + moduleName + "/" + moduleName;
+            return app.defaultPaths.modulesViewsPath + controllerName.name + "/" + moduleName + "/" + moduleName;
         };
 
         //convert widget's name to widget's path
