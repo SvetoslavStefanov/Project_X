@@ -1,4 +1,4 @@
-define(['plugins/router', 'durandal/app'], function (router, app) {
+define(['plugins/router', 'durandal/app', 'durandal/system'], function (router, app, system) {
     return {
         router: router,
         search: function() {
@@ -8,7 +8,8 @@ define(['plugins/router', 'durandal/app'], function (router, app) {
         },
         activate: function () {
             router.map([
-                { route: '', title: 'Проекти', moduleId: app.convertModuleNameToModuleId('projects'), nav: true}
+                { route: '', title: 'Проекти', moduleId: app.convertModuleNameToModuleId('projectIndex'), nav: true},
+                { route: 'project/show/:id', title: 'Проекти', moduleId: app.convertModuleNameToModuleId('projectShow'), nav: true}
             ]).buildNavigationModel();
 
             return router.activate();
