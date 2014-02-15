@@ -29,7 +29,7 @@ define(['jquery', 'knockout'], function($, ko) {
          * @return {Promise} A promise of the get response data.
          */
         get:function(url, query) {
-            return $.ajax(url, { data: query });
+            return $.ajax(url, { data: query, dataType: 'json' });
         },
         /**
          * Makes an JSONP request.

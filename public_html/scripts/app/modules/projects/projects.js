@@ -1,4 +1,4 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'plugins/serializer', 'helper/DialogHelper'], function (http, app, ko, serializer, DialogHelper) {
+define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper'], function (http, app, ko, DialogHelper) {
     "use strict";
 
     return {
@@ -10,10 +10,10 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/serializer', 'helpe
         
             var that = this;
             app.on('searchUpdate',function(response) {
-                that.projects(serializer.deserialize(response));
+                that.projects(response);
             });
             http.get('Project/index').then(function(response) {
-                that.projects(serializer.deserialize(response));
+                that.projects((response));
             });
         },
   

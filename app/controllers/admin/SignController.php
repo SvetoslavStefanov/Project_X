@@ -4,10 +4,7 @@ class admin_SignController extends admin_BaseController
 {
 
     var $before = array(
-        'setUser' => array('in', 'login'),
-        'useAjaxLayout' => array(
-            'in', 'login'
-        )
+        'setUser' => array('in', 'login')
     );
 
     protected function setUser ()
@@ -47,7 +44,7 @@ class admin_SignController extends admin_BaseController
         //session_destroy();
         unset($_SESSION['isAdmin']);
         setcookie('user_cookie', '', time() - 1, '/');
-        $this->redirect("");
+        $this->returnUserToLoginPage();
     }
 
     protected function setUserCookie ()
