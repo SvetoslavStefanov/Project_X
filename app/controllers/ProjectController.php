@@ -30,4 +30,9 @@ class ProjectController extends Controller {
              $data->attributes['small_content'] = mb_strcut($data->attributes['content'], 0, 150) . "...";
          }
      }
+
+     public function viewAction()
+     {
+         echo $this->id;
+     }
 }

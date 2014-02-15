@@ -3,8 +3,11 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/serializer', 'helpe
 
     return {
         projects: ko.observableArray([]),
-
-        attached: function () {
+        viewProjectUrl: function(id) {
+            return '#project/'+id;
+        },
+        activate: function () {
+        
             var that = this;
             app.on('searchUpdate',function(response) {
                 that.projects(serializer.deserialize(response));
@@ -13,6 +16,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/serializer', 'helpe
                 that.projects(serializer.deserialize(response));
             });
         },
+  
         viewMoreInfo: function (project) {
             app.showDialog(new DialogHelper(project.attributes.content, project.attributes.title, ['Затвори']));
         }
