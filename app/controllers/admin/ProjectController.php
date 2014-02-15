@@ -6,9 +6,6 @@ class admin_ProjectController extends admin_BaseController{
         ),
         'getProject' => array(
             'edit', 'update', 'destroy'
-        ),
-        'useAjaxLayout' => array(
-            'index', 'login', 'edit', 'update', 'create', 'destroy'
         )
     );
 

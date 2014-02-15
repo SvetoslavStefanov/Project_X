@@ -25,7 +25,7 @@ class admin_BaseController extends Controller{
 
     protected function confimAdminLogged(){
         if(empty($this->adminUser) && $this->controllerName != 'admin/Sign' && $this->actionName != 'in'){
-            $this->redirect('Sign/in');
+            $this->returnUserToLoginPage();
         }
     }
 }

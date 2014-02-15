@@ -8,10 +8,15 @@ class Controller extends Plugin
     public $id;
     public $model;
     public $rendered = false;
-    protected $layout = 'layout';
+    protected $layout = 'layoutAjax';
     protected $before;
     public static $default_pic;
     public $message = null;
+    protected $data = array();
+    protected $predefinedActions = [
+        'goToPreviousPage' => 'Redirect user to previous page',
+        'goToSignInPage' => 'Redirect user to Sign in page'
+    ];
 
     public function dispatch ($controllerName, $actionName, $id)
     {
@@ -39,23 +44,9 @@ class Controller extends Plugin
         }
     }
 
-    /*
-     * @Description
-     * Set message into session variable, so to be readed in layout.php
-     */
-
-    protected function setMessage ()
-    {
-        if ($this->message != null) {
-            $this->message = \addslashes($this->message);
-            $_SESSION['message'] = $this->message;
-        }
-    }
-
     protected function render ($template, $layout = true)
     {
         $view = new View();
-        $this->setMessage();
         $view->assign(get_object_vars($this));
 
         $view->render(
@@ -63,10 +54,6 @@ class Controller extends Plugin
         );
 
         $this->rendered = true;
-    }
-
-    protected function useAjaxLayout(){
-        $this->layout = 'layoutAjax';
     }
 
     /* protected function get($key, $default = null){
@@ -97,19 +84,9 @@ class Controller extends Plugin
         return isset($_POST[$key]) ? $_POST[$key] : $default;
     }
 
-    protected function redirect ($url)
-    {
-        $this->setMessage();
-        header('Location: ' . url($url));
-        exit;
-    }
-
     protected function back ()
     {
-        if (isset($_SERVER['HTTP_REFERER']))
-            $this->redirect($_SERVER['HTTP_REFERER']);
-        else
-            $this->redirect('/');
+        $this->data['predefinedAction'] = $this->predefinedActions['goToPreviousPage'];
     }
 
     protected function before ()
@@ -120,18 +97,26 @@ class Controller extends Plugin
         }
     }
 
+    protected function returnUserToLoginPage () {
+        $this->data['isUserLogged'] = false;
+        $this->data['errors'] = 'This area is only for registered users !';
+        $this->data['predefinedAction'] = $this->predefinedActions['goToSignInPage'];
+    }
+
     public function confirmLogged ()
     {
         if (empty($this->currentUser)) {
-            $_SESSION['reference'] = $_SERVER['REQUEST_URI'];
-            $this->redirect('Sign/in');
+            $this->returnUserToLoginPage();
+            exit;
         }
     }
 
     protected function privatePage ()
     {
         if ($this->currentUser->id != $this->id) {
+            $this->data['errors'] = 'This page is private !';
             $this->back();
+            exit;
         }
     }
 

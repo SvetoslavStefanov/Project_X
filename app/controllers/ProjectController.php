@@ -4,11 +4,7 @@ class ProjectController extends Controller {
          'setProject' => array(
              'index',
              'search'
-         ),
-         'useAjaxLayout' => array(
-            'index',
-            'search'
-        )
+         )
      );
 
      protected function setProject (){

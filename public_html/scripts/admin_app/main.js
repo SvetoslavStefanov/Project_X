@@ -9,7 +9,8 @@ requirejs.config({
         'bootstrap': '../lib/bootstrap/js/bootstrap',
         'jquery': '../lib/jquery/jquery-1.9.1',
         'lodash': '../lib/lodash/lodash.min',
-        'templates': '../../templates/admin/'
+        'templates': '../../templates/admin/',
+        'lib': '../lib'
     },
     shim: {
         'bootstrap': {
