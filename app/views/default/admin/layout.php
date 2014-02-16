@@ -22,6 +22,6 @@
                 <i class="icon-spinner icon-2x icon-spin active"></i>
             </div>
         </div>
-        <script src="scripts/lib/require/require.js" data-main="scripts/admin_app/main"></script>
+        <script src="scripts/lib/require/require.js" data-main="scripts/init"></script>
     </body>
 </html>
