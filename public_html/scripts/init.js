@@ -9,13 +9,13 @@ function buildBaseUrl (){
     var mainDir = 'scripts',
         appDir = 'app';
 
-    if (isInAdmin){
+    if (isInAdmin()){
         appDir = 'admin_' + appDir;
     }
 
     return mainDir + '/' + appDir;
 };
-console.log(buildBaseUrl());
+
 requirejs.config({
     baseUrl: buildBaseUrl(),
     paths: {
@@ -40,81 +40,26 @@ requirejs.config({
     }
 });
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'lodash', 'plugins/widget', 'require'], function(system, app, viewLocator, _, widget, require) {
-    system.debug(false);
+define(['durandal/app', 'durandal/viewLocator', 'lodash', 'plugins/widget', 'require', 'helper/viewHelper']
+    , function(app, viewLocator, _, widget, require, viewHelper) {
 
     app.title = 'Administration !';
 
-    app.configurePlugins({
-        router: true,
-        dialog: true,
-        widget: true
-    });
-
-    app.defaultPaths = {
-        modulesPath: 'modules/',
-        widgetsPath: 'widgets/',
-        modulesViewsPath: 'templates/modules/',
-        widgetsViewsPath: 'templates/widgets/',
-        dialogsViewsPath: 'templates/dialogs/'
-    };
-
-    app.extractModuleNameFromModuleControllerName = function (module){
-        return module.split(/(?=[A-Z])/)[0];
-    }
-
-    //convert module's path ( modules/shell/shell ) to module's name ( shell )
-    app.convertModuleIdToModuleName = function(moduleId, controllerName) {
-        var modulesPathArr = app.defaultPaths.modulesPath.split('/');
-        var moduleIdArr = moduleId.split('/');
-
-        var module = _.uniq(_.remove(moduleIdArr, function(num) {
-            var i;
-            for (i = 0; i < modulesPathArr.length; i++) {
-                if (modulesPathArr[i] === num) {
-                    return false;
-                }
-            }
-
-            return true;
-        }));
-
-        if (module.length > 1){
-            controllerName.name = module.shift();
-        }else{
-            controllerName.name = module[0];
-        }
-
-        return module.join("");
-    };
-
-    //convert module's name ( shell ) to module's path ( modules/shell/shell )
-    app.convertModuleNameToModuleId = function(moduleName) {
-        return this.defaultPaths.modulesPath + moduleName + "/" + moduleName;
-    };
-
-    app.convertModuleNameToModuleId = function(module) {
-        var moduleFolder = this.extractModuleNameFromModuleControllerName(module),
-            moduleName = module;
-
-        return this.defaultPaths.modulesPath + moduleFolder + "/" + moduleName + "/" + moduleName;
-    };
-
     viewLocator.convertModuleIdToViewId = function(moduleId) {
         var controllerName = {name: ''},
-            moduleName = app.convertModuleIdToModuleName(moduleId, controllerName);
+            moduleName = viewHelper.convertModuleIdToModuleName(moduleId, controllerName);
 
-        return app.defaultPaths.modulesViewsPath + controllerName.name + "/" + moduleName + "/" + moduleName;
+        return viewHelper.defaultPaths.modulesViewsPath + controllerName.name + "/" + moduleName + "/" + moduleName;
     };
 
     //convert widget's name to widget's path
     widget.convertKindToModulePath = function (widgetName){
-        return app.defaultPaths.widgetsPath + widgetName + "/" + widgetName;
+        return viewHelper.defaultPaths.widgetsPath + widgetName + "/" + widgetName;
     };
 
     //convert widget's name to widget's views path
     widget.convertKindToViewPath = function (widgetName){
-        return app.defaultPaths.widgetsViewsPath + widgetName + "/" + widgetName;
+        return viewHelper.defaultPaths.widgetsViewsPath + widgetName + "/" + widgetName;
     };
 
     require(['scripts/admin_app/main.js']);

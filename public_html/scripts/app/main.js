@@ -1,4 +1,4 @@
-define(['durandal/system', 'durandal/app'], function(system, app) {
+define(['durandal/system', 'durandal/app', 'helper/viewHelper'], function(system, app, viewHelper) {
     system.debug(false);
 
     app.title = 'Project X Home !';
@@ -12,6 +12,6 @@ define(['durandal/system', 'durandal/app'], function(system, app) {
     app.start().then(function() {
 
         //Show the app by setting the root view model for our application with a transition.
-        app.setRoot(app.convertModuleNameToModuleId('shell'), 'entrance');
+        app.setRoot(viewHelper.convertModuleNameToModuleId('shell'), 'entrance');
     });
 });

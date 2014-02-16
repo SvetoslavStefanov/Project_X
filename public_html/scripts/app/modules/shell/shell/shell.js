@@ -17,9 +17,9 @@ define(['plugins/router', 'durandal/app','knockout','plugins/http'], function (r
         },
         activate: function () {
             router.map([
-                { route: '', title: 'Проекти', moduleId: app.convertModuleNameToModuleId('projects'), nav: true,hash:'#project'},
-                { route: 'project/:projectId', moduleId: app.convertModuleNameToModuleId('showProject'), nav: false,hash:'#project/param1'},
+                { route: '', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true}
             ]).buildNavigationModel();
+
             return router.activate();
         }
     };

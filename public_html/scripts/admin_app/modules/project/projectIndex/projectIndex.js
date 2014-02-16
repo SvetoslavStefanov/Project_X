@@ -1,7 +1,7 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'controllers/projectController'], function (http, app, ko, DialogHelper, projectConroller) {
+define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'controllers/projectController'], function (http, app, ko, DialogHelper, projectController) {
     "use strict";
 
-    return projectConroller({
+    return projectController({
         projects: ko.observableArray([]),
 
         attached: function () {
