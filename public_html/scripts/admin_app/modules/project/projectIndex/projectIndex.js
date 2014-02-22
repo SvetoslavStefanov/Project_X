@@ -7,7 +7,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'cont
 
         activate: function () {
             var that = this;
-            http.get('admin/Project/index').then(function(response) {
+            http.get('Project/index').then(function(response) {
                 that.projects(response);
             });
         },
