@@ -9,7 +9,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/serializer', 'helpe
             if(!(parseInt(projectId) > 0)) {
                 return false;
             }
-    	    http.get('Project/show/'+projectId).then(function(response) {
+    	    http.get('admin/Project/show/'+projectId).then(function(response) {
                 that.projectData = response;
     	    });
     	},
