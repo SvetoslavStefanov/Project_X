@@ -37,7 +37,8 @@ requirejs.config({
         lodash: {
             exports: ['_']
         }
-    }
+    },
+    deps: ['lodash']
 });
 
 define(['durandal/app', 'durandal/viewLocator', 'lodash', 'plugins/widget', 'require', 'helper/viewHelper']

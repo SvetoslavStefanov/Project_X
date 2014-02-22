@@ -1,11 +1,10 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'controllers/projectController'], function (http, app, ko, DialogHelper, projectConroller) {
+define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'controllers/projectController', 'plugins/router'],
+    function (http, app, ko, DialogHelper, projectConroller, router) {
     "use strict";
 
     return projectConroller({
         projects: ko.observableArray([]),
-        viewProjectUrl: function(id) {
-            return '#project/show/'+id;
-        },
+
         activate: function () {
         
             var that = this;
@@ -14,10 +13,9 @@ define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'cont
                 that.projects(response);
             });
         },
-  
-        viewMoreInfo: function (project) {
-            window.location.hash = 'project/show/' + project.id;
-            //app.showDialog(new DialogHelper(project.attributes.content, project.attributes.title, ['Затвори']));
+
+        navigateToProjectShow: function (project) {
+            router.navigate('project/show/' + project.id);
         }
     });
 });

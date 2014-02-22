@@ -1,18 +1,15 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'plugins/serializer', 'helper/DialogHelper'], function (http, app, ko, serializer, DialogHelper) {
+define(['plugins/http', 'durandal/app', 'knockout', 'komapping'], function (http, app, ko, komapping) {
     "use strict";
 
     return {
-        projectData: {},
+        projectData: ko.observableArray([]),
 
     	activate: function (projectId) {
     	    var that = this;
-            if(!(parseInt(projectId) > 0)) {
-                return false;
-            }
-    	    http.get('Project/show/'+projectId).then(function(response) {
-                that.projectData = response;
-    	    });
-    	},
-    }
 
+    	    http.get('Project/show/'+projectId).then(function(response) {
+                that.projectData.push(response);
+    	    });
+    	}
+    }
 });
