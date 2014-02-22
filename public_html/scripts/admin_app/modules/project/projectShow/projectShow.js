@@ -8,7 +8,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'komapping'], function (http
     	    var that = this;
 
     	    http.get('Project/show/'+projectId).then(function(response) {
-                that.projectData.push(response);
+                that.projectData(response);
     	    });
     	}
     }
