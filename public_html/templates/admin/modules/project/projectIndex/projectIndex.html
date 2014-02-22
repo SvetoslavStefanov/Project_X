@@ -1,7 +1,7 @@
 <h1>Проекти</h1>
 
 <ul class="list_projects" data-bind="foreach: projects">
-    <li  data-bind="click: $.root.viewProject($data.attributes.id)" class="jumbotron">
+    <li class="jumbotron">
         <div class="thumbnail">
             <a class="th [radius]" href="javascript:">
                 <img src="http://foundation.zurb.com/docs/assets/img/examples/earth-th-sm.jpg">
@@ -11,7 +11,7 @@
             <h5 data-bind="text: $data.attributes.title"></h5>
             <p data-bind="html: $data.attributes.small_content" ></p>
 
-            <a href="#" class="button tiny" data-bind="click: $root.viewMoreInfo">Виж още</a>
+            <a data-bind="attr: {href: $root.viewProjectUrl($data.id)}" class="button tiny">Виж още</a>
         </div>
         <div class="clear">&nbsp;</div>
     </li>
