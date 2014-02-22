@@ -1,14 +1,18 @@
-/**
- * Created by SveXteZ on 14-2-15.
- */
-define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'controllers/projectController'], function (http, app, ko, DialogHelper, projectConroller) {
+define(['plugins/http', 'durandal/app', 'knockout', 'plugins/serializer', 'helper/DialogHelper'], function (http, app, ko, serializer, DialogHelper) {
     "use strict";
 
-    return projectConroller({
-        projects: ko.observableArray([]),
+    return {
+        projectData: {},
 
-        activate: function (id) {
-            console.log('we are showing project !', id)
-        }
-    });
+    	activate: function (projectId) {
+    	    var that = this;
+            if(!(parseInt(projectId) > 0)) {
+                return false;
+            }
+    	    http.get('Project/show/'+projectId).then(function(response) {
+                that.projectData = response;
+    	    });
+    	},
+    }
+
 });

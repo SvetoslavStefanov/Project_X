@@ -11,7 +11,7 @@
             <h5 data-bind="text: $data.attributes.title"></h5>
             <p data-bind="html: $data.attributes.small_content" ></p>
 
-            <a href="#" class="button tiny" data-bind="click: $root.viewMoreInfo">Виж още</a>
+            <a data-bind="attr: {href: $root.viewProjectUrl($data.id)}" class="button tiny">Виж още</a>
         </div>
         <div class="clear">&nbsp;</div>
     </li>
