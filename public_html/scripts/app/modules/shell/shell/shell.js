@@ -6,7 +6,6 @@ define(['plugins/router', 'durandal/app','knockout','plugins/http'], function (r
             var that = this;
             //It's really easy to show a message box.
             //You can add custom options too. Also, it returns a promise for the user's response.
-
             http.get('Project/search/'+that.searchString()).then(function(response) {
                 if(JSON.parse(response).length == 0) {
                     app.showMessage('There is no results for '+that.searchString());

@@ -9,7 +9,7 @@
  * @requires jquery
  * @requires knockout
  */
-define(['jquery', 'knockout'], function($, ko) {
+define(['jquery', 'knockout','plugins/router'], function($, ko,router) {
     /**
      * @class HTTPModule
      * @static
@@ -29,7 +29,15 @@ define(['jquery', 'knockout'], function($, ko) {
          * @return {Promise} A promise of the get response data.
          */
         get:function(url, query) {
-            return $.ajax(url, { data: query, dataType: 'json' });
+            var promise = $.ajax(url, { data: query, contentType: 'application/json', dataType: 'json' });
+            promise.fail(function(data) {
+                if(data.status == 401) {
+                   if (history.pushState) {
+                      router.navigate('#signIn');
+                   }
+                }
+            });
+            return promise;
         },
         /**
          * Makes an JSONP request.
@@ -68,9 +76,8 @@ define(['jquery', 'knockout'], function($, ko) {
         post:function(url, data) {
             return $.ajax({
                 url: url,
-                data: ko.toJSON(data),
+                data: data,
                 type: 'POST',
-                contentType: 'application/json',
                 dataType: 'json'
             });
         }

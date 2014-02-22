@@ -24,6 +24,7 @@ class admin_SignController extends admin_BaseController
 
     public function loginAction ()
     {
+
         if (isset($this->adminUser) && ($this->adminUser instanceof ActiveRecord)) {
              $this->data['isUserLogged'] = true;
              return true;
