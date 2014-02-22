@@ -271,7 +271,7 @@ abstract class ActiveRecord
     public static function findAll ($options = array())
     {
         $records = array();
-            foreach (self::$db->select(static::$table, $options) as $row) {
+        foreach (self::$db->select(static::$table, $options) as $row) {
             $records[] = self::buildFromRow($row);
         }
         return $records;
