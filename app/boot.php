@@ -37,7 +37,6 @@ define('SITE_URL',                          $config['site_url']);
 // load basic libs
 require LIB_DIR . '/AutoLoader.php';
 require LIB_DIR . '/functions.php';
-require LIB_DIR . '/Formbuilder.php';
 require LIB_DIR . '/Plugin.php';
 
 

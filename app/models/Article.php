@@ -10,8 +10,8 @@ class Article extends ActiveRecord
     {
         $this->content = trim(strip_tags($this->content));
 
-        //FormValidator::validate($this->title, 'title', array('required' => 1, 'testChars' => ' '));
-        //FormValidator::validate($this->content, 'content', array('required' => 1, 'testChars' => ' -.’,'));
+        //Validator::validate($this->title, 'title', array('required' => 1, 'testChars' => ' '));
+        //Validator::validate($this->content, 'content', array('required' => 1, 'testChars' => ' -.’,'));
     }
 
 }

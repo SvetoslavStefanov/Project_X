@@ -61,59 +61,19 @@ abstract class ActiveRecord
     }
 
     /**
-     * Validate form if there are any pre-defined validations from form_validations table
-     * @return boolean | void
-     */
-    protected function formValidate ()
-    {
-        if (!$this->validation_form) {
-            return true;
-        }
-
-        $url = getContrAndActFromUrl();
-
-        $validations = admin_FormValidations::find(array('whereOr' => array(
-                        'address1' => $url,
-                        'address2' => $url
-        )));
-
-        if (!$validations) {
-            return true;
-        }
-        FormValidator::setName($validations->name);
-
-        $validations = \admin_Validations::findAll(array('where' => array(
-                        'relation_id' => $validations->id
-        )));
-
-        $rules = array();
-
-        foreach ($validations as $validation) {
-            if (isset($this->attributes[$validation->field])) {
-                $rules[$validation->field][$validation->rule] = $validation->value;
-            }
-        }
-
-        foreach ($rules as $key => $value) {
-            FormValidator::validate($this->attributes[$key], $key, $value);
-        }
-    }
-
-    /**
      * Execute validations from form_validations table and default validation funcions in models
      * @return type
      */
     public function isValid ()
     {
-        $this->formValidate();
-
         if ($this->validate == null) {
             $this->validate();
         } else {
             $validate_func = $this->validate . 'Validate';
             $this->$validate_func();
         }
-        return empty(FormValidator::$errors);
+
+        return empty(Validator::$errors);
     }
 
     /**
@@ -126,11 +86,12 @@ abstract class ActiveRecord
     public function save ($attributes = null, $keys = null, $validate = null)
     {
         $this->validate = $validate != null ? $validate : null;
+
         if (is_array($attributes)) {
             if ($keys === null) {
                 $keys = static::$accessible === true ? static::$columns : static::$accessible;
             }
-            foreach (FormValidator::filterArray($attributes, (array) $keys) as $key => $value) {
+            foreach (Validator::filterArray($attributes, (array) $keys) as $key => $value) {
                 $this->$key = $value;
             }
         }

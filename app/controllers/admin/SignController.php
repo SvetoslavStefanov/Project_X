@@ -36,7 +36,7 @@ class admin_SignController extends admin_BaseController
             $this->setUserCookie();
             $this->data['isUserLogged'] = true;
         } else {
-            $this->data['errors'] = FormValidator::$errors;
+            $this->data['errors'] = Validator::$errors;
         }
     }
 
