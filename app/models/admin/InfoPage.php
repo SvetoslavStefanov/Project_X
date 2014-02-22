@@ -24,9 +24,9 @@ class admin_InfoPage extends ActiveRecord
 
         //$this->content = htmlentities($this->content, null, "UTF-8");
 
-        FormValidator::validate("title", "title", array('required' => 1, 'max_length' => 255));
-        FormValidator::validate("content", "content", array('required' => 1, 'max_length' => 500));
-        FormValidator::validate("status", "status", array('required' => 1));
+        Validator::validate("title", "title", array('required' => 1, 'max_length' => 255));
+        Validator::validate("content", "content", array('required' => 1, 'max_length' => 500));
+        Validator::validate("status", "status", array('required' => 1));
     }
 
 }

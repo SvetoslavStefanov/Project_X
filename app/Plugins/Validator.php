@@ -1,6 +1,6 @@
 <?php
 
-class FormValidator
+class Validator
 {
 
     public static $errors = array();

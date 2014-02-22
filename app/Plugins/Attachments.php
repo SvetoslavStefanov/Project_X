@@ -55,7 +55,7 @@ class Attachments extends \ActiveRecord{
         $file = \array_map("array_shift", $file);
 
         if(!$src = Upload::file($file, $this->dir, $options)){
-            \FormValidator::addError("Възникна грешка при качването на файла");
+            \Validator::addError("Възникна грешка при качването на файла");
             return false;
         }
 

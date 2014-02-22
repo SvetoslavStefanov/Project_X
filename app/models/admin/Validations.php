@@ -21,10 +21,10 @@ class admin_Validations extends \ActiveRecord{
 
     protected function validate(){
 
-        FormValidator::validate($this->relation_id, "relation_id", array('required' => true));
-        FormValidator::validate($this->field, "field", array('required' => true));
-        FormValidator::validate($this->rule, "rule", array('required' => true));
-        FormValidator::validate($this->value, "value", array('required' => true));
+        Validator::validate($this->relation_id, "relation_id", array('required' => true));
+        Validator::validate($this->field, "field", array('required' => true));
+        Validator::validate($this->rule, "rule", array('required' => true));
+        Validator::validate($this->value, "value", array('required' => true));
 
         $this->value = htmlentities($this->value, ENT_QUOTES | ENT_IGNORE, "UTF-8");
     }

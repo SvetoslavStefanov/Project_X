@@ -81,24 +81,24 @@ class admin_User extends \ActiveRecord {
     protected function validate(){
         $this->info = str_replace("&nbsp;", "", $this->info);
         $this->info = strip_tags($this->info, "<p><h1><h2><h3><h4><h5><h6><ol><ul><li><img><span><hr><br><b><i><a>");
-        //FormValidator::validate($this->info, "info", array("textChars" => "\'\",0-9.\-()!<>"));
-        FormValidator::validate($this->real_name, 'real_name', array("textChars"=> '\,\.()0-9-\_\:\'\"'));
-        /*if(empty(\FormValidator::$errors)){
+        //Validator::validate($this->info, "info", array("textChars" => "\'\",0-9.\-()!<>"));
+        Validator::validate($this->real_name, 'real_name', array("textChars"=> '\,\.()0-9-\_\:\'\"'));
+        /*if(empty(\Validator::$errors)){
             if($obj = $this->find(array('where' => array('username' => $this->username, 'id' => array('!=' => $this->id)))))
-                    FormValidator::addError("username", "Името е вече заето");
+                    Validator::addError("username", "Името е вече заето");
         }*/
         
-        if(empty(\FormValidator::$errors)){
+        if(empty(\Validator::$errors)){
             if($obj = $this->plugin['aUser']->find(array('where' => array('email' => $this->email, 'relation_id' => array("!=" => $this->id)))))
-                    FormValidator::addError("email", "E-mail адресът е вече зает");
+                    Validator::addError("email", "E-mail адресът е вече зает");
         }
          
-        if(empty(FormValidator::$errors) && $this->new_password != null)
+        if(empty(Validator::$errors) && $this->new_password != null)
             $this->password = Sign::crypty($this->username, $this->new_password);
         
         $this->real_name = \htmlentities($this->real_name, ENT_QUOTES | ENT_IGNORE, "UTF-8");
         
-        if(!FormValidator::$errors){
+        if(!Validator::$errors){
             $ghelper = new GoogleHelper(API_KEY);
             $country = admin_Country::getCountry($this->country);
             $city = admin_City::getCity($this->city);
@@ -135,7 +135,7 @@ class admin_User extends \ActiveRecord {
                         '225x225'
                     ));
                 
-                if(empty(FormValidator::$errors))
+                if(empty(Validator::$errors))
                     if($this->plugin['Attachments']->upload($this, $_FILES['admin_User'], $options, $this->pic)){
                         $attributes['pic'] = $this->plugin['Attachments']->id;
                         $src = $this->plugin['Attachments']->src;
@@ -173,17 +173,17 @@ class admin_User extends \ActiveRecord {
     }
     
     protected function createValidate(){
-        FormValidator::validate($this->real_name, 'real_name', array("textChars"=> '\,\.()0-9-\_\:\'\"'));
-        if(empty(\FormValidator::$errors) && strlen($this->username) > 1){
+        Validator::validate($this->real_name, 'real_name', array("textChars"=> '\,\.()0-9-\_\:\'\"'));
+        if(empty(\Validator::$errors) && strlen($this->username) > 1){
             $obj_username = $this->find(array('where' => array('username' => $this->username)));
             
             if($obj_username){
-                FormValidator::addError("username", "Името е заето");
+                Validator::addError("username", "Името е заето");
             }
         }
         if($auser = $this->plugin['aUser']->find(array('where' => array('email' => $this->email)))){
             $this->plugin['aUser'] = $auser;
-            FormValidator::addError("email", "Имейлът е регистриран");
+            Validator::addError("email", "Имейлът е регистриран");
         }
         $this->real_name = \htmlentities($this->real_name, ENT_QUOTES | ENT_IGNORE, "UTF-8");
         $this->ip = $_SERVER['REMOTE_ADDR'];

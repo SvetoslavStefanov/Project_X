@@ -20,9 +20,9 @@ class admin_FormValidations extends \ActiveRecord{
 
     protected function validate()
     {
-        FormValidator::validate($this->name, "name", array('required' => true, 'testChars' => ' '));
-        FormValidator::validate($this->address1, "address1", array('required' => true));
-        FormValidator::validate($this->address2, "address2", array('required' => true));
+        Validator::validate($this->name, "name", array('required' => true, 'testChars' => ' '));
+        Validator::validate($this->address1, "address1", array('required' => true));
+        Validator::validate($this->address2, "address2", array('required' => true));
     }
 }
 

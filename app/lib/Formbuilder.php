@@ -95,11 +95,11 @@ class Formbuilder
     public function __toString ()
     {
         $tag = tag('form', $this->attributes);
-        $errors = FormValidator::$errors;
+        $errors = Validator::$errors;
         if (empty($errors))
             return $tag;
         if ($this->validation_name != null) {
-            if (FormValidator::getName() != $this->validation_name)
+            if (Validator::getName() != $this->validation_name)
                 return $tag;
         }
 
@@ -113,7 +113,7 @@ class Formbuilder
             if (!is_int($key))
                 continue;
             $li .= '<li class="error_explanation">' . $value . '</li>';
-            unset(FormValidator::$errors[$key]);
+            unset(Validator::$errors[$key]);
         }
 
         $html2 .= $li;
@@ -193,7 +193,7 @@ class Formbuilder
      */
     protected function validate ($name)
     {
-        if (!isset(FormValidator::$errors[$name])) {//!isset($this->validate[$name]) ||
+        if (!isset(Validator::$errors[$name])) {//!isset($this->validate[$name]) ||
             return '';
         }
 
@@ -201,8 +201,8 @@ class Formbuilder
         $options['class'] = 'error_explanation';
         $options['style'] = "";
         $content = ' ';
-        if (isset(FormValidator::$errors[$name])) {
-            $content = FormValidator::$errors[$name];
+        if (isset(Validator::$errors[$name])) {
+            $content = Validator::$errors[$name];
             $options['style'] = "";
         }
 
