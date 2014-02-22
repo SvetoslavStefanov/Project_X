@@ -15,7 +15,7 @@ class SqlHandler {
         }
 
         //becouse of 'ш' and 'И'
-//        mysql_query("SET NAMES 'UTF8'");
+        $this->connection->query("SET NAMES 'UTF8'");
         $this->writer = new SqlWriter();
     }
 
