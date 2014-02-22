@@ -9,18 +9,13 @@ class SqlHandler {
     private static $showAllQueries = false;
 
     function __construct(array $options) {
-        $this->connection = mysql_connect($options['host'], $options['user'], $options['password']);
+        $this->connection = mysqli_connect($options['host'], $options['user'], $options['password'], $options['database']);
         if (!$this->connection) {
-            throw new Exception('Not connected : ' . mysql_error());
+            throw new Exception('Not connected : ' . $this->connection->error);
         }
 
-        // make foo the current db
-        $this->database = mysql_select_db($options['database'], $this->connection);
-        if (!$this->database) {
-            throw new Exception("Can't use foo : " . mysql_error());
-        }
         //becouse of 'ш' and 'И'
-        mysql_query("SET NAMES 'UTF8'");
+        $this->connection->query("SET NAMES 'UTF8'");
         $this->writer = new SqlWriter();
     }
 
@@ -30,7 +25,8 @@ class SqlHandler {
             if(self::$showAllQueries != true)
                 self::$showQuery = false;
         }
-        if (!$result = mysql_query($query, $this->connection)) {
+
+        if (!$result = $this->connection->query($query)) {
             throw new Exception('Invalid query: ' . mysql_error());
         }
         return $result;
@@ -39,7 +35,7 @@ class SqlHandler {
     function insert($table, $values) {
         $this->query($this->writer->insert($table, $values));
 
-        return mysql_insert_id($this->connection);
+        return $this->connection->insert_id;
     }
 
     function update($table, $options, $where = null) {
@@ -53,31 +49,35 @@ class SqlHandler {
     function select($table, $options = array()) {
         $result = $this->query($this->writer->select($table, $options));
         $array = array();
-        while ($row = mysql_fetch_assoc($result)) {
+        while ($row = $result->fetch_assoc()) {
             $array[] = $row;
         }
-        mysql_free_result($result);
+
+        $result->free_result();
+
         return $array;
     }
 
     function row($table, $options = array()) {
         $result = $this->query($this->writer->select($table, $options));
-        $row = mysql_fetch_assoc($result);
-        mysql_free_result($result);
+        $row = $result->fetch_assoc();
+        $result->free_result();
 
         return $row;
     }
 
     function exists($table, $where = null) {
-        return mysql_num_rows($this->query($this->writer->select($table, array(
-                                    'where' => $where,
-                                    'limit' => 1
-                                )))) > 0;
+        $this->query($this->writer->select($table, array(
+            'where' => $where,
+            'limit' => 1
+        )));
+
+        return $this->connection->num_rows > 0;
     }
 
     function count($table, $where = null, $field = '*', $distinct = false) {
         if ($field != '*') {
-            $field = '`' . mysql_real_escape_string($field) . '`';
+            $field = '`' . $this->connection->real_escape_string($field) . '`';
 
             if ($distinct) {
                 $field = 'DISTINCT ' . $field;

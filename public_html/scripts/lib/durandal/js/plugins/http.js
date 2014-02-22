@@ -30,13 +30,13 @@ define(['jquery', 'knockout','plugins/router'], function($, ko,router) {
          */
         get:function(url, query) {
             var promise = $.ajax(url, { data: query, contentType: 'application/json', dataType: 'json' });
+           
             promise.fail(function(data) {
                 if(data.status == 401) {
-                   if (history.pushState) {
-                      router.navigate('#signIn');
-                   }
+                    router.navigate('signIn');
                 }
             });
+
             return promise;
         },
         /**
