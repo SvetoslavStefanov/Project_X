@@ -33,7 +33,7 @@ define(['jquery', 'knockout','plugins/router'], function($, ko,router) {
            
             promise.fail(function(data) {
                 if(data.status == 401) {
-                    router.navigate('signIn');
+                    router.navigate('sign/signIn');
                 }
             });
 

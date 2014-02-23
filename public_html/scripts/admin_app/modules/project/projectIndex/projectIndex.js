@@ -1,14 +1,14 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'helper/DialogHelper', 'controllers/projectController', 'plugins/router'],
-    function (http, app, ko, DialogHelper, projectConroller, router) {
+define(['plugins/http', 'durandal/app', 'knockout', 'controllers/projectController', 'plugins/router'],
+    function (http, app, ko, projectController, router) {
     "use strict";
 
-    return projectConroller({
+    return projectController({
         projects: ko.observableArray([]),
 
         activate: function () {
             var that = this;
-            http.get('Project/index').then(function(response) {
-                that.projects(response);
+            http.get('admin/Project/index').then(function(response) {
+                that.projects(response.projects);
             });
         },
 

@@ -4,19 +4,19 @@
 define(['helper/viewHelper', 'durandal/system', 'knockout'], function (viewHelper, system, ko) {
     "use strict";
 
-    var baseController = {
-        getModuleName: function (){
-            return viewHelper.convertModuleIdToModuleName(system.getModuleId(this));
-        },
-        getControllerName: function (){
-            var controllerName = {name: ''};
-            viewHelper.convertModuleIdToModuleName(system.getModuleId(this), controllerName);
-
-            return controllerName.name;
-        }
-    };
-
     return function (definition){
+        var baseController = {
+            getModuleName: function (){
+                return viewHelper.convertModuleIdToModuleName(system.getModuleId(this));
+            },
+            getControllerName: function (){
+                var controllerName = {name: ''};
+                viewHelper.convertModuleIdToModuleName(system.getModuleId(this), controllerName);
+
+                return controllerName.name;
+            }
+        };
+
         definition.parent = baseController;
 
         return ko.utils.extend(baseController, definition);

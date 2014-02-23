@@ -1,7 +1,7 @@
 /**
  * Created by SveXteZ on 14-2-15.
  */
-define(['plugins/http', 'durandal/app', 'knockout', 'controllers/baseController'], function (http, app, ko, baseController) {
+define([ 'knockout', 'controllers/baseController'], function (ko, baseController) {
     "use strict";
 
     var projectController = baseController({
