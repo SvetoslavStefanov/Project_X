@@ -1,50 +1,66 @@
 define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, viewHelper, ko) {
-    "use strict";
-    return {
-        router: router,
-        searchString: ko.observable(),
-        subRoutes: {
-            project: [
-                { route: 'create', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate')}
-            ]
-        },
+        "use strict";
 
-        activate: function () {
-            router.map([
-                { route: ['project', ''], title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true},
+        return {
+            router: router,
+            searchString: ko.observable(),
+            subRoutes: {
+                project: [
+                    { route: 'create', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate')}
+                ]
+            },
+            routes: [
+                { route: '', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: false},
+                { route: 'project', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true},
                 { route: 'project/show/:id', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectShow'), nav: false},
                 { route: 'sign/signIn', title: 'Sign In', moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false}
-            ]).buildNavigationModel();
+            ],
 
-            this.addSubRoutes();
+            activate: function () {
+                this.addSubRoutes();
 
-            return router.activate();
-        },
-        addSubRoutes: function () {
-            var i;
+                router.map(this.routes).buildNavigationModel();
 
-            for (i = 0; i < router.routes.length; i++) {
-                router.routes[i].settings = this.mapSubNav(router.routes[i].route);
-            }
-        },
-        mapSubNav: function (route) {
-            var subRoutes = [], i, currentSubRouter;
+                return router.activate();
+            },
+            addSubRoutes: function () {
+                var i, subRoutes = [], route;
 
-            if (!_.isUndefined(this.subRoutes[route])) {
-                for (i = 0; i < this.subRoutes[route].length; i++) {
-                    currentSubRouter = this.subRoutes[route][i];
+                for (i = 0; i < this.routes.length; i++) {
+                    this.routes[i].settings = this.mapSubNav(this.routes[i].route);
 
-                    currentSubRouter.route = route + "/" + currentSubRouter.route;
-
-                    if (_.isUndefined(currentSubRouter.hash)){
-                        currentSubRouter.hash = router.convertRouteToHash(currentSubRouter.route);
-                    }
-
-                    subRoutes.push(currentSubRouter);
+                    subRoutes.push(this.routes[i].settings.subRoutes)
                 }
-            }
+                subRoutes = _.filter(subRoutes, function (data) {
+                    return !_.isEmpty(data);
+                });
 
-            return {subRoutes: subRoutes};
-        }
-    };
-});
+                for (route in subRoutes) {
+                    for (i = 0; i < subRoutes[route].length; i++) {
+                        this.routes.push(subRoutes[route][i]);
+                    }
+                }
+            },
+            mapSubNav: function (route) {
+                var subRoutes = [], i, currentSubRouter;
+
+                if (!_.isUndefined(this.subRoutes[route])) {
+                    for (i = 0; i < this.subRoutes[route].length; i++) {
+                        currentSubRouter = this.subRoutes[route][i];
+
+                        currentSubRouter.route = route + "/" + currentSubRouter.route;
+
+                        if (_.isUndefined(currentSubRouter.hash)) {
+                            currentSubRouter.hash = router.convertRouteToHash(currentSubRouter.route);
+                        }
+
+                        subRoutes.push(currentSubRouter);
+                    }
+                }
+
+                return {subRoutes: subRoutes};
+            }
+        };
+    }
+
+);
