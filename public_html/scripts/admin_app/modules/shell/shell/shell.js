@@ -27,10 +27,11 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 var i, subRoutes = [], route;
 
                 for (i = 0; i < this.routes.length; i++) {
-                    this.routes[i].settings = this.mapSubNav(this.routes[i].route);
+                    this.routes[i].settings = this.mapSubNav(this.routes[i].route.split('/')[0]);
 
                     subRoutes.push(this.routes[i].settings.subRoutes)
                 }
+
                 subRoutes = _.filter(subRoutes, function (data) {
                     return !_.isEmpty(data);
                 });
