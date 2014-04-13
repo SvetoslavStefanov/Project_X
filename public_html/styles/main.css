@@ -121,3 +121,7 @@ ul {
     margin-top: -17px !important;
     margin-right: -10px;
 }
+
+.nav .navigation_element a {
+    display: inline-block;
+}
