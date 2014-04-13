@@ -31,7 +31,7 @@ class admin_ProjectController extends admin_BaseController{
 
     public function indexAction(){
         $this->title = 'List projects';
-        $this->data['projects'] = $this->project->findAll();
+        $this->data['projects'] = $this->project->findAll(array('sort' => 'id DESC'));
 
         foreach ($this->data['projects'] as &$data){
              $data->attributes['small_content'] = mb_strcut($data->attributes['content'], 0, 150) . "...";
