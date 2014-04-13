@@ -1,15 +1,19 @@
-define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
+define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectController'], function (http, app, ko, ProjectController) {
     "use strict";
 
-    return {
-        projectData: ko.observableArray([]),
+    function ProjectShow () {
+        this.projectData =  ko.observableArray([]);
 
-        activate: function (projectId) {
+        this.activate = function (projectId) {
             var that = this;
 
             http.get('admin/Project/show/'+projectId).then(function(response) {
                 that.projectData(response);
             });
-        }
+        };
     }
+
+    ProjectShow.prototype = new ProjectController();
+
+    return ProjectShow;
 });

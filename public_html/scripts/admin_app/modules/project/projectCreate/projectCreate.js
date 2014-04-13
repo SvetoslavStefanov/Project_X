@@ -1,10 +1,10 @@
 /**
  * Created by SveXteZ on 14-3-1.
  */
-define(['plugins/http', 'knockout', 'plugins/router'], function (http, ko, router) {
+define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectController'], function (http, ko, router, ProjectController) {
     "use strict";
 
-    return function () {
+    function ProjectCreate () {
         this.title = ko.observable('');
         this.content = ko.observable('');
 
@@ -24,4 +24,8 @@ define(['plugins/http', 'knockout', 'plugins/router'], function (http, ko, route
             });
         };
     };
+
+    ProjectCreate.prototype = new ProjectController();
+
+    return ProjectCreate;
 });

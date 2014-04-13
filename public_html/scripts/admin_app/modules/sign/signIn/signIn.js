@@ -1,20 +1,21 @@
-define(['plugins/http', 'knockout', 'controllers/signInController', 'plugins/router'],
-    function (http, ko, signInController, router) {
+define(['plugins/http', 'knockout', 'controllers/SignController', 'plugins/router'],
+    function (http, ko, SignController, router) {
         "use strict";
 
-        return signInController({
-            username: ko.observable(),
-            password: ko.observable(),
+        function SignIn() {
+            this.username = ko.observable();
+            this.password = ko.observable();
 
-            activate: function () {
+            this.activate = function () {
                 http.get('admin/Sign/in').then(function (response) {
                     if (response.isUserLogged === true) {
                         router.navigate('');
                     }
                 });
 
-            },
-            makeRequest: function () {
+            };
+
+            this.makeRequest = function () {
                 var that = this,
                     params = {
                         username: that.username(),
@@ -25,7 +26,9 @@ define(['plugins/http', 'knockout', 'controllers/signInController', 'plugins/rou
                 }).fail(function (data) {
                         alert("Wrong name or pass")
                     });
-            }
+            };
 
-        });
+        };
+
+        SignIn.prototype = new SignController();
     });

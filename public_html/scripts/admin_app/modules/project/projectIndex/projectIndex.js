@@ -1,5 +1,5 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'controllers/projectController', 'plugins/router'],
-    function (http, app, ko, projectController, router) {
+define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectController', 'plugins/router'],
+    function (http, app, ko, ProjectController, router) {
         "use strict";
 
         var actionBoxStatusClasses = {
@@ -7,7 +7,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/projectControll
             destroyed: 'danger'
         };
 
-        return projectController(new function () {
+        function ProjectIndex () {
             this.projects = ko.observableArray([]);
             this.actionMessage = ko.observable('');
             this.actionBoxClassName = ko.observable('');
@@ -47,5 +47,9 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/projectControll
             this.navigateToProjectShow = function (project) {
                 router.navigate('project/show/' + project.id);
             };
-        });
+        };
+
+        ProjectIndex.prototype = new ProjectController();
+
+        return ProjectIndex;
     });
