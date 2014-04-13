@@ -6,12 +6,12 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
             searchString: ko.observable(),
             subRoutes: {
                 project: [
-                    { route: 'create', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate')}
+                    { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate')}
                 ]
             },
             routes: [
                 { route: '', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: false},
-                { route: 'project', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true},
+                { route: 'project', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true, name: 'project'},
                 { route: 'project/show/:id', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectShow'), nav: false},
                 { route: 'sign/signIn', title: 'Sign In', moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false}
             ],
@@ -27,7 +27,8 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 var i, subRoutes = [], route;
 
                 for (i = 0; i < this.routes.length; i++) {
-                    this.routes[i].settings = this.mapSubNav(this.routes[i].route.split('/')[0]);
+                    this.routes[i].settings = this.mapSubNav(this.routes[i].name);
+                    this.routes[i].expandedSubMenu = ko.observable(false);
 
                     subRoutes.push(this.routes[i].settings.subRoutes)
                 }
@@ -60,6 +61,17 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 }
 
                 return {subRoutes: subRoutes};
+            },
+            expandSubMenu: function () {
+                if (this.expandedSubMenu() === true) {
+                    this.expandedSubMenu(false);
+                } else {
+                    this.expandedSubMenu(true);
+                }
+            },
+            menuItemClicked: function (currentItem, parent) {
+                parent.expandedSubMenu(false);
+                router.navigate(currentItem.hash);
             }
         };
     }
