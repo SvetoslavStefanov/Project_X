@@ -13,7 +13,8 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 { route: '', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true, name: 'project'},
                 { route: 'projectIndexAction/:action', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: false},
                 { route: 'project/show/:id', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectShow'), nav: false},
-                { route: 'sign/signIn', title: 'Sign In', moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false}
+                { route: 'sign/signIn', title: 'Sign In', moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
+                { route: 'sign/signOut', title: 'Logout', moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true}
             ],
 
             activate: function () {

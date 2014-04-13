@@ -15,7 +15,7 @@ define(['jquery', 'knockout', 'plugins/router'], function ($, ko, router) {
      * @static
      */
     function errorsBehavior (data){
-        if (_.isUndefined(data.status)){
+        if (!_.isUndefined(data.status)){
             switch (data.status){
                 case 401: router.navigate('sign/signIn'); break;
             }
