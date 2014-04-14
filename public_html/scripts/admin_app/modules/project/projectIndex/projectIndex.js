@@ -17,7 +17,8 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
                 if (newValue.length > 0 ){
                     setTimeout(function (){
                         that.actionMessage('');
-                    }, 3000);
+                        router.navigate('', { replace: true, trigger: false });
+                    }, 4000);
                 }
             }, this);
 
