@@ -1,8 +1,8 @@
 /**
  * Created by SveXteZ on 14-4-13.
  */
-define(['plugins/http', 'knockout', 'controllers/SignController', 'plugins/router'],
-    function (http, ko, SignController, router) {
+define(['plugins/http', 'controllers/SignController'],
+    function (http, SignController) {
         "use strict";
 
         function SignOut() {

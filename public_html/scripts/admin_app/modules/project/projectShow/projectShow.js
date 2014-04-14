@@ -1,4 +1,5 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectController'], function (http, app, ko, ProjectController) {
+define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectController', 'plugins/router'],
+    function (http, app, ko, ProjectController, router) {
     "use strict";
 
     function ProjectShow () {
@@ -10,6 +11,10 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
             http.get('admin/Project/show/'+projectId).then(function(response) {
                 that.projectData(response);
             });
+        };
+
+        this.destroyProject = function (){
+            router.navigate('project/destroy/' + this.id);
         };
     }
 

@@ -10,7 +10,7 @@
                     <a data-bind="click: function(data) {$parent.menuItemClicked(data, data)}, html: title"></a>
                     <a data-bind="click: $parent.expandSubMenu, visible: $data.settings.subRoutes.length > 0">></a>
                     <ul class="sub-nav" data-bind="foreach: $data.settings.subRoutes, visible: $data.expandedSubMenu">
-                        <li data-bind="css: { active: $parent.isActive }">
+                        <li data-bind="css: {active: $parent.isActive}, visible: $data.show">
                             <a data-bind="html: title, click: function(data) {$parents[1].menuItemClicked(data, $parent)}"></a>
                         </li>
                     </ul>

@@ -6,7 +6,7 @@ class admin_ProjectController extends admin_BaseController{
             'search'
         ),
         'getProject' => array(
-            'edit', 'update', 'destroy','show'
+            'edit', 'update','show'
         )
     );
 
@@ -64,6 +64,7 @@ class admin_ProjectController extends admin_BaseController{
     }
     public function destroyAction(){
         $this->data['result'] = false;
+        $this->project = admin_Project::get($_POST['id']);
 
         if($this->project->destroy()){
             $this->data['result'] = true;

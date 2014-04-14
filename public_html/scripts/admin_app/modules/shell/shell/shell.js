@@ -6,7 +6,8 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
             searchString: ko.observable(),
             subRoutes: {
                 project: [
-                    { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate')}
+                    { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate'), show: true},
+                    { route: 'destroy/:id', title: 'Destroy', moduleId: viewHelper.convertModuleNameToModuleId('projectDestroy'), show: false}
                 ]
             },
             routes: [
