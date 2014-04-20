@@ -8,7 +8,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
         this.activate = function (projectId) {
             var that = this;
 
-            http.get('admin/Project/show/'+projectId).then(function(response) {
+            http.get('admin/Project/show/', {id: projectId}).then(function(response) {
                 that.projectData(response);
             });
         };

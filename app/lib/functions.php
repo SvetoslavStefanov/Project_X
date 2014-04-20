@@ -47,8 +47,8 @@ function d ($variable)
 {
     $debugTrace = (debug_backtrace());
   //  echo '<div style="border: 1px dotted black; border-left: 2px solid; padding: 5px; margin: 10px; background: white;">';
-    echo '<pre>';
-    echo "Called in {$debugTrace[0]['file']} on line {$debugTrace[0]['line']} ";
+//    echo '<pre>';
+//    echo "Called in {$debugTrace[0]['file']} on line {$debugTrace[0]['line']} ";
     //echo "\n ------------------------------------------------ \n";
     if (is_array($variable) || is_object($variable) || is_resource($variable)) {
         print_r($variable);
@@ -59,8 +59,8 @@ function d ($variable)
     } else {
         echo htmlspecialchars($variable);
     }
-    //echo "\n ------------------------------------------------ \n";
-    echo '</pre>';
+    echo "\n ------------------------------------------------ \n";
+//    echo '</pre>';
   //  echo '</div>';
 
     return $variable;

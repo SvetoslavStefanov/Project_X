@@ -8,6 +8,13 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 project: [
                     { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate'), show: true},
                     { route: 'destroy/:id', title: 'Destroy', moduleId: viewHelper.convertModuleNameToModuleId('projectDestroy'), show: false}
+                ],
+                infopage: [
+                    { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('infoPageCreate', 'infoPage'), show: true},
+                    { route: 'show/:id', title: 'Преглед', moduleId: viewHelper.convertModuleNameToModuleId('infoPageShow', 'infoPage'), show: false},
+                    { route: 'edit/:id', title: 'Редактиране', moduleId: viewHelper.convertModuleNameToModuleId('infoPageEdit', 'infoPage'), show: false},
+                    { route: 'infoPageIndexAction/:action', title: 'Инфо Страници', moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex', 'infoPage'), show: false},
+                    { route: 'destroy/:id', title: 'Destroy', moduleId: viewHelper.convertModuleNameToModuleId('infoPageDestroy', 'infoPage'), show: false}
                 ]
             },
             routes: [
@@ -15,7 +22,8 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 { route: 'projectIndexAction/:action', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: false},
                 { route: 'project/show/:id', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectShow'), nav: false},
                 { route: 'sign/signIn', title: 'Sign In', moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
-                { route: 'sign/signOut', title: 'Logout', moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true}
+                { route: 'infopage', title: 'Инфо страници', moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex', 'infoPage'), nav: true, name: 'infopage'},
+                { route: 'sign/signOut', title: 'Logout', moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true},
             ],
 
             activate: function () {

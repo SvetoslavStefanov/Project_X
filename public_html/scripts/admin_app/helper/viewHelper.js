@@ -45,9 +45,12 @@ define([], function () {
             return module.join("");
         },
         //convert module's name ( shell ) to module's path ( modules/shell/shell )
-        convertModuleNameToModuleId: function (module) {
-            var moduleFolder = this.extractModuleNameFromModuleControllerName(module),
-                moduleName = module;
+        convertModuleNameToModuleId: function (module, moduleFolder) {
+            if (_.isUndefined(moduleFolder)){
+                moduleFolder = this.extractModuleNameFromModuleControllerName(module);
+            }
+
+            var moduleName = module;
 
             return this.defaultPaths.modulesPath + moduleFolder + "/" + moduleName + "/" + moduleName;
         }

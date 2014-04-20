@@ -5,6 +5,10 @@ body {
     min-height:550px;;
 }
 
+body a {
+    cursor: pointer;
+}
+
 img {
     border: none;
 }

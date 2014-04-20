@@ -15,6 +15,10 @@ define(['helper/viewHelper', 'durandal/system', 'knockout'], function (viewHelpe
 
             return controllerName.name;
         };
+
+        this.getControllerFolder = function () {
+            return viewHelper.defaultPaths.modulesViewsPath + this.getControllerName() + "/";
+        }
     }
 
     return BaseController;

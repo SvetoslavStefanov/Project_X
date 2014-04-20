@@ -52,16 +52,19 @@ class admin_ProjectController extends admin_BaseController{
             $this->data['errors'] = FormValidator::$errors;
         }
     }
+
     public function searchAction($searchString='') {
        $this->data = $this->project->search($searchString);
        foreach ($this->data as &$data){
             $data->attributes['small_content'] = mb_strcut($data->attributes['content'], 0, 150) . "...";
         }
     }
+
     public function showAction()
     {
         $this->data = $this->project;
     }
+
     public function destroyAction(){
         $this->data['result'] = false;
         $this->project = admin_Project::get($_POST['id']);

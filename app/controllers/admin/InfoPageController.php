@@ -14,43 +14,35 @@ class admin_InfopageController extends admin_BaseController{
     }
 
     public function indexAction(){
-        $this->title = 'Info Pages';
-        $this->pages = $this->page->findAll();
-    }
-
-    public function newAction(){
-        $this->title = 'Добавяне на инфо страница';
+        $this->data['pages'] = $this->page->findAll(array('sort' => 'id DESC'));
     }
 
     public function createAction(){
-        if($this->page->save($this->post('admin_InfoPage'))){
-            $this->redirect('InfoPage/index');
+        if($this->page->save($_POST['attributes'])){
+            $this->data['result'] = true;
         }else{
-            $this->action('new');
+            $this->data['result'] = false;
         }
     }
 
     public function showAction(){
-        $this->title = $this->page->title;
-
+        $this->data['pageData'] = $this->page;
     }
 
     public function editAction(){
-        $this->title = $this->page->title .' '. ' Редактиране';
-
+        $this->data['pageData'] = $this->page;
     }
 
     public function updateAction(){
-        if($this->page->save($this->post('admin_InfoPage'))){
-            $this->redirect("InfoPage/show/{$this->id}");
+        if($this->page->save($_POST['attributes'])){
+            $this->data['result'] = true;
         }else{
-            $this->page->content = html_entity_decode($this->page->content);
-            $this->action('edit');
+            $this->data['result'] = false;
         }
     }
 
     public function destroyAction(){
         $this->page->destroy();
-        $this->redirect('InfoPage/index');
+        $this->data['result'] = true;
     }
 }

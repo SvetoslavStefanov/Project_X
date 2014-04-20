@@ -1,0 +1,19 @@
+<h1>Инфо Страници</h1>
+<div data-bind="attr: {class: 'alert alert-dismissabl alert-' + actionBoxClassName()}, visible: actionMessage().length > 0, text: actionMessage"></div>
+
+<ul class="list_projects" data-bind="foreach: pages">
+    <li class="jumbotron">
+        <div class="thumbnail">
+            <a class="th [radius]" href="javascript:">
+                <img src="http://foundation.zurb.com/docs/assets/img/examples/earth-th-sm.jpg">
+            </a>
+        </div>
+        <div class="project_content">
+            <h5 data-bind="text: $data.attributes.title"></h5>
+            <p data-bind="html: $data.attributes.small_content" ></p>
+
+            <a data-bind="click: $parent.navigateToProjectShow" class="button tiny">Виж още</a>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </li>
+</ul>

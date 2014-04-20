@@ -33,9 +33,11 @@ class Dispatcher{
        $url = trim(substr($url, strlen(PUBLIC_DIR)),'/');
        $url = explode('/', $url);
 
-       foreach($url as $key => $val)
-           if($val = strstr($val, '?', true))
+       foreach($url as $key => $val){
+           if($val = strstr($val, '?', true)){
                $url[$key] = $val;
+           }
+       }
 
        $this->cleanForAdmin($url);
 
@@ -61,6 +63,15 @@ class Dispatcher{
        return $url;
    }
 
+    public function getId(){
+        $id = isset($_POST['id']) ? $_POST['id'] : null;
+        if ($id === null) {
+            $id = isset($_GET['id']) ? $_GET['id'] : null;
+        }
+
+        return $id;
+    }
+
    public function getParams($url){
        $url = $this->cleanUrl($url);
 
@@ -77,7 +88,7 @@ class Dispatcher{
            $actionName = array_shift($url);
        }
 
-       return array($controllerName, $actionName, array_shift($url));
+       return array($controllerName, $actionName, $this->getId());
    }
 
 }

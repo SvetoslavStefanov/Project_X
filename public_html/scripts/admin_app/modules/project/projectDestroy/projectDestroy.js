@@ -1,7 +1,4 @@
 /**
- * Created by SveXteZ on 14-4-13.
- */
-/**
  * Created by SveXteZ on 14-3-1.
  */
 define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectController'], function (http, ko, router, ProjectController) {
