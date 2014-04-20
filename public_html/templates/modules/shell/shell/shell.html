@@ -6,60 +6,22 @@
                 <span>Durandal</span>
             </a>
             <ul class="nav" data-bind="foreach: router.navigationModel">
-                <li data-bind="css: { active: isActive }">
-                    <a data-bind="attr: { href: hash }, html: title"></a>
+                <li data-bind="css: {active: isActive, navigation_element: true}">
+                    <a data-bind="click: function(data) {$parent.menuItemClicked(data, data)}, html: title"></a>
+                    <a data-bind="click: $parent.expandSubMenu, visible: $data.settings.subRoutes.length > 0">></a>
+                    <ul class="sub-nav" data-bind="foreach: $data.settings.subRoutes, visible: $data.expandedSubMenu">
+                        <li data-bind="css: {active: $parent.isActive}, visible: $data.show">
+                            <a data-bind="html: title, click: function(data) {$parents[1].menuItemClicked(data, $parent)}"></a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
                 <i class="icon-spinner icon-2x icon-spin"></i>
             </div>
-            <form class="navbar-search pull-right" data-bind="submit:search">
-                <input data-bind="value: searchString" type="text" class="search-query" placeholder="Search">
-            </form>
         </div>
     </div>
 
-    <div class="container-fluid page-host" data-bind="router: { transition:'entrance', cacheViews:true }"></div>
+    <div class="container-fluid page-host" data-bind="router: { transition:'entrance', cacheViews:true }" style="padding-top:50px;"></div>
 </div>
 
-<!--
-
-<div>
-            <nav class="top-bar" data-topbar>
-                <ul class="title-area">
-                    <li class="name"><h1><a href="#">Начало</a></h1></li>
-                    <li class="toggle-topbar menu-icon has-dropdown">
-                        <a href="#">Menu</a>
-                        <ul class="dropdown">
-                            <li><a href="#">First link in dropdown</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <section class="top-bar-section">
-                    <ul class="left">
-                        <li class="name"><h1><a href="#/project">Проекти</a></h1></li>
-                    </ul>
-                    <ul class="right">
-                        <li class="name"><h1><?= link_to('admin/Sign/in', 'Влез в администрацията', array('target' => '_blank')) ?></h1></li>
-                        <li class="has-form" id="abId0.6625245281029493">
-                            <div class="row collapse" id="abId0.4594824204687029">
-                                <div class="large-8 small-9 columns" id="abId0.13749866955913603">
-                                    <input type="text" placeholder="Търсене">
-                                </div>
-                                <div class="large-4 small-3 columns">
-                                    <a href="#" class="alert button expand">Търсене</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="has-form show-for-large-up">
-                            <a href="#" class="button">За контакти</a>
-                        </li>
-                    </ul>
-                </section>
-            </nav>
-            <div ng-view class="content"></div>
-        </div>
-
-
-        -->

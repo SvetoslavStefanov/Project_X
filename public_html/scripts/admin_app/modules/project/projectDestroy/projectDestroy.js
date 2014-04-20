@@ -11,7 +11,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectContro
         this.canActivate = function (projectId) {
             var response;
 
-            response = http.post('admin/project/destroy', {id: projectId});
+            response = http.post('project/destroy', {id: projectId});
 
             response.then(function (response) {
                 if (response.result === true){

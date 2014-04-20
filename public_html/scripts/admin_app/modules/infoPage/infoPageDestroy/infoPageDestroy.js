@@ -11,7 +11,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
         this.canActivate = function (pageId) {
             var response;
 
-            response = http.post('admin/infoPage/destroy', {id: pageId});
+            response = http.post('infoPage/destroy', {id: pageId});
 
             response.then(function (response) {
                 if (response.result === true){

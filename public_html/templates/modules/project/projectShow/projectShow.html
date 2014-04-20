@@ -1,1 +1,10 @@
-<div></div>
+<div class="project">
+<h1>Преглед на проект</h1>
+	
+    <div data-bind="foreach: projectData">
+    	
+        <h5 data-bind="text: $data.attributes.title" ></h5>
+        <p data-bind="text: $data.attributes.content"></p>
+        <a data-bind="click: $parent.destroyProject">Изтрии</a>
+    </div>
+</div>

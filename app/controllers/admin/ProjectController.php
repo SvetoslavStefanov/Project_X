@@ -2,8 +2,7 @@
 class admin_ProjectController extends admin_BaseController{
     protected $before = array(
         'setProject' => array(
-            'create', 'index',
-            'search'
+            'create', 'index', 'search'
         ),
         'getProject' => array(
             'edit', 'update','show'
@@ -53,15 +52,7 @@ class admin_ProjectController extends admin_BaseController{
         }
     }
 
-    public function searchAction($searchString='') {
-       $this->data = $this->project->search($searchString);
-       foreach ($this->data as &$data){
-            $data->attributes['small_content'] = mb_strcut($data->attributes['content'], 0, 150) . "...";
-        }
-    }
-
-    public function showAction()
-    {
+    public function showAction() {
         $this->data = $this->project;
     }
 

@@ -7,7 +7,7 @@ define(['plugins/http', 'knockout', 'controllers/SignController', 'plugins/route
             this.password = ko.observable();
 
             this.activate = function () {
-                http.get('admin/Sign/login').then(function (response) {
+                http.get('Sign/login').then(function (response) {
                     if (response.isUserLogged === true) {
                         router.navigate('');
                     }
@@ -21,7 +21,7 @@ define(['plugins/http', 'knockout', 'controllers/SignController', 'plugins/route
                         username: that.username(),
                         password: that.password()};
 
-                http.post('admin/Sign/login', params).then(function (response) {
+                http.post('Sign/login', params).then(function (response) {
                     router.navigate('');
                 }).fail(function (data) {
                     alert("Wrong name or pass")

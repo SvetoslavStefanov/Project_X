@@ -9,7 +9,7 @@ define(['plugins/http', 'controllers/SignController'],
             this.canActivate = function () {
                 var promise = $.Deferred();
 
-                http.get('admin/Sign/out').fail(function () {
+                http.get('Sign/out').fail(function () {
                     promise.resolve();
                 });
 

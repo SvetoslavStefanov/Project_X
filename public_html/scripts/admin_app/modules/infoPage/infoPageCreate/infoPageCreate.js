@@ -12,7 +12,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
             params.id = 0;
             params.attributes = this.skeleton;
 
-            response = http.post('admin/infoPage/create', params);
+            response = http.post('infoPage/create', params);
 
             response.then(function () {
                 router.navigate('infopage/infoPageIndexAction/created');

@@ -9,7 +9,7 @@
  * @requires jquery
  * @requires knockout
  */
-define(['jquery', 'knockout', 'plugins/router'], function ($, ko, router) {
+define(['jquery', 'knockout', 'plugins/router', 'scripts/config.js'], function ($, ko, router, config) {
     /**
      * @class HTTPModule
      * @static
@@ -37,6 +37,10 @@ define(['jquery', 'knockout', 'plugins/router'], function ($, ko, router) {
          * @return {Promise} A promise of the get response data.
          */
         get: function (url, query) {
+            if (config.is_in_admin === true) {
+                url = config.admin_prefix + "/" + url;
+            }
+
             var promise = $.ajax(url, { data: query, contentType: 'application/json', dataType: 'json' });
 
             promise.fail(errorsBehavior);
@@ -78,6 +82,10 @@ define(['jquery', 'knockout', 'plugins/router'], function ($, ko, router) {
          * @return {Promise} A promise of the response data.
          */
         post: function (url, data) {
+            if (config.is_in_admin === true) {
+                url = config.admin_prefix + "/" + url;
+            }
+
             var promise = $.ajax({
                 url: url,
                 data: data,

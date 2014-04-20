@@ -5,12 +5,17 @@ define([], function () {
     "use strict";
 
     return {
+        config: {},
         defaultPaths: {
             modulesPath: 'modules/',
             widgetsPath: 'widgets/',
             modulesViewsPath: 'templates/modules/',
             widgetsViewsPath: 'templates/widgets/',
             dialogsViewsPath: 'templates/dialogs/'
+        },
+
+        getConfig: function () {
+            return this.config;
         },
 
         extractModuleNameFromModuleControllerName: function (module) {

@@ -5,12 +5,17 @@ define([], function () {
     "use strict";
 
     return {
+        config: {},
         defaultPaths: {
             modulesPath: 'modules/',
             widgetsPath: 'widgets/',
             modulesViewsPath: 'templates/modules/',
             widgetsViewsPath: 'templates/widgets/',
             dialogsViewsPath: 'templates/dialogs/'
+        },
+
+        getConfig: function () {
+            return this.config;
         },
 
         extractModuleNameFromModuleControllerName: function (module) {
@@ -32,6 +37,10 @@ define([], function () {
                 return true;
             }));
 
+            if (typeof controllerName === 'undefined') {
+                var controllerName = {name: ''};
+            }
+
             if (module.length > 1) {
                 controllerName.name = module.shift();
             } else {
@@ -41,9 +50,12 @@ define([], function () {
             return module.join("");
         },
         //convert module's name ( shell ) to module's path ( modules/shell/shell )
-        convertModuleNameToModuleId: function (module) {
-            var moduleFolder = this.extractModuleNameFromModuleControllerName(module),
-                moduleName = module;
+        convertModuleNameToModuleId: function (module, moduleFolder) {
+            if (_.isUndefined(moduleFolder)){
+                moduleFolder = this.extractModuleNameFromModuleControllerName(module);
+            }
+
+            var moduleName = module;
 
             return this.defaultPaths.modulesPath + moduleFolder + "/" + moduleName + "/" + moduleName;
         }

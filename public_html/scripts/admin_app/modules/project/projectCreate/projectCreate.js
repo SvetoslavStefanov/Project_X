@@ -13,7 +13,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectContro
             params.title = this.title();
             params.content = this.content();
 
-            response = http.post('admin/project/create', params);
+            response = http.post('project/create', params);
 
             response.then(function () {
                 router.navigate('projectIndexAction/created');

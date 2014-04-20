@@ -1,15 +1,15 @@
 /**
  * Created by SveXteZ on 14-2-15.
  */
-function isInAdmin(){
+function isInAdmin() {
     return window.location.pathname.search('admin') > -1;
 }
 
-function buildBaseUrl (){
+function buildBaseUrl() {
     var mainDir = 'scripts',
         appDir = 'app';
 
-    if (isInAdmin()){
+    if (isInAdmin()) {
         appDir = 'admin_' + appDir;
     }
 
@@ -38,15 +38,16 @@ requirejs.config({
             exports: ['_']
         }
     },
-    deps: ['lodash']
+    deps: ['lodash', 'jquery']
 });
 
-define(['durandal/app', 'durandal/viewLocator', 'lodash', 'plugins/widget', 'require', 'helper/viewHelper']
-    , function(app, viewLocator, _, widget, require, viewHelper) {
+define([
+    'durandal/app', 'durandal/viewLocator', 'plugins/widget', 'require', 'helper/viewHelper', 'scripts/config.js'
+], function (app, viewLocator, widget, require, viewHelper, config) {
 
-    app.title = 'Administration !';
-
-    viewLocator.convertModuleIdToViewId = function(moduleId) {
+    viewHelper.config = config;
+    viewHelper.config.is_in_admin = isInAdmin();
+    viewLocator.convertModuleIdToViewId = function (moduleId) {
         var controllerName = {name: ''},
             moduleName = viewHelper.convertModuleIdToModuleName(moduleId, controllerName);
 
@@ -54,14 +55,14 @@ define(['durandal/app', 'durandal/viewLocator', 'lodash', 'plugins/widget', 'req
     };
 
     //convert widget's name to widget's path
-    widget.convertKindToModulePath = function (widgetName){
+    widget.convertKindToModulePath = function (widgetName) {
         return viewHelper.defaultPaths.widgetsPath + widgetName + "/" + widgetName;
     };
 
     //convert widget's name to widget's views path
-    widget.convertKindToViewPath = function (widgetName){
+    widget.convertKindToViewPath = function (widgetName) {
         return viewHelper.defaultPaths.widgetsViewsPath + widgetName + "/" + widgetName;
     };
 
-    require(['scripts/admin_app/main.js']);
+    require([buildBaseUrl() + '/main.js']);
 });

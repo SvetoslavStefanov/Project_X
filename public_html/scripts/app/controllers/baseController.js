@@ -1,18 +1,25 @@
 /**
  * Created by SveXteZ on 14-2-15.
  */
-define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
+define(['helper/viewHelper', 'durandal/system', 'knockout'], function (viewHelper, system, ko) {
     "use strict";
 
-    var baseController = {
-        getProjects: function(){
-            console.log('BASEEEEE')
+    function BaseController() {
+        this.getModuleName = function () {
+            return viewHelper.convertModuleIdToModuleName(system.getModuleId(this));
+        };
+
+        this.getControllerName = function () {
+            var controllerName = {name: ''};
+            viewHelper.convertModuleIdToModuleName(system.getModuleId(this), controllerName);
+
+            return controllerName.name;
+        };
+
+        this.getControllerFolder = function () {
+            return viewHelper.defaultPaths.modulesViewsPath + this.getControllerName() + "/";
         }
-    };
-
-    return function (definition){
-        definition.parent = baseController;
-
-        return ko.utils.extend(baseController, definition);
     }
+
+    return BaseController;
 });

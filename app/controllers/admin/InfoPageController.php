@@ -1,5 +1,6 @@
 <?
-class admin_InfopageController extends admin_BaseController{
+class admin_InfopageController extends admin_BaseController
+{
     var $before = array(
         'setNewPage' => array('index', 'new', 'create'),
         'getInfopagesInfo' => array('show', 'edit', 'update', 'destroy'),

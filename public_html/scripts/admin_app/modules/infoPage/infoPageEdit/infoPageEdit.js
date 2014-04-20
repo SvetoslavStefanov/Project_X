@@ -13,7 +13,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
 
             this.pageId = pageId;
 
-            http.get('admin/infoPage/edit', {id: pageId}).then(function (response) {
+            http.get('infoPage/edit', {id: pageId}).then(function (response) {
                 that.skeleton = response.pageData.attributes;
                 promise.resolve();
             });
@@ -28,7 +28,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
             params.id = this.pageId;
             params.attributes = this.skeleton;
 
-            response = http.post('admin/infoPage/update', params);
+            response = http.post('infoPage/update', params);
 
             response.then(function () {
                 router.navigate('infopage/show/' + that.pageId);

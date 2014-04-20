@@ -2,8 +2,8 @@
  * Created by SveXteZ on 14-4-18.
  */
 define([
-    'plugins/http', 'durandal/app', 'knockout', 'controllers/InfoPageController', 'plugins/router', 'helper/viewHelper'
-], function (http, app, ko, InfoPageController, router, viewHelper) {
+    'plugins/http', 'durandal/app', 'knockout', 'controllers/InfoPageController', 'plugins/router'
+], function (http, app, ko, InfoPageController, router) {
     "use strict";
 
     var actionBoxStatusClasses = {
@@ -28,8 +28,6 @@ define([
 
         this.activate = function (action) {
             var that = this;
-
-            console.log(viewHelper.config);
 
             http.get('InfoPage/index').then(function (response) {
                 that.pages(response.pages);

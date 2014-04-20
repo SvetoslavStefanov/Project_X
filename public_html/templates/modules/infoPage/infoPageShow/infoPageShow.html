@@ -1,0 +1,11 @@
+<div class="project">
+<h1>Преглед на инфо страница</h1>
+	
+    <div data-bind="foreach: pageData">
+    	
+        <h5 data-bind="text: $data.attributes.title" ></h5>
+        <p data-bind="html: $data.attributes.content"></p>
+        <a data-bind="click: $parent.destroyPage">Изтрии</a>
+        <a data-bind="click: $parent.editPage">Редактирай</a>
+    </div>
+</div>
