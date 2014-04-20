@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="website">
+<html>
     <head>
-        <title> | Administration</title>
+        <title>Administration</title>
         <meta charset="utf-8" />
 
         <link rel="stylesheet" href="<?= SITE_URL ?>/styles/main.css" type="text/css" />

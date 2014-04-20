@@ -42,11 +42,12 @@ requirejs.config({
 });
 
 define([
-    'durandal/app', 'durandal/viewLocator', 'plugins/widget', 'require', 'helper/viewHelper', 'scripts/config.js'
-], function (app, viewLocator, widget, require, viewHelper, config) {
+    'durandal/app', 'durandal/viewLocator', 'plugins/widget', 'require', 'helper/viewHelper', 'scripts/config.js', 'plugins/router'
+], function (app, viewLocator, widget, require, viewHelper, config, router) {
 
     viewHelper.config = config;
     viewHelper.config.is_in_admin = isInAdmin();
+
     viewLocator.convertModuleIdToViewId = function (moduleId) {
         var controllerName = {name: ''},
             moduleName = viewHelper.convertModuleIdToModuleName(moduleId, controllerName);
@@ -62,6 +63,20 @@ define([
     //convert widget's name to widget's views path
     widget.convertKindToViewPath = function (widgetName) {
         return viewHelper.defaultPaths.widgetsViewsPath + widgetName + "/" + widgetName;
+    };
+
+    router.updateDocumentTitle = function (instance, instruction) {
+        if (instance.setTitle){
+            document.title = instance.setTitle() + " | " + app.title;
+        } else if (instruction.config.title) {
+            if (app.title) {
+                document.title = instruction.config.title + " | " + app.title;
+            } else {
+                document.title = instruction.config.title;
+            }
+        } else if (app.title) {
+            document.title = app.title;
+        }
     };
 
     require([buildBaseUrl() + '/main.js']);
