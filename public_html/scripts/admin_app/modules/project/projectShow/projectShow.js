@@ -14,7 +14,11 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
         };
 
         this.destroyProject = function (){
-            router.navigate('project/destroy/' + this.id);
+            var confirmDeletion = confirm('Сигурни ли сте, че искате да изтриете проекта ?');
+
+            if (confirmDeletion){
+                router.navigate('project/destroy/' + this.id);
+            }
         };
     }
 

@@ -18,7 +18,11 @@ define([
         };
 
         this.destroyPage = function () {
-            router.navigate('infopage/destroy/' + this.id);
+            var confirmDeletion = confirm('Сигурни ли сте, че искате да изтриете страницата ?');
+
+            if (confirmDeletion){
+                router.navigate('infopage/destroy/' + this.id);
+            }
         };
 
         this.editPage = function () {
