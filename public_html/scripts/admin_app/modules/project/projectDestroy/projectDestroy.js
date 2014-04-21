@@ -15,7 +15,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectContro
 
             response.then(function (response) {
                 if (response.result === true){
-                    router.navigate('projectIndexAction/destroyed');
+                    router.navigate('project/projectIndexAction/destroyed');
                 }
             });
 

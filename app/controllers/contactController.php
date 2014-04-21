@@ -6,7 +6,7 @@
  * Time: 18:30
  */
 
-class contactController extends Controller
+class ContactController extends Controller
 {
     var $before = array(
         'setNewContact' => array('create')

@@ -1,0 +1,29 @@
+<h1>Съобщения</h1>
+<div data-bind="attr: {class: 'alert alert-dismissabl alert-' + actionBoxClassName()}, visible: actionMessage().length > 0, text: actionMessage"></div>
+
+<table data-bind="visible: records().length > 0">
+    <tr>
+        <td></td>
+        <td>#</td>
+        <td>Изпратено на</td>
+        <td>Тема</td>
+        <td>Email</td>
+        <td>Съдържание</td>
+        <td>IP</td>
+    </tr>
+    <!-- ko foreach: records -->
+        <tr>
+            <td data-bind="click: $parent.deleteItem">del</td>
+            <td data-bind="text: $index()"></td>
+            <td data-bind="text: new Date($data.attributes.created*1000).toLocaleString()"></td>
+            <td data-bind="text: $data.attributes.subject"></td>
+            <td data-bind="text: $data.attributes.email"></td>
+            <td data-bind="text: $data.attributes.content"></td>
+            <td data-bind="text: $data.attributes.ip"></td>
+        </tr>
+    <!-- /ko -->
+</table>
+
+<div data-bind="visible: records().length == 0">
+    Няма съобщения
+</div>

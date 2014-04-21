@@ -16,7 +16,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectContro
             response = http.post('project/create', params);
 
             response.then(function () {
-                router.navigate('projectIndexAction/created');
+                router.navigate('project/projectIndexAction/created');
             });
 
             response.fail(function (data) {
