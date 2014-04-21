@@ -8,6 +8,9 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 infopage: [
                     { route: 'show/:id', title: 'Преглед', moduleId: viewHelper.convertModuleNameToModuleId('infoPageShow', 'infoPage'), show: false},
                     { route: 'infoPageIndexAction/:action', title: 'Инфо Страници', moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex', 'infoPage'), show: false},
+                ],
+                contact: [
+                    { route: 'contact(/:created)', title: 'За контакти', moduleId: viewHelper.convertModuleNameToModuleId('contactCreate'), show: false}
                 ]
             },
             routes: [
@@ -16,6 +19,7 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 { route: 'project/show/:id', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectShow'), nav: false},
                 { route: 'sign/signIn', title: 'Sign In', moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
                 { route: 'infopage', title: 'Инфо страници', moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex', 'infoPage'), nav: true, name: 'infopage'},
+                { route: 'contact', title: 'За контакти', moduleId: viewHelper.convertModuleNameToModuleId('contactCreate'), nav: true, name: 'contact'},
                 { route: 'sign/signOut', title: 'Logout', moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true},
             ],
 
