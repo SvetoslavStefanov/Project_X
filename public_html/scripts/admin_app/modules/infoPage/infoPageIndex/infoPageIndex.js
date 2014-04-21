@@ -29,7 +29,6 @@ define([
         this.activate = function (action) {
             var that = this;
 
-            console.log(viewHelper.config);
 
             http.get('InfoPage/index').then(function (response) {
                 that.pages(response.pages);
@@ -58,5 +57,5 @@ define([
 
     infoPageIndex.prototype = new InfoPageController();
 
-    return infoPageIndex;
+    return new infoPageIndex();
 });

@@ -55,5 +55,5 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ContactControll
 
         ContactIndex.prototype = new ContactController();
 
-        return ContactIndex;
+        return new ContactIndex();
     });

@@ -52,5 +52,5 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
 
         ProjectIndex.prototype = new ProjectController();
 
-        return ProjectIndex;
+        return new ProjectIndex();
     });
