@@ -28,10 +28,12 @@ class admin_InfopageController extends admin_BaseController
 
     public function showAction(){
         $this->data['pageData'] = $this->page;
+        $this->data['pageData']->attributes['content'] = html_entity_decode($this->data['pageData']->attributes['content']);
     }
 
     public function editAction(){
         $this->data['pageData'] = $this->page;
+        $this->data['pageData']->attributes['content'] = html_entity_decode($this->data['pageData']->attributes['content']);
     }
 
     public function updateAction(){

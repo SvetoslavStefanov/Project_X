@@ -1,7 +1,9 @@
 <form data-bind="submit: savePage">
     <input type="text" name="title" data-bind="value:  skeleton.title" placeholder="Въведи заглавие на страницата" />
     <br />
-    <textarea rows="15" cols="15" data-bind="value:  skeleton.content" placeholder="Въведи съдържание на страницата"></textarea>
+    <textarea data-bind="value: skeleton.content, ckEditor: skeleton.content" placeholder="Въведи съдържание на страницата" id="d32d23d23">
+
+    </textarea>
     <br />
     <select data-bind="options: pageStatus,
                        optionsText: 'name',

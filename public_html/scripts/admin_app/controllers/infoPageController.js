@@ -13,7 +13,7 @@ define(['knockout', 'controllers/BaseController'], function (ko, BaseController)
 
         this.skeleton = {
             title: '',
-            content: '',
+            content: ko.observable(),
             status: '',
             seo_description: '',
             seo_keywords: ''

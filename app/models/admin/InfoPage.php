@@ -22,7 +22,7 @@ class admin_InfoPage extends ActiveRecord
             $this->updated = time();
         }
 
-        //$this->content = htmlentities($this->content, null, "UTF-8");
+        $this->content = htmlentities($this->content, null, "UTF-8");
 
         Validator::validate("title", "title", array('required' => 1, 'max_length' => 255));
         Validator::validate("content", "content", array('required' => 1, 'max_length' => 500));

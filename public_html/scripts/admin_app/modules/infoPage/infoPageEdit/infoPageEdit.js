@@ -1,7 +1,9 @@
 /**
  * Created by SveXteZ on 14-3-1.
  */
-define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageController'], function (http, ko, router, InfoPageController) {
+define([
+    'plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageController', 'ckeditor'
+], function (http, ko, router, InfoPageController, ckeditor) {
     "use strict";
 
     function InfoPageEdit() {
@@ -14,7 +16,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
             this.pageId = pageId;
 
             http.get('infoPage/edit', {id: pageId}).then(function (response) {
-                that.skeleton = response.pageData.attributes;
+                that.skeleton = that.transformSkeletonToObservables(response.pageData.attributes);
                 promise.resolve();
             });
 
@@ -26,7 +28,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
                 that = this;
 
             params.id = this.pageId;
-            params.attributes = this.skeleton;
+            params.attributes = this.transformSkeletonFromObservables(this.skeleton);
 
             response = http.post('infoPage/update', params);
 
