@@ -13,7 +13,7 @@ define([
             var that = this;
 
             http.get('InfoPage/show', {id: pageId}).then(function (response) {
-                that.pageData(response.pageData);
+                that.pageData.push(response.pageData);
             });
         };
 

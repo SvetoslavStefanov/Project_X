@@ -7,15 +7,15 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
             destroyed: 'danger'
         };
 
-        function ProjectIndex () {
+        function ProjectIndex() {
             this.projects = ko.observableArray([]);
             this.actionMessage = ko.observable('');
             this.actionBoxClassName = ko.observable('');
 
             this.actionMessage.subscribe(function (newValue) {
                 var that = this;
-                if (newValue.length > 0 ){
-                    setTimeout(function (){
+                if (newValue.length > 0) {
+                    setTimeout(function () {
                         that.actionMessage('');
                         router.navigate('', { replace: true, trigger: false });
                     }, 4000);
@@ -23,10 +23,14 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
             }, this);
 
             this.activate = function (action) {
-                var that = this;
+                var that = this,
+                    promise = $.Deferred();
 
                 http.get('Project/index').then(function (response) {
                     that.projects(response.projects);
+                    promise.resolve();
+                }).fail(function () {
+                    promise.resolve();
                 });
 
                 if (!_.isUndefined(action)) {
@@ -43,6 +47,8 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
                         this.actionBoxClassName(actionBoxStatusClasses[action]);
                     }
                 }
+
+                return promise;
             };
 
             this.navigateToProjectShow = function (project) {
