@@ -2,16 +2,22 @@
 
 
 class SqlWriter {
+    private $mysqlConnecton = null;
+
+    public  function __construct($mysqlConnecton) {
+        $this->mysqlConnecton = $mysqlConnecton;
+    }
+
 	private function quote($string){
-		return '"' . mysql_real_escape_string($string) . '"';
+		return '"' . $this->mysqlConnecton->real_escape_string($string) . '"';
 	}
 	
 	private function quote2($string){
-		return '`' . mysql_real_escape_string($string) . '`';
+		return '`' . $this->mysqlConnecton->real_escape_string($string) . '`';
 	}
 
 	private function escape($string){
-		return mysql_real_escape_string($string);
+		return $this->mysqlConnecton->real_escape_string($string);
 	}
 	
 	private function join($options, $glue){
