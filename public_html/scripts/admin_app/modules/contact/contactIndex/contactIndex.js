@@ -31,6 +31,8 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ContactControll
                 http.get('Contact/index').then(function (response) {
                     that.records(response.records);
                 });
+
+                this.setTranslationData();
             };
 
             this.deleteItem = function (item) {
@@ -43,7 +45,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ContactControll
             this.handleAction = function(action) {
                 switch (action) {
                     case 'destroyed':
-                        this.actionMessage('Съобщението беше изтрито');
+                        this.actionMessage(this.currentTranslationData.actionMessage.destroyed);
                         break;
                 }
 

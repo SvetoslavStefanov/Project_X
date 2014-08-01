@@ -1,20 +1,20 @@
 <form data-bind="submit: savePage">
-    <input type="text" name="title" data-bind="value:  skeleton.title" placeholder="Въведи заглавие на страницата" />
+    <input type="text" name="title" data-bind="value:  skeleton.title, attr: {placeholder: pageFromData.title}" />
     <br />
-    <textarea data-bind="value: skeleton.content, ckEditor: skeleton.content" placeholder="Въведи съдържание на страницата" id="d32d23d23">
+    <textarea data-bind="value: skeleton.content, ckEditor: skeleton.content, text: pageFromData.content" id="some_id">
 
     </textarea>
     <br />
     <select data-bind="options: pageStatus,
                        optionsText: 'name',
                        value: skeleton.status,
-                       optionsCaption: 'Избери...',
+                       optionsCaption: pageFromData.status,
                        optionsValue: 'id'
                        "></select>
     <br />
-    <textarea data-bind="value: skeleton.seo_description" placeholder="Въведи SEO описание"></textarea>
+    <textarea data-bind="value: skeleton.seo_description, attr: {placeholder:pageFromData.seoDescription}"></textarea>
     <br />
-    <textarea data-bind="value: skeleton.seo_keywords" placeholder="Въведи SEO ключови думи"></textarea>
+    <textarea data-bind="value: skeleton.seo_keywords, attr: {placeholder:pageFromData.seoKeyWords}"></textarea>
     <br />
-    <input type="submit" class="btn btn-default" value="Запиши">
+    <input type="submit" class="btn btn-default" data-bind="value: pageFromData.save">
 </form>

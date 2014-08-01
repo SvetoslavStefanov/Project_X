@@ -44,8 +44,9 @@ requirejs.config({
 });
 
 define([
-    'durandal/app', 'durandal/viewLocator', 'plugins/widget', 'require', 'helper/viewHelper', 'scripts/config.js', 'plugins/router', 'knockout'
-], function (app, viewLocator, widget, require, viewHelper, config, router, ko) {
+    'durandal/app', 'durandal/viewLocator', 'plugins/widget', 'require', 'helper/viewHelper', 'scripts/config.js', 'plugins/router', 'knockout',
+    'ckeditor'
+], function (app, viewLocator, widget, require, viewHelper, config, router, ko, editor) {
 
     viewHelper.config = config;
     viewHelper.config.is_in_admin = isInAdmin();
@@ -83,7 +84,7 @@ define([
 
     ko.bindingHandlers.ckEditor = {
         init: function (element, valueAccessor, allBindingsAccessor) {
-            var txtBoxID = $(element).attr("id"),
+            var txtBoxID = element.id,
                 options = allBindingsAccessor().richTextOptions || {};
 
             options.toolbar_Full = [
@@ -114,7 +115,8 @@ define([
         },
         update: function (element, valueAccessor) {
             var val = ko.utils.unwrapObservable(valueAccessor());
-            $(element).html(val);
+            element.innerHTML = val;
+//            $(element).html(val);
         }
     }
 

@@ -1,4 +1,4 @@
-<h1>Езици</h1>
+<h1 data-bind="text: currentTranslationData.title">Езици</h1>
 
 <ul class="list_projects" data-bind="foreach: languages">
     <li class="jumbotron">
@@ -6,7 +6,7 @@
             <span data-bind="text: $data.attributes.name"></span> -
             <span data-bind="text: $data.attributes.full_name"></span>
             &nbsp;&nbsp;&nbsp;
-            <a data-bind="click: $parent.destroy" title="Изтрии">X</a>
+            <a data-bind="click: $parent.destroy, attr: {title: $parent.currentTranslationData.destroy}">X</a>
             <br />
         </div>
         <div class="clear">&nbsp;</div>

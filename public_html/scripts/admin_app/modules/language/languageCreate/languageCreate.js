@@ -1,29 +1,36 @@
 /**
  * Created by SveXteZ on 14-7-26.
  */
-define(['plugins/http', 'knockout', 'plugins/router'], function (http, ko, router) {
-    "use strict";
+define(['plugins/http', 'knockout', 'plugins/router', 'controllers/LanguageController'],
+    function (http, ko, router, LanguageController) {
+        "use strict";
 
-    function LanguageCreate () {
-        this.title = ko.observable('');
-        this.fullName = ko.observable('');
+        function LanguageCreate() {
+            this.title = ko.observable('');
+            this.fullName = ko.observable('');
 
-        this.createLanguage = function () {
-            var params = {}, response;
-            params.name = this.title();
-            params.full_name = this.fullName();
+            this.activate = function () {
+                this.setTranslationData();
+            };
 
-            response = http.post('language/create', params);
+            this.createLanguage = function () {
+                var params = {}, response;
+                params.name = this.title();
+                params.full_name = this.fullName();
 
-            response.then(function () {
-                router.navigate('language');
-            });
+                response = http.post('language/create', params);
 
-            response.fail(function (data) {
-                console.log(data, '\n\n FAIL \n\n');
-            });
+                response.then(function () {
+                    router.navigate('language');
+                });
+
+                response.fail(function (data) {
+                    console.log(data, '\n\n FAIL \n\n');
+                });
+            };
         };
-    };
 
-    return LanguageCreate;
-});
+        LanguageCreate.prototype = new LanguageController();
+
+        return LanguageCreate;
+    });

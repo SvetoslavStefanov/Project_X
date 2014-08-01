@@ -1,8 +1,8 @@
 /**
  * Created by SveXteZ on 14-7-26.
  */
-define(['plugins/http', 'durandal/app', 'knockout'],
-    function (http, app, ko) {
+define(['plugins/http', 'durandal/app', 'knockout', 'controllers/LanguageController'],
+    function (http, app, ko, LanguageController) {
         "use strict";
 
         function LanguageIndex() {
@@ -21,11 +21,13 @@ define(['plugins/http', 'durandal/app', 'knockout'],
                         promise.resolve();
                     });
 
+                this.setTranslationData();
+
                 return promise;
             };
 
             this.destroy = function () {
-                var confirmDeletion = confirm('Сигурни ли сте, че искате да изтриете езика ?'),
+                var confirmDeletion = confirm(that.currentTranslationData.confirmDeletion),
                     currentLanguage = this,
                     response;
 
@@ -40,6 +42,8 @@ define(['plugins/http', 'durandal/app', 'knockout'],
                 }
             };
         };
+
+        LanguageIndex.prototype = new LanguageController();
 
         return new LanguageIndex();
     });

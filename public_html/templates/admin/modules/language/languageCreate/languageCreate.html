@@ -1,8 +1,8 @@
-<h2>Създаване на език</h2>
+<h2 data-bind="text: currentTranslationData.title">Създаване на език</h2>
 <form method="POST" data-bind="submit: createLanguage">
-    <input type="text" name="title" data-bind="value: title" placeholder="Въведи кратко име на езика" />
+    <input type="text" name="title" data-bind="value: title, attr: {placeholder: currentTranslationData.placeholders.name}"/>
     <br />
-    <input type="text" name="fullName" data-bind="value: fullName" placeholder="Въведи пълно име на езика" />
+    <input type="text" name="fullName" data-bind="value: fullName, attr: {placeholder: currentTranslationData.placeholders.fullName}"/>
     <br />
-    <input type="submit" class="btn btn-default" value="Запиши">
+    <input type="submit" class="btn btn-default" data-bind="value: currentTranslationData.placeholders.save">
 </form>

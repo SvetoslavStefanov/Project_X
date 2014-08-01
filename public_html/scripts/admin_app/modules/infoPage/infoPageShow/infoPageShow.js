@@ -7,6 +7,7 @@ define([
     "use strict";
 
     function InfoPageShow() {
+        var that = this;
         this.pageData = ko.observableArray([]);
 
         this.activate = function (pageId) {
@@ -15,10 +16,12 @@ define([
             http.get('InfoPage/show', {id: pageId}).then(function (response) {
                 that.pageData.push(response.pageData);
             });
+
+            this.setTranslationData();
         };
 
         this.destroyPage = function () {
-            var confirmDeletion = confirm('Сигурни ли сте, че искате да изтриете страницата ?');
+            var confirmDeletion = confirm(that.currentTranslationData.confirmDeletion);
 
             if (confirmDeletion){
                 router.navigate('infopage/destroy/' + this.id);

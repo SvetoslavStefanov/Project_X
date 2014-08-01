@@ -72,6 +72,67 @@ define([], function () {
                 buttons: {
                     viewMore: 'View More'
                 }
+            },
+            infoPageCreate: {
+                title: 'Create new Info Page'
+            },
+            infoPageEdit: {
+                title: 'Edit Page'
+            },
+            pageFromTemplate: {
+                title: 'Enter Page\'s title',
+                content: 'Enter Page\'s content',
+                status: 'Select Status',
+                seoDescription: 'Enter Seo Description',
+                seoKeyWords: 'Enter Seo Keywords',
+                save: 'Save'
+            },
+            infoPageShow: {
+                confirmDeletion: 'Are you sure you want to delete this page ?',
+                title: 'View Page',
+                destroy: 'Delete',
+                edit: 'Edit'
+            }
+        },
+
+        contact: {
+            contactIndex: {
+                actionMessages: {
+                    destroyed: 'You have destroyed a message'
+                },
+                title: 'Messages',
+                sent: 'Sent at',
+                subject: 'Subject',
+                email: 'Email',
+                content: 'Content',
+                noMessages: 'There aren\'t any messages yet'
+            }
+        },
+
+        language: {
+            languageIndex: {
+                title: 'List Languages',
+                confirmDeletion: 'Are you sure you want to delete this language ?',
+                destroy: 'Delete'
+            },
+            languageCreate: {
+                title: 'Create new Language',
+                placeholders: {
+                    name: 'Enter language\'s short name',
+                    fullName: 'Enter language\'s full name',
+                    save: 'Save'
+                }
+            }
+        },
+
+        sign: {
+            signIn: {
+                title: 'Sign In',
+                placeholders: {
+                    username: 'Enter your username',
+                    password: 'Enter your password',
+                    save: 'Sign in !'
+                }
             }
         }
     }

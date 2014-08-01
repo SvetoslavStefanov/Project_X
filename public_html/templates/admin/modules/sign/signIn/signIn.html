@@ -2,10 +2,10 @@
 <br />
 <br />
 <br />
-<div>LOGIN PAGE</div>
+<div data-bind="text: currentTranslationData.title"></div>
 <form class="" data-bind="submit:makeRequest">
-    <input data-bind="value: username" type="text" class="search-query" placeholder="Username">
-    <input data-bind="value: password" type="password" class="search-query" placeholder="Password">
+    <input data-bind="value: username, attr: {placeholder: currentTranslationData.placeholders.username}" type="text" class="search-query" />
+    <input data-bind="value: password, attr: {placeholder: currentTranslationData.placeholders.password}" type="password" class="search-query">
     <br />
-    <input type="submit" value="Sign in" />
+    <input type="submit" data-bind="value: currentTranslationData.placeholders.save" />
 </form>

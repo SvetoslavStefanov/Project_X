@@ -13,6 +13,7 @@ define(['plugins/http', 'knockout', 'controllers/SignController', 'plugins/route
                     }
                 });
 
+                this.setTranslationData();
             };
 
             this.makeRequest = function () {

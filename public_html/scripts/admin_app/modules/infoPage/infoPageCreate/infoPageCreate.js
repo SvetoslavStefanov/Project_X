@@ -4,7 +4,12 @@
 define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageController'], function (http, ko, router, InfoPageController) {
     "use strict";
 
-    function ProjectCreate() {
+    function InfoPageCreate() {
+
+        this.activate = function () {
+            this.setTranslationData();
+            this.pageFromData = this.translations[this.getControllerName()]['pageFromTemplate'];
+        };
 
         this.savePage = function () {
             var response, params = {};
@@ -24,7 +29,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
         };
     };
 
-    ProjectCreate.prototype = new InfoPageController();
+    InfoPageCreate.prototype = new InfoPageController();
 
-    return ProjectCreate;
+    return InfoPageCreate;
 });

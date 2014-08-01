@@ -20,6 +20,9 @@ define([
                 promise.resolve();
             });
 
+            this.setTranslationData();
+            this.pageFromData = this.translations[this.getControllerName()]['pageFromTemplate'];
+
             return promise;
         };
 

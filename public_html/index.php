@@ -31,8 +31,6 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
     $languageConfig['languages'] = [];
     $langs = $language->findAll();
 
-    $currentUser = Sign::find(array('where' => array('id' => $_SESSION['isAdmin'])));
-
     foreach ($langs as $lang) {
         $newObj = $lang->attributes;
         $newObj['id'] = $lang->id;
@@ -40,17 +38,23 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
         array_push($languageConfig['languages'], $newObj);
     }
 
-    foreach ($languageConfig['languages'] as $lang) {
-        if ($lang['id'] == $currentUser->attributes['selected_lang']) {
-            $languageConfig['default'] = $lang;
+    if (isset($_SESSION['isAdmin'])) {
+        $currentUser = Sign::find(array('where' => array('id' => $_SESSION['isAdmin'])));
+        $defaultLangId = $currentUser->attributes['selected_lang'];
+    } else {
+        foreach ($languageConfig['languages'] as $lang) {
+            if ($lang['is_default'] == 1) {
+                $defaultLangId = $lang['id'];
+                break;
+            }
         }
     }
 
-    $translation = new admin_Translation();
-    $translationsObj = $translation->findAll(array('where' => array('language_id' => $currentUser->attributes['selected_lang'])));
-    $translations = [];
-    foreach ($translationsObj as $trs) {
-        array_push($translations, $trs->attributes);
+
+    foreach ($languageConfig['languages'] as $lang) {
+        if ($lang['id'] == $defaultLangId) {
+            $languageConfig['default'] = $lang;
+        }
     }
 
     require loadLayout();
