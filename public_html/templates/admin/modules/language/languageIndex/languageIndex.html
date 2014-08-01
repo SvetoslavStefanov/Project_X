@@ -1,0 +1,14 @@
+<h1>Езици</h1>
+
+<ul class="list_projects" data-bind="foreach: languages">
+    <li class="jumbotron">
+        <div class="project_content">
+            <span data-bind="text: $data.attributes.name"></span> -
+            <span data-bind="text: $data.attributes.full_name"></span>
+            &nbsp;&nbsp;&nbsp;
+            <a data-bind="click: $parent.destroy" title="Изтрии">X</a>
+            <br />
+        </div>
+        <div class="clear">&nbsp;</div>
+    </li>
+</ul>

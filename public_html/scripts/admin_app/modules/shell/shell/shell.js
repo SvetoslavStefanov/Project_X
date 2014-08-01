@@ -1,43 +1,54 @@
-define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, viewHelper, ko) {
+define([
+    'plugins/router', 'helper/viewHelper', 'knockout', 'controllers/ShellController'
+], function (router, viewHelper, ko, ShellController) {
         "use strict";
 
-        return {
-            router: router,
-            searchString: ko.observable(),
-            subRoutes: {
+        function Shell() {
+            this.setTranslationData('shell', 'shell');
+            this.router = router;
+            this.subRoutes = {
                 project: [
-                    { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('projectCreate'), show: true},
-                    { route: 'destroy/:id', title: 'Destroy', moduleId: viewHelper.convertModuleNameToModuleId('projectDestroy'), show: false},
-                    { route: 'projectIndexAction/:action', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: false},
-                    { route: 'show/:id', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectShow'), nav: false}
+                    { route: 'new', title: this.currentTranslationData.subroutes.project.new, moduleId: viewHelper.convertModuleNameToModuleId('projectCreate'), show: true},
+                    { route: 'destroy/:id', title: this.currentTranslationData.subroutes.project.destroy, moduleId: viewHelper.convertModuleNameToModuleId('projectDestroy'), show: false},
+                    { route: 'projectIndexAction/:action', title: this.currentTranslationData.subroutes.project.index, moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: false},
+                    { route: 'show/:id', title: this.currentTranslationData.subroutes.project.show, moduleId: viewHelper.convertModuleNameToModuleId('projectShow'), nav: false}
                 ],
                 infopage: [
-                    { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('infoPageCreate', 'infoPage'), show: true},
-                    { route: 'show/:id', title: 'Преглед', moduleId: viewHelper.convertModuleNameToModuleId('infoPageShow', 'infoPage'), show: false},
-                    { route: 'edit/:id', title: 'Редактиране', moduleId: viewHelper.convertModuleNameToModuleId('infoPageEdit', 'infoPage'), show: false},
-                    { route: 'infoPageIndexAction/:action', title: 'Инфо Страници', moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex', 'infoPage'), show: false},
-                    { route: 'destroy/:id', title: 'Destroy', moduleId: viewHelper.convertModuleNameToModuleId('infoPageDestroy', 'infoPage'), show: false}
+                    { route: 'new', title: this.currentTranslationData.subroutes.infopage.new, moduleId: viewHelper.convertModuleNameToModuleId('infoPageCreate', 'infoPage'), show: true},
+                    { route: 'show/:id', title: this.currentTranslationData.subroutes.infopage.show, moduleId: viewHelper.convertModuleNameToModuleId('infoPageShow', 'infoPage'), show: false},
+                    { route: 'edit/:id', title: this.currentTranslationData.subroutes.infopage.edit, moduleId: viewHelper.convertModuleNameToModuleId('infoPageEdit', 'infoPage'), show: false},
+                    { route: 'infoPageIndexAction/:action', title: this.currentTranslationData.subroutes.infopage.index, moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex',
+                        'infoPage'), show: false},
+                    { route: 'destroy/:id', title: this.currentTranslationData.subroutes.infopage.destroy, moduleId: viewHelper.convertModuleNameToModuleId('infoPageDestroy', 'infoPage'), show: false}
                 ],
-                contact: [
-
+                language: [
+                    {route: 'new', title: this.currentTranslationData.subroutes.language.new, moduleId: viewHelper.convertModuleNameToModuleId('languageCreate'), show: true}
+                ],
+                translation: [
+                    { route: 'new', title: 'Създай', moduleId: viewHelper.convertModuleNameToModuleId('translationCreate'), show: true},
+                    { route: 'edit/:id', title: 'Редактиране', moduleId: viewHelper.convertModuleNameToModuleId('translationEdit'), show: false}
                 ]
-            },
-            routes: [
-                { route: '', title: 'Проекти', moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true, name: 'project'},
-                { route: 'sign/signIn', title: 'Sign In', moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
-                { route: 'infopage', title: 'Инфо страници', moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex', 'infoPage'), nav: true, name: 'infopage'},
-                { route: 'contact', title: 'Съобщения', moduleId: viewHelper.convertModuleNameToModuleId('contactIndex'), nav: true, name: 'contact'},
-                { route: 'sign/signOut', title: 'Logout', moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true},
-            ],
+            };
 
-            activate: function () {
+            this.routes = [
+                { route: '', title: this.currentTranslationData.routes.project, moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true, name: 'project'},
+                { route: 'sign/signIn', title: this.currentTranslationData.routes.signIn, moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
+                { route: 'infopage', title: this.currentTranslationData.routes.infopage, moduleId: viewHelper.convertModuleNameToModuleId('infoPageIndex','infoPage'), nav: true, name: 'infopage'},
+                { route: 'contact', title: this.currentTranslationData.routes.contact, moduleId: viewHelper.convertModuleNameToModuleId('contactIndex'), nav: true, name: 'contact'},
+                { route: 'language', title: this.currentTranslationData.routes.language, moduleId: viewHelper.convertModuleNameToModuleId('languageIndex'), nav: true, name: 'language'},
+//                { route: 'translation', title: 'Преводи', moduleId: viewHelper.convertModuleNameToModuleId('translationIndex'), nav: true, name: 'translation'},
+                { route: 'sign/signOut', title: this.currentTranslationData.routes.signOut, moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true},
+            ];
+
+            this.activate = function () {
                 this.addSubRoutes();
 
                 router.map(this.routes).buildNavigationModel();
 
                 return router.activate();
-            },
-            addSubRoutes: function () {
+            };
+
+            this.addSubRoutes = function () {
                 var i, subRoutes = [], route;
 
                 for (i = 0; i < this.routes.length; i++) {
@@ -56,8 +67,9 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                         this.routes.push(subRoutes[route][i]);
                     }
                 }
-            },
-            mapSubNav: function (route) {
+            };
+
+            this.mapSubNav = function (route) {
                 var subRoutes = [], i, currentSubRouter;
 
                 if (!_.isUndefined(this.subRoutes[route])) {
@@ -75,19 +87,24 @@ define(['plugins/router', 'helper/viewHelper', 'knockout'], function (router, vi
                 }
 
                 return {subRoutes: subRoutes};
-            },
-            expandSubMenu: function () {
+            };
+
+            this.expandSubMenu = function () {
                 if (this.expandedSubMenu() === true) {
                     this.expandedSubMenu(false);
                 } else {
                     this.expandedSubMenu(true);
                 }
-            },
-            menuItemClicked: function (currentItem, parent) {
+            };
+
+            this.menuItemClicked = function (currentItem, parent) {
                 parent.expandedSubMenu(false);
                 router.navigate(currentItem.hash);
-            }
+            };
         };
-    }
 
+        Shell.prototype = new ShellController();
+
+        return new Shell();
+    }
 );

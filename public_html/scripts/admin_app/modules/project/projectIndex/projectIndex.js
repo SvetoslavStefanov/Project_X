@@ -33,13 +33,15 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
                     promise.resolve();
                 });
 
+                this.setTranslationData();
+
                 if (!_.isUndefined(action)) {
                     switch (action) {
                         case 'created':
-                            this.actionMessage('Направихте нов проект');
+                            this.actionMessage(this.currentTranslationData.actionMessage.created);
                             break;
                         case 'destroyed':
-                            this.actionMessage('Изтрихте проекта');
+                            this.actionMessage(this.currentTranslationData.actionMessage.destroyed);
                             break;
                     }
 

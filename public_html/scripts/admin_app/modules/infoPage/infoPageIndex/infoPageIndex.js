@@ -29,6 +29,7 @@ define([
         this.activate = function (action) {
             var that = this;
 
+            this.setTranslationData();
 
             http.get('InfoPage/index').then(function (response) {
                 that.pages(response.pages);
@@ -37,10 +38,10 @@ define([
             if (!_.isUndefined(action)) {
                 switch (action) {
                     case 'created':
-                        this.actionMessage('Направихте нова страница');
+                        this.actionMessage(this.currentTranslationData.created);
                         break;
                     case 'destroyed':
-                        this.actionMessage('Изтрихте страницата');
+                        this.actionMessage(this.currentTranslationData.destroyed);
                         break;
                 }
 

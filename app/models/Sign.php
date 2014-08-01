@@ -1,10 +1,4 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Sign
  *
@@ -17,7 +11,8 @@ class Sign extends ActiveRecord
     static $columns = array(
         'username',
         'password',
-        'email'
+        'email',
+        'selected_lang'
     );
 
     protected function registerValidate ()
@@ -74,5 +69,3 @@ class Sign extends ActiveRecord
     }
 
 }
-
-?>

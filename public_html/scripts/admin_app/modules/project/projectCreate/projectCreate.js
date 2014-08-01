@@ -8,6 +8,10 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectContro
         this.title = ko.observable('');
         this.content = ko.observable('');
 
+        this.activate = function () {
+            this.setTranslationData();
+        };
+
         this.createProject = function () {
             var params = {}, response;
             params.title = this.title();

@@ -6,6 +6,7 @@ define([], function () {
 
     return {
         config: {},
+        languageConfig: backEndConfig.language,
         defaultPaths: {
             modulesPath: 'modules/',
             widgetsPath: 'widgets/',

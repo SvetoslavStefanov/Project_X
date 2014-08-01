@@ -12,6 +12,11 @@
         <link rel="stylesheet" href="<?= SITE_URL ?>/styles/ie10mobile.css" />
         <link rel="stylesheet" href="<?= SITE_URL ?>/styles/durandal/durandal.css" />
         <link rel="stylesheet" href="<?= SITE_URL ?>/styles/samples.css" />
+        <script>
+            var backEndConfig = {};
+            backEndConfig.language = <?php echo json_encode($languageConfig) ?>;
+            backEndConfig.translations = <?php echo json_encode($translations) ?>;
+        </script>
     </head>
     <body>
         <div id="applicationHost">

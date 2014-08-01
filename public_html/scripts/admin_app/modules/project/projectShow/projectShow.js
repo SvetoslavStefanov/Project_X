@@ -3,18 +3,22 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
     "use strict";
 
     function ProjectShow () {
+        var that = this;
+
         this.projectData =  ko.observableArray([]);
 
         this.activate = function (projectId) {
             var that = this;
 
             http.get('Project/show/', {id: projectId}).then(function(response) {
-                that.projectData(response);
+                that.projectData.push(response);
             });
+
+            this.setTranslationData();
         };
 
         this.destroyProject = function (){
-            var confirmDeletion = confirm('Сигурни ли сте, че искате да изтриете проекта ?');
+            var confirmDeletion = confirm(that.currentTranslationData.confirmDeletion);
 
             if (confirmDeletion){
                 router.navigate('project/destroy/' + this.id);

@@ -1,4 +1,4 @@
-<h1>Проекти</h1>
+<h1 data-bind="text: currentTranslationData.title"></h1>
 <div data-bind="attr: {class: 'alert alert-dismissabl alert-' + actionBoxClassName()}, visible: actionMessage().length > 0, text: actionMessage"></div>
 
 <ul class="list_projects" data-bind="foreach: projects">
@@ -12,7 +12,7 @@
             <h5 data-bind="text: $data.attributes.title"></h5>
             <p data-bind="html: $data.attributes.small_content" ></p>
 
-            <a data-bind="click: $parent.navigateToProjectShow" class="button tiny">Виж още</a>
+            <a data-bind="click: $parent.navigateToProjectShow, text: $parent.currentTranslationData.buttons.viewMore" class="button tiny"></a>
         </div>
         <div class="clear">&nbsp;</div>
     </li>

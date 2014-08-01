@@ -1,10 +1,40 @@
 /**
  * Created by SveXteZ on 14-2-15.
  */
-define(['helper/viewHelper', 'durandal/system', 'knockout', 'koMapping'], function (viewHelper, system, ko, koMapping) {
+define([
+    'helper/viewHelper', 'durandal/system', 'knockout', 'koMapping'
+], function (viewHelper, system, ko, koMapping) {
     "use strict";
 
     function BaseController() {
+        var that = this;
+        this.translations = backEndConfig.translations;
+        this.currentTranslationData = {};
+
+        this.setTranslationData = function (controllerName, fileName) {
+            if (_.isUndefined(controllerName)) {
+                controllerName = this.getControllerName();
+            }
+
+            if (_.isUndefined(fileName)) {
+                fileName = this.getModuleName();
+            }
+
+            this.currentTranslationData = this.translations[controllerName][fileName];
+        };
+
+        this.findTranslationByProperty = function (propertyName) {
+            var i;
+
+            for (i = 0; i < this.translations.length; i++) {
+                if (this.translations[i].property_name == propertyName) {
+                    return this.translations[i].translated;
+                }
+            }
+
+            return 'No Translation';
+        };
+
         this.getModuleName = function () {
             return viewHelper.convertModuleIdToModuleName(system.getModuleId(this));
         };
@@ -21,7 +51,7 @@ define(['helper/viewHelper', 'durandal/system', 'knockout', 'koMapping'], functi
         };
 
         this.transformSkeletonFromObservables = function (data) {
-            var  newData = {};
+            var newData = {};
 
             _.each(data, function (item, key) {
                 if (ko.isObservable(item)) {
