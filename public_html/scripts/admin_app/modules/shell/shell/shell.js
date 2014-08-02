@@ -38,7 +38,7 @@ define([
             };
 
             this.routes = [
-                { route: '', title: this.currentTranslationData.routes.project, nav: true, name: 'project', icon: 'icon-list-alt'},
+                { route: '', title: this.currentTranslationData.routes.project, moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true, name: 'project', icon: 'icon-list-alt'},
                 { route: 'sign/signIn', title: this.currentTranslationData.routes.signIn, moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
                 { route: 'infoPage', title: this.currentTranslationData.routes.infopage, nav: true, name: 'infoPage', icon: 'icon-list-alt'},
                 { route: 'contact', title: this.currentTranslationData.routes.contact, moduleId: viewHelper.convertModuleNameToModuleId('contactIndex'), nav: true, name: 'contact', icon: 'icon-envelope-alt'},

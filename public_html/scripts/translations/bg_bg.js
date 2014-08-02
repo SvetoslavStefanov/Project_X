@@ -106,7 +106,12 @@ define([], function () {
                 subject: 'Тема',
                 email: 'Email',
                 content: 'Съдържание',
-                noMessages: 'Няма съобщения'
+                action: 'Действия',
+                noMessages: 'Няма съобщения',
+                actions: {
+                    destroy: 'Изтрий',
+                    answer: 'Отговори'
+                }
             }
         },
 

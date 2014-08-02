@@ -109,7 +109,12 @@ define([], function () {
                 subject: 'Subject',
                 email: 'Email',
                 content: 'Content',
-                noMessages: 'There aren\'t any messages yet'
+                action: 'Actions',
+                noMessages: 'There aren\'t any messages yet',
+                actions: {
+                    destroy: 'Delete',
+                    answer: 'Answer'
+                }
             }
         },
 

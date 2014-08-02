@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="<?= SITE_URL ?>/styles/main.css" type="text/css"/>
     <link rel="stylesheet" href="<?= SITE_URL ?>/plugins/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?= SITE_URL ?>/styles/MoneAdmin.css"/>
-
     <link rel="stylesheet" href="<?= SITE_URL ?>/plugins/Font-Awesome/css/font-awesome.min.css" />
     <script>
         var backEndConfig = {};
