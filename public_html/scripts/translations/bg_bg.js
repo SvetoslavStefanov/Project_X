@@ -142,7 +142,7 @@ define([], function () {
 
         sign: {
             signIn: {
-                title: 'Вход',
+                title: 'Въведете вашите потребителско име и парола',
                 placeholders: {
                     username: 'Въведи потребителско име',
                     password: 'Въведи парола',

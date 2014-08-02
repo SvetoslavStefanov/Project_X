@@ -10,6 +10,7 @@ define(['plugins/http', 'controllers/SignController'],
                 var promise = $.Deferred();
 
                 http.get('Sign/out').fail(function () {
+                    backEndConfig.currentUser = null;
                     promise.resolve();
                 });
 

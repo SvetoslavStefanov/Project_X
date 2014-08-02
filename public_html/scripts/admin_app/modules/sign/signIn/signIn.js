@@ -17,16 +17,29 @@ define(['plugins/http', 'knockout', 'controllers/SignController', 'plugins/route
             };
 
             this.makeRequest = function () {
-                var that = this,
-                    params = {
-                        username: that.username(),
-                        password: that.password()};
+                var i, inputs = document.getElementById('module_signIn').getElementsByTagName('input');
+
+                for (i = 0; i < inputs.length; i++) {
+                    if (inputs[i].type === 'text') {
+                        this.username(inputs[i].value);
+                    }
+
+                    if (inputs[i].type === 'password') {
+                        this.password(inputs[i].value);
+                    }
+                }
+
+                var params = {
+                    username: this.username(),
+                    password: this.password()
+                };
 
                 http.post('Sign/login', params).then(function (response) {
+                    backEndConfig.currentUser = response.currentUser;
                     router.navigate('');
                 }).fail(function (data) {
-                    alert("Wrong name or pass")
-                });
+                        alert("Wrong name or pass")
+                    });
             };
 
         };

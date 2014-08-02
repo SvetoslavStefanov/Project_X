@@ -18,13 +18,10 @@ class admin_SignController extends admin_BaseController
         if (isset($this->adminUser) && ($this->adminUser instanceof ActiveRecord)) {
             $this->data['isUserLogged'] = true;
         }
-
-        $this->data['title'] = 'Administration Login';
     }
 
     public function loginAction ()
     {
-
         if (isset($this->adminUser) && ($this->adminUser instanceof ActiveRecord)) {
              $this->data['isUserLogged'] = true;
              return true;
@@ -35,6 +32,8 @@ class admin_SignController extends admin_BaseController
         if ($this->sign = $this->sign->loginValidate($_POST)) {
             $this->setUserCookie();
             $this->data['isUserLogged'] = true;
+            $this->sign->attributes['password'] = 'no way !';
+            $this->data['currentUser'] = $this->sign;
         } else {
             $this->data['errors'] = Validator::$errors;
         }

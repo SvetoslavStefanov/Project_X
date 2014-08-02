@@ -145,7 +145,7 @@ define([], function () {
 
         sign: {
             signIn: {
-                title: 'Sign In',
+                title: 'Enter your username and password',
                 placeholders: {
                     username: 'Enter your username',
                     password: 'Enter your password',

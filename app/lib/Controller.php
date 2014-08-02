@@ -13,10 +13,6 @@ class Controller extends Plugin
     public static $default_pic;
     public $message = null;
     protected $data = array();
-    protected $predefinedActions = array(
-        'goToPreviousPage' => 'Redirect user to previous page',
-        'goToSignInPage' => 'Redirect user to Sign in page'
-    );
 
     public function dispatch ($controllerName, $actionName, $id)
     {
@@ -49,9 +45,8 @@ class Controller extends Plugin
         $view = new View();
         $view->assign(get_object_vars($this));
 
-        $view->render(
-                $template = $this->controllerName . '/' . $template, $layout === true ? $this->layout : $layout
-        );
+
+        $view->render($this->controllerName . '/' . $template, $layout === true ? $this->layout : $layout);
 
         $this->rendered = true;
     }
@@ -86,7 +81,7 @@ class Controller extends Plugin
 
     protected function back ()
     {
-        $this->data['predefinedAction'] = $this->predefinedActions['goToPreviousPage'];
+//        $this->data['predefinedAction'] = $this->predefinedActions['goToPreviousPage'];
     }
 
     protected function before ()
@@ -100,7 +95,8 @@ class Controller extends Plugin
     protected function returnUserToLoginPage () {
         $this->data['isUserLogged'] = false;
         $this->data['errors'] = 'This area is only for registered users !';
-        $this->data['predefinedAction'] = $this->predefinedActions['goToSignInPage'];
+
+        $this->render('');
     }
 
     public function confirmLogged ()

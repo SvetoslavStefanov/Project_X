@@ -24,7 +24,7 @@ requirejs.config({
         'durandal': '../lib/durandal/js',
         'plugins': '../lib/durandal/js/plugins',
         'transitions': '../lib/durandal/js/transitions',
-        'knockout': '../lib/knockout/knockout-2.3.0',
+        'knockout': '../lib/knockout/knockout-3.1.0',
         'koMapping': '../lib/knockout/knockout.mapping',
         'jquery': '../lib/jquery/jquery-1.9.1',
         'lodash': '../lib/lodash/lodash.min',

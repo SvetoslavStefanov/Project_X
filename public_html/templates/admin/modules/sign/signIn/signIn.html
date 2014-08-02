@@ -1,11 +1,12 @@
-<br />
-<br />
-<br />
-<br />
-<div data-bind="text: currentTranslationData.title"></div>
-<form class="" data-bind="submit:makeRequest">
-    <input data-bind="value: username, attr: {placeholder: currentTranslationData.placeholders.username}" type="text" class="search-query" />
-    <input data-bind="value: password, attr: {placeholder: currentTranslationData.placeholders.password}" type="password" class="search-query">
-    <br />
-    <input type="submit" data-bind="value: currentTranslationData.placeholders.save" />
-</form>
+<div class="tab-content" id="module_signIn">
+    <div class="tab-pane active">
+        <form class="form-signin" data-bind="submit:makeRequest">
+            <p class="text-muted text-center btn-block btn btn-primary btn-rect" data-bind="text: currentTranslationData.title"></p>
+
+            <input type="text" data-bind="value: username, attr: {placeholder: currentTranslationData.placeholders.username}" class="form-control">
+            <input type="password" data-bind="value: password, attr: {placeholder: currentTranslationData.placeholders.password}"
+                   class="form-control">
+            <input class="btn text-muted text-center btn-danger" type="submit" data-bind="value: currentTranslationData.placeholders.save"/>
+        </form>
+    </div>
+</div>

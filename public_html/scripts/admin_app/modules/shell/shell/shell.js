@@ -7,6 +7,7 @@ define([
             var that = this;
 
             this.setTranslationData('shell', 'shell');
+            this.isUserLogged = ko.observable(false);
             this.router = router;
             this.subRoutes = {
                 project: [
@@ -45,6 +46,16 @@ define([
                 { route: 'language', title: this.currentTranslationData.routes.language, nav: true, name: 'language', icon: 'icon-font'},
                 { route: 'sign/signOut', title: this.currentTranslationData.routes.signOut, moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true, icon: 'icon-signout'},
             ];
+
+            router.activeInstruction.subscribe(function (newValue) {
+                if (newValue.config.moduleId === this.routes[1].moduleId) {
+                    this.isUserLogged(false);
+                } else {
+                    if (this.isUserLogged() === false && !_.isNull(backEndConfig.currentUser)) {
+                        this.isUserLogged(true);
+                    }
+                }
+            }, this);
 
             this.activate = function () {
                 this.addSubRoutes();
