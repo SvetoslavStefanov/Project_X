@@ -1,12 +1,33 @@
-<ul class="list_projects" data-bind="foreach: languages">
-    <li class="jumbotron">
-        <div class="project_content">
-            <span data-bind="text: $data.attributes.name"></span> -
-            <span data-bind="text: $data.attributes.full_name"></span>
-            &nbsp;&nbsp;&nbsp;
-            <a data-bind="click: $parent.destroy, attr: {title: $parent.currentTranslationData.destroy}">X</a>
-            <br />
+<div class="row">
+    <div class="col-lg-3">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="text-align: center">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center" data-bind="text: currentTranslationData.tableHeaders.action"></th>
+                                <th style="text-align: center" data-bind="text: currentTranslationData.tableHeaders.name"></th>
+                                <th style="text-align: center" data-bind="text: currentTranslationData.tableHeaders.fullName"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- ko foreach: languages -->
+                            <tr>
+                                <td>
+                                    <a class="pointer btn-flat icon-remove"
+                                       data-bind="attr: {title: $parent.currentTranslationData.destroy}, click: $parent.destroy">&nbsp;</a>
+                                </td>
+                                <td data-bind="text: $data.attributes.name"></td>
+                                <td data-bind="text: $data.attributes.full_name"></td>
+                            </tr>
+                            <!-- /ko -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="clear">&nbsp;</div>
-    </li>
-</ul>
+    </div>
+</div>

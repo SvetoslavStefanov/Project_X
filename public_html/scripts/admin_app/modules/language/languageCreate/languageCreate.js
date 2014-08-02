@@ -21,7 +21,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/LanguageContr
                 response = http.post('language/create', params);
 
                 response.then(function () {
-                    router.navigate('language');
+                    router.navigate('language/index');
                 });
 
                 response.fail(function (data) {

@@ -119,7 +119,12 @@ define([], function () {
             languageIndex: {
                 title: 'Списък Езици',
                 confirmDeletion: 'Сигурни ли сте, че искате да изтриете този език ?',
-                destroy: 'Delete'
+                destroy: 'Delete',
+                tableHeaders: {
+                    action: 'Действия',
+                    name: 'Кратко име',
+                    fullName: 'Пълно име'
+                }
             },
             languageCreate: {
                 title: 'Създай нов Език',
@@ -127,6 +132,10 @@ define([], function () {
                     name: 'Въведи кратко наименование на езика',
                     fullName: 'Въведи пълното име на езика',
                     save: 'Запиши'
+                },
+                labels: {
+                    name: 'Крако наименование',
+                    fullName: 'Пълно наименование'
                 }
             }
         },

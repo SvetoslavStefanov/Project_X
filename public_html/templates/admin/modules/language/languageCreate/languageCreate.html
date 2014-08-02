@@ -1,7 +1,12 @@
 <form method="POST" data-bind="submit: createLanguage">
-    <input type="text" name="title" data-bind="value: title, attr: {placeholder: currentTranslationData.placeholders.name}"/>
-    <br />
-    <input type="text" name="fullName" data-bind="value: fullName, attr: {placeholder: currentTranslationData.placeholders.fullName}"/>
-    <br />
+    <div class="form-group">
+        <label data-bind="text: currentTranslationData.labels.name"></label>
+        <input class="form-control" type="text" name="title" data-bind="value: title, attr: {placeholder: currentTranslationData.placeholders.name}"/>
+    </div>
+    <div class="form-group">
+        <label data-bind="text: currentTranslationData.labels.fullName"></label>
+        <input class="form-control" type="text" name="title" data-bind="value: fullName, attr: {placeholder: currentTranslationData.placeholders.fullName}"/>
+    </div>
+
     <input type="submit" class="btn btn-default" data-bind="value: currentTranslationData.placeholders.save">
 </form>

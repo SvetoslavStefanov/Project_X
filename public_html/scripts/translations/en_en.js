@@ -122,7 +122,12 @@ define([], function () {
             languageIndex: {
                 title: 'List Languages',
                 confirmDeletion: 'Are you sure you want to delete this language ?',
-                destroy: 'Delete'
+                destroy: 'Delete',
+                tableHeaders: {
+                    action: 'Действия',
+                    name: 'Кратко име',
+                    fullName: 'Пълно име'
+                }
             },
             languageCreate: {
                 title: 'Create new Language',
@@ -130,6 +135,10 @@ define([], function () {
                     name: 'Enter language\'s short name',
                     fullName: 'Enter language\'s full name',
                     save: 'Save'
+                },
+                labels: {
+                    name: 'Short name',
+                    fullName: 'Full name'
                 }
             }
         },
