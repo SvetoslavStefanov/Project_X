@@ -54,12 +54,16 @@ define([], function () {
                 destroy: 'Delete'
             },
             projectCreate: {
-                title: 'Create new Project',
                 save: 'Save',
                 placeholders: {
                     title: 'Enter Project\'s title',
                     description: 'Enter Project\'s description'
+                },
+                labels: {
+                    title: 'Title',
+                    description: 'Description'
                 }
+
             }
         },
 

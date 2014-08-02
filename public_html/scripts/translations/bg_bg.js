@@ -12,7 +12,7 @@ define([], function () {
                         new: 'Създай',
                         destroy: 'Изтрий',
                         index: 'Списък Проекти',
-                        show: 'Покажи Проект'
+                        show: 'Разглеждане на проект'
                     },
                     infopage: {
                         new: 'Създай',
@@ -45,20 +45,21 @@ define([], function () {
                 },
                 buttons: {
                     viewMore: 'Виж още'
-                },
-                title: 'Проекти'
+                }
             },
             projectShow: {
                 confirmDeletion: 'Сигурни ли сте, че искате да изтриете този проект ?',
-                title: 'Разглеждане на проект',
                 destroy: 'Изтрий'
             },
             projectCreate: {
-                title: 'Създай нов проект',
                 save: 'Запиши',
                 placeholders: {
                     title: 'Въведи заглавие на проекта',
                     description: 'Въведи описание на проекта'
+                },
+                labels: {
+                    title: 'Заглавие',
+                    description: 'Описание'
                 }
             }
         },
