@@ -73,16 +73,9 @@ define([], function () {
                     created: 'You have created new page',
                     destroyed: 'You have destroyed a page'
                 },
-                title: 'List Info Pages',
                 buttons: {
                     viewMore: 'View More'
                 }
-            },
-            infoPageCreate: {
-                title: 'Create new Info Page'
-            },
-            infoPageEdit: {
-                title: 'Edit Page'
             },
             pageFromTemplate: {
                 title: 'Enter Page\'s title',
@@ -90,11 +83,17 @@ define([], function () {
                 status: 'Select Status',
                 seoDescription: 'Enter Seo Description',
                 seoKeyWords: 'Enter Seo Keywords',
-                save: 'Save'
+                save: 'Save',
+                labels: {
+                    title: 'Page\'s title',
+                    content: 'Page\'s content',
+                    status: 'Page\'s status',
+                    seoDescription: 'SEO Description',
+                    seoKeyWords: 'SEO Keywords'
+                }
             },
             infoPageShow: {
                 confirmDeletion: 'Are you sure you want to delete this page ?',
-                title: 'View Page',
                 destroy: 'Delete',
                 edit: 'Edit'
             }

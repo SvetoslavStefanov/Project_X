@@ -1,17 +1,19 @@
 <div data-bind="attr: {class: 'alert alert-dismissabl alert-' + actionBoxClassName()}, visible: actionMessage().length > 0, text: actionMessage"></div>
 
-<ul class="list_projects" data-bind="foreach: pages">
-    <li class="jumbotron">
-        <div class="thumbnail">
-            <a class="th [radius]" href="javascript:">
-                <img src="http://foundation.zurb.com/docs/assets/img/examples/earth-th-sm.jpg">
-            </a>
+<div class="row" data-bind="foreach: pages">
+    <div class="col-lg-5">
+        <div class="panel panel-primary">
+            <div class="panel-heading" data-bind="text: $data.attributes.title"></div>
+            <div class="panel-body">
+                <img class="media-object img-thumbnail user-img" src="http://foundation.zurb.com/docs/assets/img/examples/earth-th-sm.jpg" align="left"
+                     style="margin-right: 15px" />
+                <p data-bind="html: $data.attributes.content"></p>
+            </div>
+
+            <div class="panel-footer" style="padding: 0">
+                <a data-bind="click: $parent.navigateToProjectShow, text: $parent.currentTranslationData.buttons.viewMore"
+                   class="btn btn-primary btn-flat btn-rect"></a>
+            </div>
         </div>
-        <div class="project_content">
-            <h5 data-bind="text: $data.attributes.title"></h5>
-            <p data-bind="html: $data.attributes.content" ></p>
-            <a data-bind="click: $parent.navigateToProjectShow, text: $parent.currentTranslationData.buttons.viewMore" class="button tiny"></a>
-        </div>
-        <div class="clear">&nbsp;</div>
-    </li>
-</ul>
+    </div>
+</div>

@@ -70,16 +70,9 @@ define([], function () {
                     created: 'Създадохте нова страница',
                     destroyed: 'Изтрихте страницата'
                 },
-                title: 'Списък Страници',
                 buttons: {
                     viewMore: 'Виж още'
                 }
-            },
-            infoPageCreate: {
-                title: 'Създай нова Инфо Страница'
-            },
-            infoPageEdit: {
-                title: 'Редактирай Страницата'
             },
             pageFromTemplate: {
                 title: 'Въведи заглавие на страницата',
@@ -87,11 +80,17 @@ define([], function () {
                 status: 'Избери статус',
                 seoDescription: 'Въведи СЕО описание',
                 seoKeyWords: 'Въведи СЕО ключови думи',
-                save: 'Запиши'
+                save: 'Запиши',
+                labels: {
+                    title: 'Заглавие на страницата',
+                    content: 'Съдържание на страницата',
+                    status: 'Статус',
+                    seoDescription: 'СЕО описание',
+                    seoKeyWords: 'СЕО ключови думи'
+                }
             },
             infoPageShow: {
                 confirmDeletion: 'Сигурни ли сте, че искате да изтриете тази страницата ?',
-                title: 'Разглеждане на страницата',
                 destroy: 'Изтрий',
                 edit: 'Редактирай'
             }
