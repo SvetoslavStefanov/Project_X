@@ -36,7 +36,7 @@ define([
             response = http.post('infoPage/update', params);
 
             response.then(function () {
-                router.navigate('infopage/show/' + that.pageId);
+                router.navigate('infoPage/show/' + that.pageId);
             });
 
             response.fail(function (data) {

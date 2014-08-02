@@ -52,7 +52,7 @@ define([
         };
 
         this.navigateToProjectShow = function (project) {
-            router.navigate('infopage/show/' + project.id);
+            router.navigate('infoPage/show/' + project.id);
         };
     };
 

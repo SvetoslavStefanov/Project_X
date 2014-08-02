@@ -31,6 +31,8 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
     $languageConfig['languages'] = [];
     $langs = $language->findAll();
 
+    $currentUser = null;
+
     foreach ($langs as $lang) {
         $newObj = $lang->attributes;
         $newObj['id'] = $lang->id;

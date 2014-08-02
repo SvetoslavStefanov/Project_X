@@ -1,27 +1,88 @@
-﻿<div>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <a class="brand" data-bind="attr: { href: router.navigationModel()[0].hash }">
-                <i class="icon-home"></i>
-                <span>Durandal</span>
+﻿<div id="top">
+    <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
+        <a class="accordion-toggle btn btn-primary btn-sm visible-xs" id="menu-toggle">
+            <i class="icon-align-justify"></i>
+        </a>
+        <!-- LOGO SECTION -->
+        <header class="navbar-header">
+            <a data-bind="attr: { href: router.navigationModel()[0].hash }" class="navbar-brand">
+                <img src="assets/img/logo.png" alt=""/>
             </a>
-            <ul class="nav" data-bind="foreach: router.navigationModel">
-                <li data-bind="css: {active: isActive, navigation_element: true}">
-                    <a data-bind="click: function(data) {$parent.menuItemClicked(data, data)}, html: title"></a>
-                    <a data-bind="click: $parent.expandSubMenu, visible: $data.settings.subRoutes.length > 0">></a>
-                    <ul class="sub-nav" data-bind="foreach: $data.settings.subRoutes, visible: $data.expandedSubMenu">
-                        <li data-bind="css: {active: $parent.isActive}, visible: $data.show">
-                            <a data-bind="html: title, click: function(data) {$parents[1].menuItemClicked(data, $parent)}"></a>
-                        </li>
-                    </ul>
+        </header>
+        <!-- END LOGO SECTION -->
+        <ul class="nav navbar-top-links navbar-right">
+
+        <!--ADMIN SETTINGS SECTIONS -->
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-user">
+                <li>
+                    <a href="login.html"><i class="icon-signout"></i> Logout </a>
                 </li>
             </ul>
-            <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
-                <i class="icon-spinner icon-2x icon-spin"></i>
+        </li>
+
+        <li class="loader" data-bind="visible: router.isNavigating" style="margin-left: 15px">
+            <i class="icon-spinner icon-2x icon-spin"></i>
+        </li>
+        <!--END ADMIN SETTINGS -->
+    </ul>
+
+    </nav>
+</div>
+
+<!-- MENU SECTION -->
+<div id="left" >
+    <div class="media user-media well-small">
+        <a class="user-link" href="#">
+            <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif" />
+        </a>
+        <br />
+        <div class="media-body">
+            <h5 class="media-heading" data-bind="text: backEndConfig.currentUser.attributes.username"></h5>
+        </div>
+        <br />
+    </div>
+
+    <ul id="menu" class="collapse" data-bind="foreach: router.navigationModel">
+        <li data-bind="css: {active: isActive, panel: true, pointer: true}">
+            <a class="accordion-toggle"  data-bind="click: $parent.menuItemClicked">
+                <i data-bind="attr: {class: $data.icon}"></i> <span data-bind="html: title"></span>
+
+                <span class="pull-right" data-bind="click: $parent.expandSubMenu, visible: $data.settings.subRoutes.length > 0">
+                  <i class="icon-angle-left"></i>
+                </span>
+               &nbsp;
+                <span class="label label-default" data-bind="text: $data.activeSubRoutes, visible: $data.activeSubRoutes > 0"></span>
+                &nbsp;
+            </a>
+            <ul data-bind="foreach: $data.settings.subRoutes, visible: $data.expandedSubMenu">
+                <li data-bind="css: {active: $data.isActive}, visible: $data.show">
+                    <a data-bind="click: function(data) {$parents[1].subMenuItemClicked(data, $parent)}">
+                        <i class="icon-angle-right"></i>
+                        <span data-bind="html: title"></span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<!--END MENU SECTION -->
+
+<div id="content">
+    <div class="inner" style="min-height:500px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 data-bind="text: router.activeInstruction().config.title"></h2>
+                <hr>
+
+                <div data-bind="router: { transition:'entrance', cacheViews:true }"></div>
             </div>
         </div>
     </div>
-
-    <div class="container-fluid page-host" data-bind="router: { transition:'entrance', cacheViews:true }" style="padding-top:50px;"></div>
 </div>
-

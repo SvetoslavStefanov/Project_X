@@ -20,27 +20,26 @@ requirejs.config({
     baseUrl: buildBaseUrl(),
     paths: {
         'text': '../lib/require/text',
+        'bootstrap': '../../plugins/bootstrap/js/bootstrap.min',
         'durandal': '../lib/durandal/js',
         'plugins': '../lib/durandal/js/plugins',
         'transitions': '../lib/durandal/js/transitions',
         'knockout': '../lib/knockout/knockout-2.3.0',
         'koMapping': '../lib/knockout/knockout.mapping',
-        'bootstrap': '../lib/bootstrap/js/bootstrap',
         'jquery': '../lib/jquery/jquery-1.9.1',
         'lodash': '../lib/lodash/lodash.min',
         'ckeditor': '../lib/ckeditor/ckeditor',
         'templates': '../../templates' + (isInAdmin() ? '/admin' : '')
     },
     shim: {
-        'bootstrap': {
-            deps: ['jquery'],
-            exports: 'jQuery'
+        "bootstrap": {
+            deps: ["jquery"]
         },
         lodash: {
             exports: ['_']
         }
     },
-    deps: ['lodash', 'jquery']
+    deps: ['lodash', 'jquery', 'bootstrap']
 });
 
 define([

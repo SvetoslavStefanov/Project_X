@@ -11,18 +11,19 @@ define([], function () {
                     project: {
                         new: 'Създай',
                         destroy: 'Изтрий',
-                        index: 'Проекти',
+                        index: 'Списък Проекти',
                         show: 'Покажи Проект'
                     },
                     infopage: {
                         new: 'Създай',
                         destroy: 'Изтрий',
-                        index: 'Инфо Страници',
+                        index: 'Списък Инфо Страници',
                         show: 'Покажи страница',
                         edit: 'Редактирай Страница'
                     },
                     language: {
-                        new: 'Създай'
+                        new: 'Създай',
+                        index: 'Списък Езици'
                     }
                 },
                 routes: {

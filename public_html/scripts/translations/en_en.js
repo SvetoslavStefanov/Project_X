@@ -11,18 +11,19 @@ define([], function () {
                     project: {
                         new: 'Create',
                         destroy: 'Destroy',
-                        index: 'Projects',
-                        show: 'Show Project'
+                        show: 'Show Project',
+                        index: 'List Projects'
                     },
                     infopage: {
                         new: 'Create',
                         destroy: 'Destroy',
-                        index: 'Info Pages',
+                        index: 'List Info Pages',
                         show: 'Show Page',
                         edit: 'Edit Page'
                     },
                     language: {
-                        new: 'Create'
+                        new: 'Create',
+                        index: 'List Languages'
                     }
                 },
                 routes: {

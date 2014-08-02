@@ -20,7 +20,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
             response = http.post('infoPage/create', params);
 
             response.then(function () {
-                router.navigate('infopage/infoPageIndexAction/created');
+                router.navigate('infoPage/infoPageIndexAction/created');
             });
 
             response.fail(function (data) {

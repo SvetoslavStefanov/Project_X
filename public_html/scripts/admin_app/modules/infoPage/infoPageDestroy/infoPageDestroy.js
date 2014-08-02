@@ -15,7 +15,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/InfoPageContr
 
             response.then(function (response) {
                 if (response.result === true){
-                    router.navigate('infopage/infoPageIndexAction/destroyed');
+                    router.navigate('infoPage/infoPageIndexAction/destroyed');
                 }
             });
 

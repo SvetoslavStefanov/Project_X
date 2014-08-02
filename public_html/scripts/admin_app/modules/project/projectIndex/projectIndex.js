@@ -1,64 +1,69 @@
-define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectController', 'plugins/router'],
-    function (http, app, ko, ProjectController, router) {
-        "use strict";
+define([
+    'plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectController', 'plugins/router'
+], function (http, app, ko, ProjectController, router) {
+    "use strict";
 
-        var actionBoxStatusClasses = {
-            created: 'success',
-            destroyed: 'danger'
+    var actionBoxStatusClasses = {
+        created: 'success',
+        destroyed: 'danger'
+    };
+
+    function ProjectIndex() {
+        this.projects = ko.observableArray([]);
+        this.actionMessage = ko.observable('');
+        this.actionBoxClassName = ko.observable('');
+
+        this.actionMessage.subscribe(function (newValue) {
+            var that = this;
+            if (newValue.length > 0) {
+                setTimeout(function () {
+                    that.actionMessage('');
+                    router.navigate('', { replace: true, trigger: false });
+                }, 4000);
+            }
+        }, this);
+
+        this.compositionComplete = function () {
+          $("h1").carousel();
         };
 
-        function ProjectIndex() {
-            this.projects = ko.observableArray([]);
-            this.actionMessage = ko.observable('');
-            this.actionBoxClassName = ko.observable('');
+        this.activate = function (action) {
+            var that = this,
+                promise = $.Deferred();
 
-            this.actionMessage.subscribe(function (newValue) {
-                var that = this;
-                if (newValue.length > 0) {
-                    setTimeout(function () {
-                        that.actionMessage('');
-                        router.navigate('', { replace: true, trigger: false });
-                    }, 4000);
-                }
-            }, this);
-
-            this.activate = function (action) {
-                var that = this,
-                    promise = $.Deferred();
-
-                http.get('Project/index').then(function (response) {
-                    that.projects(response.projects);
-                    promise.resolve();
-                }).fail(function () {
+            http.get('Project/index').then(function (response) {
+                that.projects(response.projects);
+                promise.resolve();
+            }).fail(function () {
                     promise.resolve();
                 });
 
-                this.setTranslationData();
+            this.setTranslationData();
 
-                if (!_.isUndefined(action)) {
-                    switch (action) {
-                        case 'created':
-                            this.actionMessage(this.currentTranslationData.actionMessage.created);
-                            break;
-                        case 'destroyed':
-                            this.actionMessage(this.currentTranslationData.actionMessage.destroyed);
-                            break;
-                    }
-
-                    if (!_.isUndefined(actionBoxStatusClasses[action])) {
-                        this.actionBoxClassName(actionBoxStatusClasses[action]);
-                    }
+            if (!_.isUndefined(action)) {
+                switch (action) {
+                    case 'created':
+                        this.actionMessage(this.currentTranslationData.actionMessage.created);
+                        break;
+                    case 'destroyed':
+                        this.actionMessage(this.currentTranslationData.actionMessage.destroyed);
+                        break;
                 }
 
-                return promise;
-            };
+                if (!_.isUndefined(actionBoxStatusClasses[action])) {
+                    this.actionBoxClassName(actionBoxStatusClasses[action]);
+                }
+            }
 
-            this.navigateToProjectShow = function (project) {
-                router.navigate('project/show/' + project.id);
-            };
+            return promise;
         };
 
-        ProjectIndex.prototype = new ProjectController();
+        this.navigateToProjectShow = function (project) {
+            router.navigate('project/show/' + project.id);
+        };
+    };
 
-        return new ProjectIndex();
-    });
+    ProjectIndex.prototype = new ProjectController();
+
+    return new ProjectIndex();
+});

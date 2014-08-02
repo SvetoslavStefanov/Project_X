@@ -24,12 +24,12 @@ define([
             var confirmDeletion = confirm(that.currentTranslationData.confirmDeletion);
 
             if (confirmDeletion){
-                router.navigate('infopage/destroy/' + this.id);
+                router.navigate('infoPage/destroy/' + this.id);
             }
         };
 
         this.editPage = function () {
-            router.navigate('infopage/edit/' + this.id);
+            router.navigate('infoPage/edit/' + this.id);
         };
     }
 
