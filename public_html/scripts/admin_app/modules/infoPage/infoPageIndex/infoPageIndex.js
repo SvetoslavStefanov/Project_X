@@ -38,10 +38,10 @@ define([
             if (!_.isUndefined(action)) {
                 switch (action) {
                     case 'created':
-                        this.actionMessage(this.currentTranslationData.created);
+                        this.actionMessage(this.currentTranslationData.actionMessages.created);
                         break;
                     case 'destroyed':
-                        this.actionMessage(this.currentTranslationData.destroyed);
+                        this.actionMessage(this.currentTranslationData.actionMessages.destroyed);
                         break;
                 }
 
