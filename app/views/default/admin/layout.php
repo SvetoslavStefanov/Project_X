@@ -13,6 +13,7 @@
         var backEndConfig = {};
         backEndConfig.language = <?php echo json_encode($languageConfig) ?>;
         backEndConfig.currentUser = <?php echo json_encode($currentUser) ?>;
+        backEndConfig.translations = <?php echo json_encode($translations) ?>;
     </script>
 </head>
 <body class="padTop53 ">

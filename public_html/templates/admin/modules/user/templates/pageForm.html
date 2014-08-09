@@ -1,0 +1,46 @@
+<div class="accordion-body collapse in body">
+    <form class="form-horizontal"  data-bind="submit: saveUser">
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.username"></label>
+
+            <div class="col-lg-8">
+                <input type="text" class="form-control" data-bind="value: skeleton.username, attr:{placeholder: pageFromData.placeholders.username}">
+                <span data-bind="text: errorsByField.username"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.password"></label>
+
+            <div class="col-lg-8">
+                <input type="password"
+                       class="form-control" data-bind="value: skeleton.password, attr:{placeholder: pageFromData.placeholders.password}">
+                <span data-bind="text: errorsByField.password"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.email"></label>
+
+            <div class="col-lg-8">
+                <input type="email" class="form-control" data-bind="value: skeleton.email, attr:{placeholder: pageFromData.placeholders.email}">
+                <span data-bind="text: errorsByField.email"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.selected_lang"></label>
+
+            <div class="col-lg-8">
+                <select class="form-control" data-bind="options: backEndConfig.language.languages,
+                               optionsText: 'full_name',
+                               value: skeleton.selected_lang,
+                               optionsCaption: pageFromData.placeholders.selected_lang,
+                               optionsValue: 'id'
+                               "></select>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-default pull-right" data-bind="value: pageFromData.save">
+    </form>
+</div>

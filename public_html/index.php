@@ -29,9 +29,9 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
     $languageConfig = [];
     $languageConfig['default'] = null;
     $languageConfig['languages'] = [];
-    $langs = $language->findAll();
-
     $currentUser = null;
+
+    $langs = $language->findAll();
 
     foreach ($langs as $lang) {
         $newObj = $lang->attributes;
@@ -53,12 +53,13 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
         }
     }
 
-
     foreach ($languageConfig['languages'] as $lang) {
         if ($lang['id'] == $defaultLangId) {
             $languageConfig['default'] = $lang;
         }
     }
+
+    $translations = json_decode(file_get_contents(('scripts/translations/' . $languageConfig['default']['name'] . '.json')));
 
     require loadLayout();
 }

@@ -35,6 +35,12 @@ define([
                 language: [
                     {route: 'index', title: this.currentTranslationData.subroutes.language.index, moduleId: viewHelper.convertModuleNameToModuleId('languageIndex'), show: true},
                     {route: 'new', title: this.currentTranslationData.subroutes.language.new, moduleId: viewHelper.convertModuleNameToModuleId('languageCreate'), show: true}
+                ],
+                user: [
+                    {route: 'index', title: this.currentTranslationData.subroutes.user.index, moduleId: viewHelper.convertModuleNameToModuleId('userIndex'), show: true},
+                    {route: 'create', title: this.currentTranslationData.subroutes.user.create, moduleId: viewHelper.convertModuleNameToModuleId('userCreate'), show: true},
+                    {route: 'show/:id', title: this.currentTranslationData.subroutes.user.show, moduleId: viewHelper.convertModuleNameToModuleId('userShow'), show: false},
+                    {route: 'edit/:id', title: this.currentTranslationData.subroutes.user.edit, moduleId: viewHelper.convertModuleNameToModuleId('userEdit'), show: false}
                 ]
             };
 
@@ -44,6 +50,7 @@ define([
                 { route: 'infoPage', title: this.currentTranslationData.routes.infopage, nav: true, name: 'infoPage', icon: 'icon-list-alt'},
                 { route: 'contact', title: this.currentTranslationData.routes.contact, moduleId: viewHelper.convertModuleNameToModuleId('contactIndex'), nav: true, name: 'contact', icon: 'icon-envelope-alt'},
                 { route: 'language', title: this.currentTranslationData.routes.language, nav: true, name: 'language', icon: 'icon-font'},
+                { route: 'user', title: this.currentTranslationData.routes.user, nav: true, name: 'user', icon: 'icon-user'},
                 { route: 'sign/signOut', title: this.currentTranslationData.routes.signOut, moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true, icon: 'icon-signout'},
             ];
 

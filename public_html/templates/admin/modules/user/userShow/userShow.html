@@ -1,0 +1,85 @@
+<div class="row" data-bind="foreach: userData">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span data-bind="text: $data.attributes.username"></span>
+                &nbsp;&nbsp; | &nbsp;&nbsp;
+                <span>Светослав Стефанов</span>
+
+                <div style="float: right">
+                    <a class="btn btn-default btn-flat icon-edit"
+                       data-bind="attr: {title: $parent.currentTranslationData.edit}, click: $parent.edit"></a>
+
+                    <a class="btn btn-default btn-flat icon-remove"
+                       data-bind="attr: {title: $parent.currentTranslationData.destroy}, click: $parent.destroy">&nbsp;</a>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <div class="col-lg-4">
+                        <img data-src="holder.js/100%x200" alt="100%x200"
+                             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDIiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMSIgeT0iMTAwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjE1cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjQyeDIwMDwvdGV4dD48L3N2Zz4="
+                             style="height: 200px; width: 100%; display: block;">
+                </div>
+
+                <div class="col-lg-4">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td style="border-top: none; ">
+                                        <strong>Email:</strong>
+                                        <span data-bind="text: $data.attributes.email"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Language:</strong>
+                                        English
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Last Login:</strong>
+                                        07.08.2014
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+
+                <div class="col-lg-4">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td style="border-top: none; ">
+                                        <strong>Added Articles:</strong>
+                                        3
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Answered mails:</strong>
+                                        2
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Comments:</strong>
+                                        3
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+
+                <div class="col-lg-12">
+                        <p>Here we will show user's info when there is any field in DB for this purpose !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
