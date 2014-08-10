@@ -8,7 +8,7 @@ class admin_UserController extends admin_BaseController {
 
     var $before = array(
         'setUser' => array('index', 'create'),
-        'getUser' => array('update', 'destroy', 'show', 'edit'),
+        'getUser' => array('update', 'destroy', 'show', 'edit', 'changeLanguage'),
     );
 
     protected function setUser() {
@@ -66,5 +66,11 @@ class admin_UserController extends admin_BaseController {
         $this->user->attributes['password'] = '';
         $this->data['user'] = $this->user;
         $this->data['user']->attributes['info']  = htmlspecialchars_decode($this->data['user']->attributes['info'], ENT_QUOTES);
+    }
+
+    public function changeLanguageAction() {
+        $this->user->selected_lang = $_POST['lang_id'];//TODO: secure this - make call to DB to check if there is any lang with this id
+        $this->user->save();
+        $this->data['result'] = true;
     }
 }

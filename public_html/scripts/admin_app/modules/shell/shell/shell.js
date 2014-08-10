@@ -1,6 +1,6 @@
 define([
-    'plugins/router', 'helper/viewHelper', 'knockout', 'controllers/ShellController'
-], function (router, viewHelper, ko, ShellController) {
+    'plugins/router', 'helper/viewHelper', 'knockout', 'controllers/ShellController', 'plugins/http'
+], function (router, viewHelper, ko, ShellController, http) {
         "use strict";
 
         function Shell() {
@@ -49,7 +49,7 @@ define([
                 { route: 'sign/signIn', title: this.currentTranslationData.routes.signIn, moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
                 { route: 'infoPage', title: this.currentTranslationData.routes.infopage, nav: true, name: 'infoPage', icon: 'icon-list-alt'},
                 { route: 'contact', title: this.currentTranslationData.routes.contact, moduleId: viewHelper.convertModuleNameToModuleId('contactIndex'), nav: true, name: 'contact', icon: 'icon-envelope-alt'},
-                { route: 'language', title: this.currentTranslationData.routes.language, nav: true, name: 'language', icon: 'icon-font'},
+                { route: 'language', title: this.currentTranslationData.routes.language, nav: true, name: 'language', icon: ' icon-flag'},
                 { route: 'user', title: this.currentTranslationData.routes.user, nav: true, name: 'user', icon: 'icon-user'},
                 { route: 'sign/signOut', title: this.currentTranslationData.routes.signOut, moduleId: viewHelper.convertModuleNameToModuleId('signOut'), nav: true, icon: 'icon-signout'},
             ];
@@ -163,6 +163,14 @@ define([
                 _.each(router.navigationModel(), function (item) {
                     item.isActive(false);
                     item.expandedSubMenu(false);
+                });
+            };
+
+            this.changeLanguage = function () {
+                http.post('user/changeLanguage', {id: backEndConfig.currentUser.id, lang_id: this.id}).then(function(response) {
+                    if (response.result === true) {
+                        location.reload();
+                    }
                 });
             };
         };

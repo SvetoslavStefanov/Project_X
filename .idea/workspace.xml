@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="440ec033-42e3-422c-ac19-f4e04cb4b9e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Sign.php" afterPath="$PROJECT_DIR$/app/models/Sign.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/SignController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/SignController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/admin/User.php" afterPath="$PROJECT_DIR$/app/models/admin/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/UserController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json" afterPath="$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/translations/en_en.json" afterPath="$PROJECT_DIR$/public_html/scripts/translations/en_en.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/admin/modules/shell/shell/shell.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/shell/shell/shell.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Project_X.iws" />
@@ -44,19 +37,99 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bg_bg.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bg_bg.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="44" selection-start="4940" selection-end="4940" vertical-scroll-proportion="1.0425926" vertical-offset="3023" max-vertical-offset="3938">
+            <state line="167" column="17" selection-start="5002" selection-end="5002" vertical-scroll-proportion="-21.0" vertical-offset="3023" max-vertical-offset="3938">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-5.387097" vertical-offset="647" max-vertical-offset="1650">
+            <state line="73" column="37" selection-start="2401" selection-end="2401" vertical-scroll-proportion="1.2857143" vertical-offset="913" max-vertical-offset="1782">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shell.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/shell/shell/shell.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="112" selection-start="1668" selection-end="1668" vertical-scroll-proportion="-19.516129" vertical-offset="209" max-vertical-offset="2398">
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userEdit.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userEdit/userEdit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="56" selection-start="1113" selection-end="1146" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1364">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shell.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="171" column="42" selection-start="9476" selection-end="9476" vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="1144">
+              <folding>
+                <element signature="e#424#3898#0" expanded="false" />
+                <element signature="e#451#1384#0" expanded="false" />
+                <element signature="e#1412#2756#0" expanded="false" />
+                <element signature="e#1434#1627#0" expanded="false" />
+                <element signature="e#1649#1839#0" expanded="false" />
+                <element signature="e#1861#2056#0" expanded="false" />
+                <element signature="e#2078#2273#0" expanded="false" />
+                <element signature="e#2295#2511#0" expanded="false" />
+                <element signature="e#2533#2737#0" expanded="false" />
+                <element signature="e#2784#3155#0" expanded="false" />
+                <element signature="e#3179#3884#0" expanded="false" />
+                <element signature="e#3927#5106#0" expanded="false" />
+                <element signature="e#5176#5524#0" expanded="false" />
+                <element signature="e#5252#5317#0" expanded="false" />
+                <element signature="e#5323#5510#0" expanded="false" />
+                <element signature="e#5420#5492#0" expanded="false" />
+                <element signature="e#5574#5734#0" expanded="false" />
+                <element signature="e#5777#6261#0" expanded="false" />
+                <element signature="e#6010#6245#0" expanded="false" />
+                <element signature="e#6070#6227#0" expanded="false" />
+                <element signature="e#6308#7315#0" expanded="false" />
+                <element signature="e#6451#6954#0" expanded="false" />
+                <element signature="e#6782#6856#0" expanded="false" />
+                <element signature="e#7020#7084#0" expanded="false" />
+                <element signature="e#7129#7301#0" expanded="false" />
+                <element signature="e#7197#7283#0" expanded="false" />
+                <element signature="e#7364#8073#0" expanded="false" />
+                <element signature="e#7483#8011#0" expanded="false" />
+                <element signature="e#7556#7993#0" expanded="false" />
+                <element signature="e#7782#7912#0" expanded="false" />
+                <element signature="e#8121#8331#0" expanded="false" />
+                <element signature="e#8176#8244#0" expanded="false" />
+                <element signature="e#8250#8317#0" expanded="false" />
+                <element signature="e#8381#8687#0" expanded="false" />
+                <element signature="e#8441#8597#0" expanded="false" />
+                <element signature="e#8603#8673#0" expanded="false" />
+                <element signature="e#8759#8955#0" expanded="false" />
+                <element signature="e#9009#9202#0" expanded="false" />
+                <element signature="e#9076#9186#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signIn.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/sign/signIn/signIn.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="20" selection-start="1319" selection-end="1344" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1210">
               <folding />
             </state>
           </provider>
@@ -73,61 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/admin/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="74" selection-start="947" selection-end="947" vertical-scroll-proportion="-10.354838" vertical-offset="317" max-vertical-offset="1694">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pageForm.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="37" selection-start="2848" selection-end="2852" vertical-scroll-proportion="-18.870968" vertical-offset="691" max-vertical-offset="1540">
+            <state line="40" column="32" selection-start="1909" selection-end="1909" vertical-scroll-proportion="-6.096774" vertical-offset="691" max-vertical-offset="1540">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sign.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Sign.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="22" selection-start="2066" selection-end="2066" vertical-scroll-proportion="-18.451612" vertical-offset="0" max-vertical-offset="880">
-              <folding>
-                <element signature="n#registerValidate#0;n#Sign#0;n#!!top" expanded="false" />
-                <element signature="n#loginValidate#0;n#Sign#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userShow.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="67" selection-start="4041" selection-end="4041" vertical-scroll-proportion="-18.451612" vertical-offset="1166" max-vertical-offset="1980">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="19" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/admin/SignController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="35" selection-start="809" selection-end="809" vertical-scroll-proportion="-16.741936" vertical-offset="185" max-vertical-offset="1276">
-              <folding>
-                <element signature="n#outAction#0;n#admin_SignController#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -152,8 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public_html/index.php" />
-        <option value="$PROJECT_DIR$/public_html/scripts/admin_app/main.js" />
         <option value="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userEdit/userEdit.js" />
         <option value="$PROJECT_DIR$/app/lib/ActiveRecord.php" />
         <option value="$PROJECT_DIR$/app/lib/SqlHandler.php" />
@@ -165,9 +186,11 @@
         <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" />
         <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" />
         <option value="$PROJECT_DIR$/app/models/admin/User.php" />
-        <option value="$PROJECT_DIR$/app/controllers/admin/UserController.php" />
         <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html" />
         <option value="$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/UserController.php" />
+        <option value="$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js" />
+        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/shell/shell/shell.html" />
       </list>
     </option>
   </component>
@@ -910,7 +933,11 @@
       <created>1407615501746</created>
       <updated>1407615501746</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Add new fields to users. Make proper update of password field. Show new data.">
+      <created>1407692402102</created>
+      <updated>1407692402102</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -937,22 +964,22 @@
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32392776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32352942" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295711" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.49973643" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5002636" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999474" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21558164" sideWeight="0.67081445" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999474" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5002636" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32731378" sideWeight="0.49973643" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -989,7 +1016,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Remove form validation from activeRecord.&#10;Rename formValidation plugin to Validator. Since we forms aren't handled from PHP anymore we have to change the name." />
     <MESSAGE value="Remove unnecessary files." />
     <MESSAGE value="Fix signing in." />
     <MESSAGE value="Implement sub menu navigation. We need better styling." />
@@ -1014,7 +1040,8 @@
     <MESSAGE value="Fix: php warning for unsuported method." />
     <MESSAGE value="Fix: Loading infoPage show and project index.  I also delete the DB by mistake and here is the new one." />
     <MESSAGE value="Move getting translation's data to back-end.&#10;Implement user create / edit, list users, show user." />
-    <option name="LAST_COMMIT_MESSAGE" value="Move getting translation's data to back-end.&#10;Implement user create / edit, list users, show user." />
+    <MESSAGE value="Add new fields to users. Make proper update of password field. Show new data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new fields to users. Make proper update of password field. Show new data." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1022,43 +1049,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Plugins/Validator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="45" selection-start="6567" selection-end="6567" vertical-scroll-proportion="0.0" vertical-offset="3916" max-vertical-offset="6512">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/SqlHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="37" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/SqlWriter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="5" selection-start="1041" selection-end="1041" vertical-scroll-proportion="-11.354838" vertical-offset="440" max-vertical-offset="1892">
-          <folding>
-            <element signature="n#insert#0;n#SqlWriter#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/admin/Sign.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userCreate/userCreate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/ActiveRecord.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="94" column="37" selection-start="2305" selection-end="2305" vertical-scroll-proportion="-16.32258" vertical-offset="572" max-vertical-offset="2552">
@@ -1120,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="37" selection-start="2848" selection-end="2852" vertical-scroll-proportion="-18.870968" vertical-offset="691" max-vertical-offset="1540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="67" selection-start="4041" selection-end="4041" vertical-scroll-proportion="-18.451612" vertical-offset="1166" max-vertical-offset="1980">
@@ -1137,22 +1120,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/admin/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="74" selection-start="947" selection-end="947" vertical-scroll-proportion="-10.354838" vertical-offset="317" max-vertical-offset="1694">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/SignController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="35" selection-start="809" selection-end="809" vertical-scroll-proportion="-16.741936" vertical-offset="185" max-vertical-offset="1276">
-          <folding>
-            <element signature="n#outAction#0;n#admin_SignController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-5.387097" vertical-offset="647" max-vertical-offset="1650">
           <folding />
         </state>
       </provider>
@@ -1173,9 +1140,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="301" column="1" selection-start="5474" selection-end="5474" vertical-scroll-proportion="0.2207944" vertical-offset="6433" max-vertical-offset="58476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="44" selection-start="4940" selection-end="4940" vertical-scroll-proportion="1.0425926" vertical-offset="3023" max-vertical-offset="3938">
+        <state line="167" column="17" selection-start="5002" selection-end="5002" vertical-scroll-proportion="-21.0" vertical-offset="3023" max-vertical-offset="3938">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userEdit/userEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="56" selection-start="1113" selection-end="1146" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="1364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/sign/signIn/signIn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="20" selection-start="1319" selection-end="1344" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/SignController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="35" selection-start="809" selection-end="809" vertical-scroll-proportion="0.5466667" vertical-offset="253" max-vertical-offset="1276">
+          <folding>
+            <element signature="n#outAction#0;n#admin_SignController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="42" selection-start="9476" selection-end="9476" vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="1144">
+          <folding>
+            <element signature="e#424#3898#0" expanded="false" />
+            <element signature="e#451#1384#0" expanded="false" />
+            <element signature="e#1412#2756#0" expanded="false" />
+            <element signature="e#1434#1627#0" expanded="false" />
+            <element signature="e#1649#1839#0" expanded="false" />
+            <element signature="e#1861#2056#0" expanded="false" />
+            <element signature="e#2078#2273#0" expanded="false" />
+            <element signature="e#2295#2511#0" expanded="false" />
+            <element signature="e#2533#2737#0" expanded="false" />
+            <element signature="e#2784#3155#0" expanded="false" />
+            <element signature="e#3179#3884#0" expanded="false" />
+            <element signature="e#3927#5106#0" expanded="false" />
+            <element signature="e#5176#5524#0" expanded="false" />
+            <element signature="e#5252#5317#0" expanded="false" />
+            <element signature="e#5323#5510#0" expanded="false" />
+            <element signature="e#5420#5492#0" expanded="false" />
+            <element signature="e#5574#5734#0" expanded="false" />
+            <element signature="e#5777#6261#0" expanded="false" />
+            <element signature="e#6010#6245#0" expanded="false" />
+            <element signature="e#6070#6227#0" expanded="false" />
+            <element signature="e#6308#7315#0" expanded="false" />
+            <element signature="e#6451#6954#0" expanded="false" />
+            <element signature="e#6782#6856#0" expanded="false" />
+            <element signature="e#7020#7084#0" expanded="false" />
+            <element signature="e#7129#7301#0" expanded="false" />
+            <element signature="e#7197#7283#0" expanded="false" />
+            <element signature="e#7364#8073#0" expanded="false" />
+            <element signature="e#7483#8011#0" expanded="false" />
+            <element signature="e#7556#7993#0" expanded="false" />
+            <element signature="e#7782#7912#0" expanded="false" />
+            <element signature="e#8121#8331#0" expanded="false" />
+            <element signature="e#8176#8244#0" expanded="false" />
+            <element signature="e#8250#8317#0" expanded="false" />
+            <element signature="e#8381#8687#0" expanded="false" />
+            <element signature="e#8441#8597#0" expanded="false" />
+            <element signature="e#8603#8673#0" expanded="false" />
+            <element signature="e#8759#8955#0" expanded="false" />
+            <element signature="e#9009#9202#0" expanded="false" />
+            <element signature="e#9076#9186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="32" selection-start="1909" selection-end="1909" vertical-scroll-proportion="-6.096774" vertical-offset="691" max-vertical-offset="1540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/shell/shell/shell.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="112" selection-start="1668" selection-end="1668" vertical-scroll-proportion="-19.516129" vertical-offset="209" max-vertical-offset="2398">
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="37" selection-start="2401" selection-end="2401" vertical-scroll-proportion="1.2857143" vertical-offset="913" max-vertical-offset="1782">
           <folding />
         </state>
       </provider>
