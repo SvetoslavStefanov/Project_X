@@ -154,13 +154,17 @@
                 "username": "Enter username",
                 "email": "Enter valid email",
                 "selected_lang": "Enter language",
-                "password": "Enter password"
+                "password": "Enter password",
+                "real_name": "Enter real name",
+                "info": "Enter user's description"
             },
             "labels": {
                 "username": "Username",
                 "password": "Password",
                 "email": "Email",
-                "selected_lang": "User's default language"
+                "selected_lang": "User's default language",
+                "real_name": "Real name",
+                "info": "User's description"
             },
             "save": "Save"
         },

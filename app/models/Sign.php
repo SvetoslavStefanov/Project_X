@@ -12,7 +12,10 @@ class Sign extends ActiveRecord
         'username',
         'password',
         'email',
-        'selected_lang'
+        'selected_lang',
+        'real_name',
+        'last_login',
+        'info',
     );
 
     protected function registerValidate ()
@@ -61,6 +64,11 @@ class Sign extends ActiveRecord
         }
 
         return false;
+    }
+
+    public function setAfterLoginData () {
+        $this->last_login = time();
+        $this->save();
     }
 
     public static function crypty ($username, $password)

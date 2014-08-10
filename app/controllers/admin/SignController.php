@@ -31,6 +31,7 @@ class admin_SignController extends admin_BaseController
 
         if ($this->sign = $this->sign->loginValidate($_POST)) {
             $this->setUserCookie();
+            $this->sign->setAfterLoginData();
             $this->data['isUserLogged'] = true;
             $this->sign->attributes['password'] = 'no way !';
             $this->data['currentUser'] = $this->sign;

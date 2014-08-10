@@ -1,18 +1,28 @@
 <div class="accordion-body collapse in body">
-    <form class="form-horizontal"  data-bind="submit: saveUser">
+    <form class="form-horizontal" data-bind="submit: saveUser">
         <div class="form-group">
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.username"></label>
 
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <input type="text" class="form-control" data-bind="value: skeleton.username, attr:{placeholder: pageFromData.placeholders.username}">
                 <span data-bind="text: errorsByField.username"></span>
             </div>
         </div>
 
         <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.real_name"></label>
+
+            <div class="col-lg-4">
+                <input type="text"
+                       class="form-control" data-bind="value: skeleton.real_name, attr:{placeholder: pageFromData.placeholders.real_name}">
+                <span data-bind="text: errorsByField.real_name"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.password"></label>
 
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <input type="password"
                        class="form-control" data-bind="value: skeleton.password, attr:{placeholder: pageFromData.placeholders.password}">
                 <span data-bind="text: errorsByField.password"></span>
@@ -22,7 +32,7 @@
         <div class="form-group">
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.email"></label>
 
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <input type="email" class="form-control" data-bind="value: skeleton.email, attr:{placeholder: pageFromData.placeholders.email}">
                 <span data-bind="text: errorsByField.email"></span>
             </div>
@@ -31,13 +41,22 @@
         <div class="form-group">
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.selected_lang"></label>
 
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <select class="form-control" data-bind="options: backEndConfig.language.languages,
                                optionsText: 'full_name',
                                value: skeleton.selected_lang,
                                optionsCaption: pageFromData.placeholders.selected_lang,
                                optionsValue: 'id'
                                "></select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.info"></label>
+
+            <div class="col-lg-4">
+                <textarea class="form-control" rows="3" data-bind="value: skeleton.info, attr:{placeholder: pageFromData.placeholders.info}"></textarea>
+                <span data-bind="text: errorsByField.info"></span>
             </div>
         </div>
 

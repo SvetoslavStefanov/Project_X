@@ -4,7 +4,7 @@
             <div class="panel-heading">
                 <span data-bind="text: $data.attributes.username"></span>
                 &nbsp;&nbsp; | &nbsp;&nbsp;
-                <span>Светослав Стефанов</span>
+                <span data-bind="text: $data.attributes.real_name"></span>
 
                 <div style="float: right">
                     <a class="btn btn-default btn-flat icon-edit"
@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>
                                         <strong>Last Login:</strong>
-                                        07.08.2014
+                                        <span data-bind="text: $data.attributes.last_login_full"></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="col-lg-12">
-                        <p>Here we will show user's info when there is any field in DB for this purpose !</p>
+                        <p data-bind="html: $data.attributes.info"></p>
                 </div>
             </div>
         </div>

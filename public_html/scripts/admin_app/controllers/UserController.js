@@ -7,10 +7,11 @@ define(['knockout', 'controllers/BaseController'], function (ko, BaseController)
     function UserController() {
         this.skeleton = {
             username: '',
-//            info: ko.observable(),
+            info: '',
             password: '',
             email: '',
-            selected_lang: ''
+            selected_lang: '',
+            real_name: ''
         };
 
         this.errorsByField = {};

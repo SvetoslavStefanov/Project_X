@@ -2,15 +2,15 @@
 
 <div class="row" data-bind="foreach: users">
     <div class="col-sm-6 col-md-3">
-        <div class="thumbnail">
+        <div class="thumbnail"  style="height: 420px">
             <img data-src="holder.js/100%x200" alt="100%x200"
                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDIiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMSIgeT0iMTAwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjE1cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjQyeDIwMDwvdGV4dD48L3N2Zz4="
                  style="height: 200px; width: 100%; display: block;">
 
             <div class="caption">
-                <h3 data-bind="text: $data.attributes.username"></h3>
+                <h3 data-bind="text: $data.attributes.real_name"></h3>
 
-                <p>Here we will show user's info when there is any field in DB for this purpose !</p>
+                <p data-bind="html: $data.attributes.info"></p>
 
                 <p>
                     <a data-bind="click: $parent.openUserProfile, text: $parent.currentTranslationData.buttons.viewMore" class="btn btn-primary"></a>

@@ -24,7 +24,8 @@ class admin_UserController extends admin_BaseController {
     }
 
     public function updateAction() {
-        unset($_POST['password']);
+        $this->user->originalPassword = $this->user->password;
+
         if ($this->user->save($_POST)) {
             $this->data['result'] = true;
             $this->user->attributes['password'] = 'no way !';
@@ -53,10 +54,17 @@ class admin_UserController extends admin_BaseController {
     public function showAction() {
         $this->user->attributes['password'] = '';
         $this->data['user'] = $this->user;
+        if ($this->user->attributes['last_login'] == 0) {
+            $this->user->attributes['last_login_full'] = 'Never';
+        } else {
+            $this->user->attributes['last_login_full'] = date('d.m.Y H:i', $this->user->attributes['last_login']);
+        }
+
     }
 
     public function editAction() {
         $this->user->attributes['password'] = '';
         $this->data['user'] = $this->user;
+        $this->data['user']->attributes['info']  = htmlspecialchars_decode($this->data['user']->attributes['info'], ENT_QUOTES);
     }
 }

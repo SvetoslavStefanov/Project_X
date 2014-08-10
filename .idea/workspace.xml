@@ -2,130 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="440ec033-42e3-422c-ac19-f4e04cb4b9e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userCreate/userCreate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userEdit/userEdit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userEdit/userEdit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userIndex/userIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userShow/userShow.js" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\app\controllers\admin\TranslationController.php" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\app\models\admin\Translation.php" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\admin_app\controllers\TranslationController.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\admin_app\modules\translation\translationCreate\translationCreate.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\admin_app\modules\translation\translationEdit\translationEdit.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\admin_app\modules\translation\translationIndex\translationIndex.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\ar.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\ca.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\cs.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\cy.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\de.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\el.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\eo.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\es.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\et.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\fa.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\fi.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\fr.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\gl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\he.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\hr.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\hu.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\id.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\it.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\ja.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\km.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\ku.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\lv.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\nb.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\nl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\no.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\pl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\pt.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\ru.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\si.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\sk.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\sl.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\sq.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\sv.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\th.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\tr.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\tt.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\ug.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\uk.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\vi.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\lib\ckeditor\plugins\specialchar\dialogs\lang\zh.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Sign.php" afterPath="$PROJECT_DIR$/app/models/Sign.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/SignController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/SignController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/admin/User.php" afterPath="$PROJECT_DIR$/app/models/admin/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/UserController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/index.php" afterPath="$PROJECT_DIR$/public_html/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/default/admin/layout.php" afterPath="$PROJECT_DIR$/app/views/default/admin/layout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/admin_app/main.js" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js" afterPath="$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json" afterPath="$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/scripts/translations/en_en.json" afterPath="$PROJECT_DIR$/public_html/scripts/translations/en_en.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\translations\bg_bg.js" afterPath="$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json" />
-      <change type="MOVED" beforePath="F:\xampp\htdocs\Project_X\public_html\scripts\translations\en_en.js" afterPath="$PROJECT_DIR$/public_html/scripts/translations/en_en.json" />
-      <change type="MOVED" beforePath="F:\xampp\htdocs\Project_X\public_html\templates\admin\modules\translation\translationCreate\translationCreate.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" />
-      <change type="MOVED" beforePath="F:\xampp\htdocs\Project_X\public_html\templates\admin\modules\translation\translationIndex\translationIndex.html" afterPath="$PROJECT_DIR$/public_html/templates/admin/modules/user/userCreate/userCreate.html" />
     </list>
     <ignored path="Project_X.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -151,145 +38,37 @@
       <file leaf-file-name="en_en.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/en_en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="8" selection-start="4285" selection-end="4789" vertical-scroll-proportion="-13.4838705" vertical-offset="0" max-vertical-offset="638">
-              <folding>
-                <element signature="n#!!block;n#project#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infopage#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#language#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#routes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actionMessages#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#buttons#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#projectShow#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#placeholders#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#labels#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actionMessages#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#buttons#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#labels#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infoPageShow#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actionMessages#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actions#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#tableHeaders#0;n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#placeholders#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#labels#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#placeholders#0;n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#buttons#0;n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#pageFromTemplate#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#placeholders#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#labels#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#userShow#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-              </folding>
+            <state line="27" column="19" selection-start="816" selection-end="816" vertical-scroll-proportion="-19.161291" vertical-offset="0" max-vertical-offset="4026">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bg_bg.json" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bg_bg.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="43" selection-start="4503" selection-end="4503" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="990">
-              <folding>
-                <element signature="n#!!block;n#project#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infopage#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#language#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#routes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actionMessages#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#buttons#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#projectShow#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#placeholders#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#labels#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actionMessages#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#buttons#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#labels#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#infoPageShow#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actionMessages#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#actions#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#tableHeaders#0;n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#placeholders#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#labels#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#placeholders#0;n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#buttons#0;n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="43" selection-start="1059" selection-end="1059" vertical-scroll-proportion="-4.677419" vertical-offset="713" max-vertical-offset="1540">
+            <state line="163" column="44" selection-start="4940" selection-end="4940" vertical-scroll-proportion="1.0425926" vertical-offset="3023" max-vertical-offset="3938">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shell.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="33" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="3938">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/default/admin/layout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="71" selection-start="618" selection-end="633" vertical-scroll-proportion="-9.225806" vertical-offset="0" max-vertical-offset="792">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userCreate.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userCreate/userCreate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="990">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userEdit.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userEdit/userEdit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="36" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="1364">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="18" selection-start="667" selection-end="667" vertical-scroll-proportion="0.7574074" vertical-offset="185" max-vertical-offset="1474">
+            <state line="37" column="0" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-5.387097" vertical-offset="647" max-vertical-offset="1650">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userIndex.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="53" selection-start="287" selection-end="287" vertical-scroll-proportion="-2.8387096" vertical-offset="0" max-vertical-offset="572">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -297,8 +76,58 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/admin/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="18" selection-start="54" selection-end="54" vertical-scroll-proportion="-1.1290323" vertical-offset="53" max-vertical-offset="1408">
+            <state line="29" column="74" selection-start="947" selection-end="947" vertical-scroll-proportion="-10.354838" vertical-offset="317" max-vertical-offset="1694">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pageForm.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="37" selection-start="2848" selection-end="2852" vertical-scroll-proportion="-18.870968" vertical-offset="691" max-vertical-offset="1540">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sign.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Sign.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="22" selection-start="2066" selection-end="2066" vertical-scroll-proportion="-18.451612" vertical-offset="0" max-vertical-offset="880">
+              <folding>
+                <element signature="n#registerValidate#0;n#Sign#0;n#!!top" expanded="false" />
+                <element signature="n#loginValidate#0;n#Sign#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userShow.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="67" selection-start="4041" selection-end="4041" vertical-scroll-proportion="-18.451612" vertical-offset="1166" max-vertical-offset="1980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="19" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/admin/SignController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="35" selection-start="809" selection-end="809" vertical-scroll-proportion="-16.741936" vertical-offset="185" max-vertical-offset="1276">
+              <folding>
+                <element signature="n#outAction#0;n#admin_SignController#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -323,21 +152,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/userEdit/userEdit.html" />
-        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/userCreate/userCreate.html" />
-        <option value="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userShow/userShow.js" />
-        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" />
-        <option value="$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js" />
-        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" />
-        <option value="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userCreate/userCreate.js" />
-        <option value="$PROJECT_DIR$/public_html/scripts/translations/en_en.js" />
-        <option value="$PROJECT_DIR$/app/views/default/admin/layout.php" />
         <option value="$PROJECT_DIR$/public_html/index.php" />
         <option value="$PROJECT_DIR$/public_html/scripts/admin_app/main.js" />
-        <option value="$PROJECT_DIR$/app/models/admin/User.php" />
         <option value="$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userEdit/userEdit.js" />
-        <option value="$PROJECT_DIR$/app/controllers/admin/UserController.php" />
+        <option value="$PROJECT_DIR$/app/lib/ActiveRecord.php" />
+        <option value="$PROJECT_DIR$/app/lib/SqlHandler.php" />
+        <option value="$PROJECT_DIR$/app/lib/SqlWriter.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/SignController.php" />
+        <option value="$PROJECT_DIR$/app/models/Sign.php" />
+        <option value="$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js" />
         <option value="$PROJECT_DIR$/public_html/scripts/translations/en_en.json" />
+        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html" />
+        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html" />
+        <option value="$PROJECT_DIR$/app/models/admin/User.php" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/UserController.php" />
+        <option value="$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html" />
         <option value="$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json" />
       </list>
     </option>
@@ -884,17 +713,17 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="266" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1043" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1048" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1048" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1043" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="269" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="264" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1077,7 +906,11 @@
       <created>1406373210767</created>
       <updated>1406373210767</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Move getting translation's data to back-end.&#10;Implement user create / edit, list users, show user.">
+      <created>1407615501746</created>
+      <updated>1407615501746</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1141,9 +974,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24866596" sideWeight="0.67081445" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1156,7 +989,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fix pushing to array, the array should be replaced every time." />
     <MESSAGE value="Remove form validation from activeRecord.&#10;Rename formValidation plugin to Validator. Since we forms aren't handled from PHP anymore we have to change the name." />
     <MESSAGE value="Remove unnecessary files." />
     <MESSAGE value="Fix signing in." />
@@ -1181,7 +1013,8 @@
     <MESSAGE value="Introduce CKEditor to the project. Now Infopages can be designed better" />
     <MESSAGE value="Fix: php warning for unsuported method." />
     <MESSAGE value="Fix: Loading infoPage show and project index.  I also delete the DB by mistake and here is the new one." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Loading infoPage show and project index.  I also delete the DB by mistake and here is the new one." />
+    <MESSAGE value="Move getting translation's data to back-end.&#10;Implement user create / edit, list users, show user." />
+    <option name="LAST_COMMIT_MESSAGE" value="Move getting translation's data to back-end.&#10;Implement user create / edit, list users, show user." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1189,183 +1022,160 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/init.js">
+    <entry file="file://$PROJECT_DIR$/app/Plugins/Validator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="4315" selection-end="4315" vertical-scroll-proportion="0.71794873" vertical-offset="1958" max-vertical-offset="2816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/boot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="23" selection-start="1026" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="726" max-vertical-offset="1298">
+        <state line="178" column="45" selection-start="6567" selection-end="6567" vertical-scroll-proportion="0.0" vertical-offset="3916" max-vertical-offset="6512">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/json.php">
+    <entry file="file://$PROJECT_DIR$/app/lib/SqlHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="36" selection-start="965" selection-end="965" vertical-scroll-proportion="0.3458283" vertical-offset="462" max-vertical-offset="4730">
+        <state line="7" column="37" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="2618">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/controllers/BaseController.js">
+    <entry file="file://$PROJECT_DIR$/app/lib/SqlWriter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2090">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="12" selection-start="311" selection-end="311" vertical-scroll-proportion="0.33333334" vertical-offset="0" max-vertical-offset="858">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="43" selection-start="1059" selection-end="1059" vertical-scroll-proportion="-4.677419" vertical-offset="713" max-vertical-offset="1540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/shell/shell/shell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="3938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userCreate/userCreate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="990">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.71825874" vertical-offset="594" max-vertical-offset="5522">
+        <state line="36" column="5" selection-start="1041" selection-end="1041" vertical-scroll-proportion="-11.354838" vertical-offset="440" max-vertical-offset="1892">
           <folding>
-            <marker date="1397824075578" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1397824075578" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1397824075578" expanded="false" signature="-1:-1" placeholder="..." />
+            <element signature="n#insert#0;n#SqlWriter#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/modules/user/userEdit/userEdit.js">
+    <entry file="file://$PROJECT_DIR$/app/models/admin/Sign.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="36" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="1364">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userCreate/userCreate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/ActiveRecord.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="37" selection-start="2305" selection-end="2305" vertical-scroll-proportion="-16.32258" vertical-offset="572" max-vertical-offset="2552">
+          <folding>
+            <element signature="n#__construct#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#388#482#0" expanded="false" />
+            <element signature="n#__isset#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="n#__get#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#1087#1150#0" expanded="false" />
+            <element signature="n#isNew#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="n#validate#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#1278#1406#0" expanded="false" />
+            <element signature="n#isValid#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#1691#1845#0" expanded="false" />
+            <element signature="e#2769#2914#0" expanded="false" />
+            <element signature="n#beforeSave#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#2970#3050#0" expanded="false" />
+            <element signature="n#afterSave#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#3105#3174#0" expanded="false" />
+            <element signature="n#beforeDestroy#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#3233#3294#0" expanded="false" />
+            <element signature="n#destroy#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#3558#3657#0" expanded="false" />
+            <element signature="n#count#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#3780#3896#0" expanded="false" />
+            <element signature="n#exists#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#4015#4158#0" expanded="false" />
+            <element signature="n#get#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#4548#4642#0" expanded="false" />
+            <element signature="n#findById#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#4767#4886#0" expanded="false" />
+            <element signature="n#find#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#5167#5292#0" expanded="false" />
+            <element signature="n#findAll#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#5391#5515#0" expanded="false" />
+            <element signature="e#5553#5657#0" expanded="false" />
+            <element signature="n#destroyAll#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+            <element signature="e#5731#5819#0" expanded="false" />
+            <element signature="e#5831#5945#0" expanded="false" />
+            <element signature="n#buildFromRow#0;n#ActiveRecord#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Sign.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="22" selection-start="2066" selection-end="2066" vertical-scroll-proportion="-18.451612" vertical-offset="0" max-vertical-offset="880">
+          <folding>
+            <element signature="n#registerValidate#0;n#Sign#0;n#!!top" expanded="false" />
+            <element signature="n#loginValidate#0;n#Sign#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/scripts/admin_app/controllers/UserController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="19" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1056">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/templates/pageForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="37" selection-start="2848" selection-end="2852" vertical-scroll-proportion="-18.870968" vertical-offset="691" max-vertical-offset="1540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userShow/userShow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="67" selection-start="4041" selection-end="4041" vertical-scroll-proportion="-18.451612" vertical-offset="1166" max-vertical-offset="1980">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/admin/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="54" selection-end="54" vertical-scroll-proportion="-1.1290323" vertical-offset="53" max-vertical-offset="1408">
+        <state line="29" column="74" selection-start="947" selection-end="947" vertical-scroll-proportion="-10.354838" vertical-offset="317" max-vertical-offset="1694">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/en_en.json">
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/SignController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="8" selection-start="4285" selection-end="4789" vertical-scroll-proportion="-13.4838705" vertical-offset="0" max-vertical-offset="638">
+        <state line="32" column="35" selection-start="809" selection-end="809" vertical-scroll-proportion="-16.741936" vertical-offset="185" max-vertical-offset="1276">
           <folding>
-            <element signature="n#!!block;n#project#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infopage#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#language#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#routes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actionMessages#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#buttons#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#projectShow#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#placeholders#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#labels#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actionMessages#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#buttons#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#labels#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infoPageShow#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actionMessages#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actions#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#tableHeaders#0;n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#placeholders#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#labels#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#placeholders#0;n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#buttons#0;n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#pageFromTemplate#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#placeholders#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#labels#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#userShow#0;n#!!block;n#user#0;n#!!top" expanded="false" />
+            <element signature="n#outAction#0;n#admin_SignController#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="43" selection-start="4503" selection-end="4503" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="990">
-          <folding>
-            <element signature="n#!!block;n#project#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infopage#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#language#0;n#!!block;n#subroutes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#routes#0;n#!!block;n#shell#0;n#!!block;n#shell#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actionMessages#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#buttons#0;n#!!block;n#projectIndex#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#projectShow#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#placeholders#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#labels#0;n#!!block;n#projectCreate#0;n#!!block;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actionMessages#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#buttons#0;n#!!block;n#infoPageIndex#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#labels#0;n#!!block;n#pageFromTemplate#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#infoPageShow#0;n#!!block;n#infoPage#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actionMessages#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#actions#0;n#!!block;n#contactIndex#0;n#!!block;n#contact#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#tableHeaders#0;n#!!block;n#languageIndex#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#placeholders#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#labels#0;n#!!block;n#languageCreate#0;n#!!block;n#language#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#placeholders#0;n#!!block;n#signIn#0;n#!!block;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#buttons#0;n#!!block;n#userIndex#0;n#!!block;n#user#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/default/admin/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="71" selection-start="618" selection-end="633" vertical-scroll-proportion="-9.225806" vertical-offset="0" max-vertical-offset="792">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="18" selection-start="667" selection-end="667" vertical-scroll-proportion="0.7574074" vertical-offset="185" max-vertical-offset="1474">
+        <state line="37" column="0" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-5.387097" vertical-offset="647" max-vertical-offset="1650">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/admin/modules/user/userIndex/userIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="53" selection-start="287" selection-end="287" vertical-scroll-proportion="-2.8387096" vertical-offset="0" max-vertical-offset="572">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/en_en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="19" selection-start="816" selection-end="816" vertical-scroll-proportion="-19.161291" vertical-offset="0" max-vertical-offset="4026">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/scripts/translations/bg_bg.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="44" selection-start="4940" selection-end="4940" vertical-scroll-proportion="1.0425926" vertical-offset="3023" max-vertical-offset="3938">
           <folding />
         </state>
       </provider>
