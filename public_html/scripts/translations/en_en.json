@@ -22,7 +22,8 @@
                 "index": "List users",
                 "create": "Create User",
                 "edit": "Edit User",
-                "show": "Show user's details"
+                "show": "Show user's details",
+                "editPermissions": "Edit User's Permissions"
             }
         },
         "routes": {
@@ -33,7 +34,8 @@
             "signIn": "Login",
             "signOut": "Logout",
             "user": "Users"
-        }
+        },
+        "permissions": "You don't have permissions to browse"
     }
 }, "project": {
     "projectIndex": {
@@ -173,6 +175,21 @@
             "edit": "Edit",
             "confirmDeletion": "Are you sure you want to delete this user ?"
         },
-        "userEdit": {}
+        "userEdit": {
+            "editPermissions": "Edit User's Permissions"
+        }
+    },
+    "permissions": {
+        "ProjectController": {
+            "name": "Projects",
+            "permissions": {
+                "create": "Create user",
+                "index": "View all users",
+                "edit": "View User's edit page",
+                "update": "Edit user",
+                "show": "Show user's info",
+                "destroy": "Delete user"
+            }
+        }
     }
 }

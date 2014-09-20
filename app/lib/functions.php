@@ -43,27 +43,28 @@ function handle_exception ($e)
     }
 }
 
-function d ($variable)
+function d ()
 {
     $debugTrace = (debug_backtrace());
   //  echo '<div style="border: 1px dotted black; border-left: 2px solid; padding: 5px; margin: 10px; background: white;">';
 //    echo '<pre>';
 //    echo "Called in {$debugTrace[0]['file']} on line {$debugTrace[0]['line']} ";
-    //echo "\n ------------------------------------------------ \n";
-    if (is_array($variable) || is_object($variable) || is_resource($variable)) {
-        print_r($variable);
-    } else if (is_bool($variable)) {
-        echo '<strong style="color: green">', ($variable ? 'true' : 'false'), '</strong>';
-    } else if ($variable === null) {
-        echo '<strong style="color: red">null</strong>';
-    } else {
-        echo htmlspecialchars($variable);
-    }
-    echo "\n ------------------------------------------------ \n";
-//    echo '</pre>';
-  //  echo '</div>';
 
-    return $variable;
+    foreach (func_get_args() as $variable) {
+        if (is_array($variable) || is_object($variable) || is_resource($variable)) {
+            print_r($variable);
+        } else if (is_bool($variable)) {
+            echo $variable ? 'true' : 'false';
+        } else if ($variable === null) {
+            echo 'null';
+        } else {
+            echo htmlspecialchars($variable);
+        }
+
+        echo "\n ---- \n";
+    }
+
+    echo "\n ------------------------------------------------ \n";
 }
 
 function url ($url)

@@ -38,10 +38,9 @@ define(['plugins/http', 'knockout', 'controllers/SignController', 'plugins/route
                     backEndConfig.currentUser = response.currentUser;
                     router.navigate('');
                 }).fail(function (data) {
-                        alert("Wrong name or pass")
-                    });
+                    alert("Wrong name or pass")
+                });
             };
-
         };
 
         SignIn.prototype = new SignController();

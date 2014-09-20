@@ -6,8 +6,9 @@ define([
 ], function (http, ko, router, UserController, ckeditor) {
     "use strict";
 
-    function InfoPageEdit() {
+    function UserEdit() {
         this.userId = 0;
+        this.isEditingUser = true;
 
         this.activate = function (userId) {
             var promise = $.Deferred(),
@@ -49,9 +50,13 @@ define([
                 console.log(data.responseText, '\n\n FAIL \n\n');
             });
         };
+
+        this.goToEditUserPermssions = function() {
+            router.navigate('user/editPermissions/' + this.userId);
+        };
     };
 
-    InfoPageEdit.prototype = new UserController();
+    UserEdit.prototype = new UserController();
 
-    return InfoPageEdit;
+    return UserEdit;
 });

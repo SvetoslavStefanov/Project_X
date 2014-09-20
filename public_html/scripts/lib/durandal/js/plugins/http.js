@@ -9,7 +9,7 @@
  * @requires jquery
  * @requires knockout
  */
-define(['jquery', 'knockout', 'plugins/router', 'scripts/config.js'], function ($, ko, router, config) {
+define(['knockout', 'plugins/router', 'scripts/config.js', 'durandal/app'], function (ko, router, config, app) {
     /**
      * @class HTTPModule
      * @static
@@ -18,6 +18,10 @@ define(['jquery', 'knockout', 'plugins/router', 'scripts/config.js'], function (
         if (!_.isUndefined(data.status)){
             switch (data.status){
                 case 401: router.navigate('sign/signIn'); break;
+                case 550:
+                    router.navigateBack();
+                    app.trigger('no_permission');
+                    break;
             }
         }
     }

@@ -44,9 +44,9 @@ class Controller extends Plugin
     {
         $view = new View();
         $view->assign(get_object_vars($this));
+        $path = count($template) > 0 ? $this->controllerName . '/' . $template : '';
 
-
-        $view->render($this->controllerName . '/' . $template, $layout === true ? $this->layout : $layout);
+        $view->render($path, $layout === true ? $this->layout : $layout);
 
         $this->rendered = true;
     }
@@ -116,4 +116,14 @@ class Controller extends Plugin
         }
     }
 
+    protected function setHeaderError($errorNumber) {
+        switch ($errorNumber) {
+            case 401:
+                header("HTTP/1.0 401 Unauthorized");
+                break;
+            case 550:
+                header("HTTP/1.0 550 Permission Denied");
+                break;
+        }
+    }
 }

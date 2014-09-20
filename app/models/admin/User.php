@@ -15,7 +15,8 @@ class admin_User extends \ActiveRecord
         'real_name',
         'last_login',
         'info',
-        'selected_lang'
+        'selected_lang',
+        'permissions'
     );
 
     public $originalPassword = null;
@@ -68,5 +69,15 @@ class admin_User extends \ActiveRecord
 //        $this->real_name = \htmlentities($this->real_name, ENT_QUOTES | ENT_IGNORE, "UTF-8");
 //        $this->date = time();
 //        $this->cookie = genereteCode();
+    }
+
+    public  function setPermissions($newPermissions) {
+        $this->permissions = json_encode($newPermissions);
+
+        return true;
+    }
+
+    public function getPermissions() {
+        return json_decode($this->permissions, true);
     }
 }

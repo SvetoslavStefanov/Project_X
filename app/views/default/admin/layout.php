@@ -8,12 +8,17 @@
     <link rel="stylesheet" href="<?= SITE_URL ?>/styles/main.css" type="text/css"/>
     <link rel="stylesheet" href="<?= SITE_URL ?>/plugins/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?= SITE_URL ?>/styles/MoneAdmin.css"/>
+
+    <link rel="stylesheet" href="<?= SITE_URL ?>/styles/jquery.steps.css"/>
+
     <link rel="stylesheet" href="<?= SITE_URL ?>/plugins/Font-Awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="<?= SITE_URL ?>/plugins/bootstrap/css/bootstrap-switch.css"/>
     <script>
         var backEndConfig = {};
         backEndConfig.language = <?php echo json_encode($languageConfig) ?>;
         backEndConfig.currentUser = <?php echo json_encode($currentUser) ?>;
         backEndConfig.translations = <?php echo json_encode($translations) ?>;
+        backEndConfig.constants = <?php echo json_encode($constants) ?>;
     </script>
 </head>
 <body class="padTop53 ">

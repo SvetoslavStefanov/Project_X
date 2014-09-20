@@ -16,6 +16,7 @@ class Sign extends ActiveRecord
         'real_name',
         'last_login',
         'info',
+        'permissions'
     );
 
     protected function registerValidate ()

@@ -29,7 +29,6 @@ class admin_ProjectController extends admin_BaseController{
     }
 
     public function indexAction(){
-        $this->title = 'List projects';
         $this->data['projects'] = $this->project->findAll(array('sort' => 'id DESC'));
 
         foreach ($this->data['projects'] as &$data){

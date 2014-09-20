@@ -59,6 +59,10 @@ define([], function () {
             var moduleName = module;
 
             return this.defaultPaths.modulesPath + moduleFolder + "/" + moduleName + "/" + moduleName;
+        },
+
+        capitaliseString: function(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
         }
     };
 });

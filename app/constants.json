@@ -1,0 +1,25 @@
+{
+    "userPermissions": {
+        "ProjectController": {
+            "create": true,
+            "new": true,
+            "index": true,
+            "edit": false,
+            "update": true,
+            "show": true,
+            "destroy": false
+        },
+        "UserController": {
+            "index": false,
+            "create": false,
+            "edit": false,
+            "update": false,
+            "show": true,
+            "destroy": false,
+            "getPermissions": false
+        },
+        "InfoPageController": {
+            "index": true
+        }
+    }
+}

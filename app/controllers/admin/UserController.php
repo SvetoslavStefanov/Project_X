@@ -8,7 +8,7 @@ class admin_UserController extends admin_BaseController {
 
     var $before = array(
         'setUser' => array('index', 'create'),
-        'getUser' => array('update', 'destroy', 'show', 'edit', 'changeLanguage'),
+        'getUser' => array('update', 'destroy', 'show', 'edit', 'changeLanguage', 'getPermissions', 'updatePermissions'),
     );
 
     protected function setUser() {
@@ -65,12 +65,40 @@ class admin_UserController extends admin_BaseController {
     public function editAction() {
         $this->user->attributes['password'] = '';
         $this->data['user'] = $this->user;
-        $this->data['user']->attributes['info']  = htmlspecialchars_decode($this->data['user']->attributes['info'], ENT_QUOTES);
+        $this->data['user']->attributes['info'] = htmlspecialchars_decode($this->data['user']->attributes['info'], ENT_QUOTES);
     }
 
     public function changeLanguageAction() {
-        $this->user->selected_lang = $_POST['lang_id'];//TODO: secure this - make call to DB to check if there is any lang with this id
+        $this->user->selected_lang = $_POST['lang_id']; //TODO: secure this - make call to DB to check if there is any lang with this id
         $this->user->save();
         $this->data['result'] = true;
+    }
+
+    public function getPermissionsAction() {
+        $constants = json_decode(file_get_contents((ROOT_DIR . '/constants.json')), true);
+        $userPermissions = $this->user->getPermissions();
+        $constantsPermissions = $constants['userPermissions'];
+
+        foreach ($constantsPermissions as $cControllerName => $actions) {
+            foreach ($actions as $cActionName => $value) {
+                if (isset($userPermissions[$cControllerName]) && isset($userPermissions[$cControllerName][$cActionName])) {
+                    $constantsPermissions[$cControllerName][$cActionName] = $userPermissions[$cControllerName][$cActionName];
+                }
+            }
+        }
+
+        $this->data['permissions'] = $constantsPermissions;
+    }
+
+    public function updatePermissionsAction() {
+        if ($this->user->setPermissions($_POST['permissions'])) {
+            $this->user->save();
+            $this->data['result'] = true;
+            $this->user->attributes['password'] = 'no way !';
+            $this->data['userId'] = $this->user->id;
+        } else {
+            $this->data['result'] = false;
+            $this->data['errors'] = Validator::$errors;
+        }
     }
 }

@@ -60,6 +60,7 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
     }
 
     $translations = json_decode(file_get_contents(('scripts/translations/' . $languageConfig['default']['name'] . '.json')));
+    $constants = json_decode(file_get_contents((ROOT_DIR . '/constants.json')), true);
 
     require loadLayout();
 }

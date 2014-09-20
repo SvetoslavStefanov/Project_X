@@ -1,6 +1,7 @@
 define([
-    'plugins/router', 'helper/viewHelper', 'knockout', 'controllers/ShellController', 'plugins/http'
-], function (router, viewHelper, ko, ShellController, http) {
+    'plugins/router', 'helper/viewHelper', 'knockout', 'controllers/ShellController', 'plugins/http', 'durandal/app',
+    'helper/permissionsHelper'
+], function (router, viewHelper, ko, ShellController, http, app, permissionsHelper) {
         "use strict";
 
         function Shell() {
@@ -8,6 +9,14 @@ define([
 
             this.setTranslationData('shell', 'shell');
             this.isUserLogged = ko.observable(false);
+            this.permissionDeniedText = ko.observable('');
+            this.permissionDeniedText.subscribe(function (newValue) {
+                if (newValue.length > 0) {
+                    setTimeout(function () {
+                        that.permissionDeniedText('');
+                    }, 7000);
+                }
+            });
             this.router = router;
             this.subRoutes = {
                 project: [
@@ -40,7 +49,8 @@ define([
                     {route: 'index', title: this.currentTranslationData.subroutes.user.index, moduleId: viewHelper.convertModuleNameToModuleId('userIndex'), show: true},
                     {route: 'create', title: this.currentTranslationData.subroutes.user.create, moduleId: viewHelper.convertModuleNameToModuleId('userCreate'), show: true},
                     {route: 'show/:id', title: this.currentTranslationData.subroutes.user.show, moduleId: viewHelper.convertModuleNameToModuleId('userShow'), show: false},
-                    {route: 'edit/:id', title: this.currentTranslationData.subroutes.user.edit, moduleId: viewHelper.convertModuleNameToModuleId('userEdit'), show: false}
+                    {route: 'edit/:id', title: this.currentTranslationData.subroutes.user.edit, moduleId: viewHelper.convertModuleNameToModuleId('userEdit'), show: false},
+                    {route: 'editPermissions/:id', title: this.currentTranslationData.subroutes.user.editPermissions, moduleId: viewHelper.convertModuleNameToModuleId('userEditPermissions'), show: false}
                 ]
             };
 
@@ -55,7 +65,7 @@ define([
             ];
 
             router.activeInstruction.subscribe(function (newValue) {
-                if (newValue.config.moduleId === this.routes[1].moduleId) {
+                if (!_.isUndefined(newValue) && newValue.config.moduleId === this.routes[1].moduleId) {
                     this.isUserLogged(false);
                 } else {
                     if (this.isUserLogged() === false && !_.isNull(backEndConfig.currentUser)) {
@@ -65,9 +75,15 @@ define([
             }, this);
 
             this.activate = function () {
+                app.on('no_permission').then(function () {
+                    that.permissionDeniedText(that.currentTranslationData.permissions + ' ' + router.activeInstruction().config.title + ' section');
+                });
+
                 this.addSubRoutes();
 
                 router.map(this.routes).buildNavigationModel();
+
+                this.checkRoutesForPermissions();
 
                 return router.activate();
             };
@@ -167,11 +183,35 @@ define([
             };
 
             this.changeLanguage = function () {
-                http.post('user/changeLanguage', {id: backEndConfig.currentUser.id, lang_id: this.id}).then(function(response) {
+                http.post('user/changeLanguage', {id: backEndConfig.currentUser.id, lang_id: this.id}).then(function (response) {
                     if (response.result === true) {
                         location.reload();
                     }
                 });
+            };
+
+            this.checkRoutesForPermissions = function () {
+                if (_.isNull(backEndConfig.currentUser)){
+                    return false;
+                }
+
+                var actionName, controllerName,
+                    controller = {name: ''},
+                    userPermissionsPromise = permissionsHelper.getUserPermissions(backEndConfig.currentUser.id);
+
+                userPermissionsPromise.then(function (permissions) {
+                    var userPermissions = permissions.permissions;
+                    _.each(this.routes, function (item) {
+                        if (_.isUndefined(item.name) && item.show === true) {
+                            viewHelper.convertModuleIdToModuleName(item.moduleId, controller);
+
+                            controllerName = viewHelper.capitaliseString(controller.name) + 'Controller';
+                            actionName = item.route.split('/')[1];
+
+                            item.show = permissionsHelper.checkConstantsAndUserPermissions(userPermissions, controllerName, actionName);
+                        }
+                    });
+                }.bind(this));
             };
         };
 
@@ -180,3 +220,10 @@ define([
         return new Shell();
     }
 );
+/*
+ TODO:
+ [DONE] правата да се записват за всеки потребител в БД
+ Правата от БД да се връщат в глобалния конфиг за фронт-енда
+ [DONE] Правата да се чекват за показване на меню-то.
+ [DONE] Глобален permission обект за чекване на правата ( както в back-енда ) - ще служи за обикновените меню-та
+ */
