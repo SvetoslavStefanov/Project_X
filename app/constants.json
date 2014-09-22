@@ -1,16 +1,18 @@
 {
     "userPermissions": {
         "ProjectController": {
-            "create": true,
+            "create": false,
+            "new": false,
             "index": true,
             "edit": false,
-            "update": true,
+            "update": false,
             "show": true,
             "destroy": false
         },
         "UserController": {
-            "index": false,
+            "index": true,
             "create": false,
+            "new": false,
             "edit": false,
             "update": false,
             "show": true,
@@ -23,7 +25,8 @@
         "InfopageController": {
             "index": true,
             "create": false,
-            "edit": true,
+            "new": false,
+            "edit": false,
             "update": false,
             "show": true,
             "destroy": false
@@ -35,10 +38,11 @@
         "LanguageController": {
             "index": true,
             "create": false,
+            "new": false,
             "destroy": false
         },
         "ContactController": {
-            "index": false,
+            "index": true,
             "destroy": false
         }
     }

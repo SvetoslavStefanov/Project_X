@@ -41,6 +41,8 @@ class admin_UserController extends admin_BaseController {
     }
 
     public function createAction() {
+        $_POST['permissions'] = $this->getPermissionsAction();
+
         if ($this->user->save($_POST, null, 'create')) {
             $this->data['result'] = true;
             $this->user->attributes['password'] = 'no way !';
@@ -88,6 +90,8 @@ class admin_UserController extends admin_BaseController {
         }
 
         $this->data['permissions'] = $constantsPermissions;
+
+        return $this->data['permissions'];
     }
 
     public function editPermissionsAction() {

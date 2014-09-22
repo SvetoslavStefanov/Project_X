@@ -48,7 +48,7 @@ define([
                 ],
                 user: [
                     {route: 'index', title: this.currentTranslationData.subroutes.user.index, moduleId: viewHelper.convertModuleNameToModuleId('userIndex'), show: true},
-                    {route: 'create', title: this.currentTranslationData.subroutes.user.create, moduleId: viewHelper.convertModuleNameToModuleId('userCreate'), show: true},
+                    {route: 'new', title: this.currentTranslationData.subroutes.user.create, moduleId: viewHelper.convertModuleNameToModuleId('userCreate'), show: true},
                     {route: 'show/:id', title: this.currentTranslationData.subroutes.user.show, moduleId: viewHelper.convertModuleNameToModuleId('userShow'), show: false},
                     {route: 'edit/:id', title: this.currentTranslationData.subroutes.user.edit, moduleId: viewHelper.convertModuleNameToModuleId('userEdit'), show: false},
                     {route: 'editPermissions/:id', title: this.currentTranslationData.subroutes.user.editPermissions, moduleId: viewHelper.convertModuleNameToModuleId('userEditPermissions'), show: false}

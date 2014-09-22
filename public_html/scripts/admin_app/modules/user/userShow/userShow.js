@@ -23,7 +23,9 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/UserController'
             var confirmDeletion = confirm(that.currentTranslationData.confirmDeletion);
 
             if (confirmDeletion){
-                router.navigate('user/destroy/' + this.id);
+                http.post('user/destroy', {id: this.id}).then(function () {
+                    router.navigate('user/index');
+                });
             }
         };
 

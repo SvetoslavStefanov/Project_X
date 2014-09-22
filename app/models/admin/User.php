@@ -4,8 +4,7 @@
  *
  * @author svetlio
  */
-class admin_User extends \ActiveRecord
-{
+class admin_User extends \ActiveRecord {
     public static $table = 'user';
     static $columns = array(
         'username',
@@ -21,11 +20,10 @@ class admin_User extends \ActiveRecord
 
     public $originalPassword = null;
 
-    protected function validate()
-    {
+    protected function validate() {
         Validator::validate($this->password, "password", ['required' => false, 'min_length' => 6]);
         Validator::validate($this->info, "info", array("textChars" => "\'\",0-9.\-()!?<>"));
-        Validator::validate($this->real_name, 'real_name', array("textChars"=> '\,\.()0-9-\_\:\'\"'));
+        Validator::validate($this->real_name, 'real_name', array("textChars" => '\,\.()0-9-\_\:\'\"'));
         /*if(empty(\Validator::$errors)){
             if($obj = $this->find(array('where' => array('username' => $this->username, 'id' => array('!=' => $this->id)))))
                     Validator::addError("username", "Името е вече заето");
@@ -36,7 +34,7 @@ class admin_User extends \ActiveRecord
 //                    Validator::addError("email", "E-mail адресът е вече зает");
 //        }
 
-        if(empty(Validator::$errors) && strlen($this->password) > 0 && strlen($this->originalPassword) > 0){
+        if (empty(Validator::$errors) && strlen($this->password) > 0 && strlen($this->originalPassword) > 0) {
             $this->password = Sign::crypty($this->username, $this->password);
         }
 //
@@ -48,9 +46,16 @@ class admin_User extends \ActiveRecord
         $this->info = htmlentities($this->info, ENT_QUOTES | ENT_IGNORE, "UTF-8");
     }
 
-    protected function createValidate()
-    {
-//        Validator::validate($this->real_name, 'real_name', array("textChars"=> '\,\.()0-9-\_\:\'\"'));
+    protected function createValidate() {
+        Validator::validate($this->username, "username", ['required' => true, 'min_length' => 6]);
+        Validator::validate($this->email, "email", ['required' => true, 'min_length' => 8, "isMail" => true]);
+        Validator::validate($this->permissions, "permissions", ['required' => true]);
+        Validator::validate($this->password, "password", ['required' => false, 'min_length' => 6]);
+        Validator::validate($this->info, "info", array("textChars" => "\'\",0-9.\-()!?<>"));
+        Validator::validate($this->real_name, 'real_name', array("required" => true, "textChars" => '\,\.()0-9-\_\:\'\"'));
+
+        $this->setPermissions($this->permissions);
+
         if (empty(\Validator::$errors) && strlen($this->username) > 1) {
             $obj_username = $this->find(array('where' => array('username' => $this->username)));
 
@@ -66,12 +71,12 @@ class admin_User extends \ActiveRecord
         if (empty(Validator::$errors) && $this->password != null) {
             $this->password = Sign::crypty($this->username, $this->password);
         }
-//        $this->real_name = \htmlentities($this->real_name, ENT_QUOTES | ENT_IGNORE, "UTF-8");
-//        $this->date = time();
-//        $this->cookie = genereteCode();
+
+        $this->last_login = 0;
+        $this->real_name = \htmlentities($this->real_name, ENT_QUOTES | ENT_IGNORE, "UTF-8");
     }
 
-    public  function setPermissions($newPermissions) {
+    public function setPermissions($newPermissions) {
         $this->permissions = json_encode($newPermissions);
 
         return true;
