@@ -10,11 +10,13 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ProjectControll
         this.activate = function (projectId) {
             var that = this;
 
-            http.get('Project/show/', {id: projectId}).then(function(response) {
+            var promise = http.get('Project/show/', {id: projectId}).then(function(response) {
                 that.projectData.push(response);
             });
 
             this.setTranslationData();
+
+            return promise;
         };
 
         this.destroyProject = function (){

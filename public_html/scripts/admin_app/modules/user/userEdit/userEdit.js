@@ -11,15 +11,13 @@ define([
         this.isEditingUser = true;
 
         this.activate = function (userId) {
-            var promise = $.Deferred(),
-                that = this;
+            var that = this;
 
             this.userId = userId;
 
-            http.get('User/edit', {id: userId}).then(function (response) {
+            var promise = http.get('User/edit', {id: userId}).then(function (response) {
                 that.skeleton = that.transformSkeletonToObservables(response.user.attributes);
-                promise.resolve();
-            });
+            })
 
             this.setTranslationData();
             this.buildErrorsByFieldSkeleton();
@@ -51,7 +49,7 @@ define([
             });
         };
 
-        this.goToEditUserPermssions = function() {
+        this.goToEditUserPermssions = function () {
             router.navigate('user/editPermissions/' + this.userId);
         };
     };

@@ -17,6 +17,14 @@ class Permissions {
         $this->permissions = $constants['userPermissions'];
     }
 
+    public function isBooleanProperty ($data) {
+            if (is_bool($data)) {
+                return $data;
+            }
+
+            return $data == 'true' ? true : false;
+        }
+
     public function setController($controllerName) {
         $this->controllerName = $controllerName;
     }
@@ -26,16 +34,14 @@ class Permissions {
     }
 
     public function checkPermissionsByAction($actionName) {
-        return true;
-
         if (!isset($this->permissions[$this->controllerName][$actionName])) {
             return false;
         }
 
         if (!isset($this->userPermissions[$this->controllerName][$actionName])) {
-            return $this->permissions[$this->controllerName][$actionName];
+            return $this->isBooleanProperty($this->permissions[$this->controllerName][$actionName]);
         }
 
-        return $this->userPermissions[$this->controllerName][$actionName];
+        return $this->isBooleanProperty($this->userPermissions[$this->controllerName][$actionName]);
     }
 }

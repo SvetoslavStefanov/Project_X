@@ -2,7 +2,6 @@
     "userPermissions": {
         "ProjectController": {
             "create": true,
-            "new": true,
             "index": true,
             "edit": false,
             "update": true,
@@ -16,10 +15,31 @@
             "update": false,
             "show": true,
             "destroy": false,
-            "getPermissions": false
+            "changeLanguage": true,
+            "getPermissions": true,
+            "editPermissions": false,
+            "updatePermissions": false
         },
-        "InfoPageController": {
-            "index": true
+        "InfopageController": {
+            "index": true,
+            "create": false,
+            "edit": true,
+            "update": false,
+            "show": true,
+            "destroy": false
+        },
+        "SignController": {
+            "out": true,
+            "login": true
+        },
+        "LanguageController": {
+            "index": true,
+            "create": false,
+            "destroy": false
+        },
+        "ContactController": {
+            "index": false,
+            "destroy": false
         }
     }
 }

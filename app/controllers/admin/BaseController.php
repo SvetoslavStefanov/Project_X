@@ -7,18 +7,18 @@
 class admin_BaseController extends Controller {
     protected $adminUser;
 
-    public function __construct () {
+    public function __construct() {
         $this->permissionsPlugin = new Permissions();
     }
 
-    protected function before () {
+    protected function before() {
         $this->controllerName = str_replace('_', '/', $this->controllerName);
         $this->levelAccess();
-        $this->confimAdminLogged();
+        $this->confirmAdminLogged();
         Dispatcher::$in_admin = true;
     }
 
-    protected function levelAccess () {
+    protected function levelAccess() {
         if (isset ($_SESSION['isAdmin'])) {
             $this->adminUser = admin_User::get($_SESSION['isAdmin']);
             return true;
@@ -27,28 +27,32 @@ class admin_BaseController extends Controller {
         }
     }
 
-    protected function confimAdminLogged () {
+    protected function confirmAdminLogged() {
         if (empty($this->adminUser) && $this->controllerName != 'admin/Sign' && $this->actionName != 'in') {
             $this->returnUserToLoginPage();
         }
     }
 
-    public function action ($actionName, $id = null) {
-        $this->permissionsPlugin->setController(str_replace('admin_', '', get_class($this)));
-        $this->permissionsPlugin->setUserPermissions($this->adminUser->getPermissions());
+    public function action($actionName, $id = null) {
+        if (null === $this->adminUser) {
+            $this->_actionCall($actionName, $id);
+        } else {
+            $this->permissionsPlugin->setController(str_replace('admin_', '', get_class($this)));
+            $this->permissionsPlugin->setUserPermissions($this->adminUser->getPermissions());
 
-        if ($this->permissionsPlugin->checkPermissionsByAction($actionName)) {
-            $this->{$actionName . 'Action'}($id);
-
-            if (is_array($this->data) && isset($this->data['isUserLogged']) && !$this->data['isUserLogged']) {
-                $this->setHeaderError(401);
-            }
-
-            if (!$this->rendered) {
+            if ($this->permissionsPlugin->checkPermissionsByAction($actionName) == true) {
+                $this->_actionCall($actionName, $id);
+            } else {
+                $this->setHeaderError(550);
                 $this->render($actionName);
             }
-        } else {
-            $this->setHeaderError(550);
+        }
+    }
+
+    private function _actionCall($actionName, $id) {
+        $this->{$actionName . 'Action'}($id);
+
+        if (!$this->rendered) {
             $this->render($actionName);
         }
     }

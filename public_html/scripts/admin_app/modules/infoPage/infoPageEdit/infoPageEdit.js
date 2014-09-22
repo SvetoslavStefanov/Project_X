@@ -10,14 +10,12 @@ define([
         this.pageId = 0;
 
         this.activate = function (pageId) {
-            var promise = $.Deferred(),
-                that = this;
+            var that = this;
 
             this.pageId = pageId;
 
-            http.get('infoPage/edit', {id: pageId}).then(function (response) {
+            var promise = http.get('infoPage/edit', {id: pageId}).then(function (response) {
                 that.skeleton = that.transformSkeletonToObservables(response.pageData.attributes);
-                promise.resolve();
             });
 
             this.setTranslationData();

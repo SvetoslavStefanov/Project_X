@@ -37,6 +37,7 @@ class admin_SignController extends admin_BaseController
             $this->data['currentUser'] = $this->sign;
         } else {
             $this->data['errors'] = Validator::$errors;
+            $this->returnUserToLoginPage();
         }
     }
 

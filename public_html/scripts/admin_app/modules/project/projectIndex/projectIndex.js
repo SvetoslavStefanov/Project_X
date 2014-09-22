@@ -29,14 +29,11 @@ define([
 
         this.activate = function (action) {
             var that = this,
-                promise = $.Deferred();
+                promise;
 
-            http.get('Project/index').then(function (response) {
+            promise = http.get('Project/index').then(function (response) {
                 that.projects(response.projects);
-                promise.resolve();
-            }).fail(function () {
-                    promise.resolve();
-                });
+            });
 
             this.setTranslationData();
 

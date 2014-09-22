@@ -12,14 +12,11 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/LanguageControl
 
             this.activate = function () {
                 var that = this,
-                    promise = $.Deferred();
+                    promise;
 
-                http.get('Language/index').then(function (response) {
+                promise = http.get('Language/index').then(function (response) {
                     that.languages(response.languages);
-                    promise.resolve();
-                }).fail(function () {
-                        promise.resolve();
-                    });
+                });
 
                 this.setTranslationData();
 

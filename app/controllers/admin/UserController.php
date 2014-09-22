@@ -8,7 +8,7 @@ class admin_UserController extends admin_BaseController {
 
     var $before = array(
         'setUser' => array('index', 'create'),
-        'getUser' => array('update', 'destroy', 'show', 'edit', 'changeLanguage', 'getPermissions', 'updatePermissions'),
+        'getUser' => array('update', 'destroy', 'show', 'edit', 'changeLanguage', 'getPermissions', 'editPermissions', 'updatePermissions'),
     );
 
     protected function setUser() {
@@ -88,6 +88,10 @@ class admin_UserController extends admin_BaseController {
         }
 
         $this->data['permissions'] = $constantsPermissions;
+    }
+
+    public function editPermissionsAction() {
+        $this->getPermissionsAction();
     }
 
     public function updatePermissionsAction() {

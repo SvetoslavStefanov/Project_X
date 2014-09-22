@@ -31,7 +31,7 @@ define([
 
             this.setTranslationData();
 
-            http.get('InfoPage/index').then(function (response) {
+            var promise = http.get('InfoPage/index').then(function (response) {
                 that.pages(response.pages);
             });
 
@@ -49,6 +49,8 @@ define([
                     this.actionBoxClassName(actionBoxStatusClasses[action]);
                 }
             }
+
+            return promise;
         };
 
         this.navigateToProjectShow = function (project) {

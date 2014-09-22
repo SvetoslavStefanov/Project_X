@@ -28,11 +28,13 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/UserController'
             this.activate = function () {
                 var that = this;
 
-                http.get('User/index').then(function (response) {
+                var promise = http.get('User/index').then(function (response) {
                     that.users(response.users);
                 });
 
                 this.setTranslationData();
+
+                return promise;
             };
 
             this.deleteItem = function (item) {

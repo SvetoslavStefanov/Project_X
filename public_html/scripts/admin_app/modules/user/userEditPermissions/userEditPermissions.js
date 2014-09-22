@@ -18,7 +18,7 @@ define([
         this.activate = function (userId) {
             this.userId = userId;
 
-            var query = permissionsHelper.getUserPermissions(this.userId);
+            var query = http.get('User/editPermissions', {id: userId});
 
             query.then(function (response) {
                 that.setTabs(response.permissions);

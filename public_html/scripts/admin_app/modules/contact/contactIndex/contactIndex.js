@@ -28,11 +28,13 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ContactControll
             this.activate = function () {
                 var that = this;
 
-                http.get('Contact/index').then(function (response) {
+                var promise = http.get('Contact/index').then(function (response) {
                     that.records(response.records);
                 });
 
                 this.setTranslationData();
+
+                return promise;
             };
 
             this.deleteItem = function (item) {

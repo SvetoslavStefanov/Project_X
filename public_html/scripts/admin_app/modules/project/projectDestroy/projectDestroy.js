@@ -9,11 +9,11 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ProjectContro
         this.content = ko.observable('');
 
         this.canActivate = function (projectId) {
-            var response;
+            var query;
 
-            response = http.post('project/destroy', {id: projectId});
+            query = http.post('project/destroy', {id: projectId});
 
-            response.then(function (response) {
+            query.then(function (response) {
                 if (response.result === true){
                     router.navigate('project/projectIndexAction/destroyed');
                 }

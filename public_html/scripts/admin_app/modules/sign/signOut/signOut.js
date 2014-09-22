@@ -7,11 +7,8 @@ define(['plugins/http', 'controllers/SignController'],
 
         function SignOut() {
             this.canActivate = function () {
-                var promise = $.Deferred();
-
                 http.get('Sign/out').fail(function () {
                     backEndConfig.currentUser = null;
-                    promise.resolve();
                 });
 
                 return false

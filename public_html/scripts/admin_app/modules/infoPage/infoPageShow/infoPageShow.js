@@ -13,11 +13,13 @@ define([
         this.activate = function (pageId) {
             var that = this;
 
-            http.get('InfoPage/show', {id: pageId}).then(function (response) {
+            var promise = http.get('InfoPage/show', {id: pageId}).then(function (response) {
                 that.pageData.push(response.pageData);
             });
 
             this.setTranslationData();
+
+            return promise;
         };
 
         this.destroyPage = function () {

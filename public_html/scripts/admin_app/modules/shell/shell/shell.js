@@ -17,6 +17,7 @@ define([
                     }, 7000);
                 }
             });
+            this.activePageTitle = ko.observable();
             this.router = router;
             this.subRoutes = {
                 project: [
@@ -53,7 +54,6 @@ define([
                     {route: 'editPermissions/:id', title: this.currentTranslationData.subroutes.user.editPermissions, moduleId: viewHelper.convertModuleNameToModuleId('userEditPermissions'), show: false}
                 ]
             };
-
             this.routes = [
                 { route: '', title: this.currentTranslationData.routes.project, moduleId: viewHelper.convertModuleNameToModuleId('projectIndex'), nav: true, name: 'project', icon: 'icon-list-alt'},
                 { route: 'sign/signIn', title: this.currentTranslationData.routes.signIn, moduleId: viewHelper.convertModuleNameToModuleId('signIn'), nav: false},
@@ -71,6 +71,10 @@ define([
                     if (this.isUserLogged() === false && !_.isNull(backEndConfig.currentUser)) {
                         this.isUserLogged(true);
                     }
+                }
+
+                if (!_.isUndefined(newValue)) {
+                    this.activePageTitle(newValue.config.title);
                 }
             }, this);
 
@@ -90,6 +94,10 @@ define([
 
             this.attached = function () {
                 var controllerName = {name: ''};
+                if (_.isUndefined(router.activeInstruction())) {
+                    return true;
+                }
+
                 viewHelper.convertModuleIdToModuleName(router.activeInstruction().config.moduleId, controllerName);
 
                 _.each(router.navigationModel(), function (item) {
@@ -208,7 +216,7 @@ define([
                             controllerName = viewHelper.capitaliseString(controller.name) + 'Controller';
                             actionName = item.route.split('/')[1];
 
-                            item.show = permissionsHelper.checkConstantsAndUserPermissions(userPermissions, controllerName, actionName);
+//                            item.show = permissionsHelper.checkConstantsAndUserPermissions(userPermissions, controllerName, actionName);
                         }
                     });
                 }.bind(this));
@@ -220,10 +228,3 @@ define([
         return new Shell();
     }
 );
-/*
- TODO:
- [DONE] правата да се записват за всеки потребител в БД
- Правата от БД да се връщат в глобалния конфиг за фронт-енда
- [DONE] Правата да се чекват за показване на меню-то.
- [DONE] Глобален permission обект за чекване на правата ( както в back-енда ) - ще служи за обикновените меню-та
- */

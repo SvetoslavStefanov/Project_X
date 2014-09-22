@@ -19,7 +19,7 @@ define(['knockout', 'plugins/router', 'scripts/config.js', 'durandal/app'], func
             switch (data.status){
                 case 401: router.navigate('sign/signIn'); break;
                 case 550:
-                    router.navigateBack();
+//                    router.navigateBack();
                     app.trigger('no_permission');
                     break;
             }

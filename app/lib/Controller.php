@@ -95,6 +95,7 @@ class Controller extends Plugin
     protected function returnUserToLoginPage () {
         $this->data['isUserLogged'] = false;
         $this->data['errors'] = 'This area is only for registered users !';
+        $this->setHeaderError(401);
 
         $this->render('');
     }
