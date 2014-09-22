@@ -216,7 +216,7 @@ define([
                             controllerName = viewHelper.capitaliseString(controller.name) + 'Controller';
                             actionName = item.route.split('/')[1];
 
-//                            item.show = permissionsHelper.checkConstantsAndUserPermissions(userPermissions, controllerName, actionName);
+                            item.show = permissionsHelper.checkConstantsAndUserPermissions(userPermissions, controllerName, actionName);
                         }
                     });
                 }.bind(this));
