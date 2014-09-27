@@ -1,10 +1,11 @@
 <div class="accordion-body collapse in body">
-    <form class="form-horizontal" data-bind="submit: saveUser">
+    <form class="form-horizontal" data-bind="submit: saveUser" enctype="multipart/form-data">
         <div class="form-group">
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.username"></label>
 
             <div class="col-lg-4">
-                <input type="text" class="form-control" data-bind="value: skeleton.username, attr:{placeholder: pageFromData.placeholders.username}">
+                <input type="text" name="username" class="form-control"
+                       data-bind="value: skeleton.username, attr:{placeholder: pageFromData.placeholders.username}">
                 <span data-bind="text: errorsByField.username"></span>
             </div>
         </div>
@@ -13,7 +14,7 @@
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.real_name"></label>
 
             <div class="col-lg-4">
-                <input type="text"
+                <input type="text" name="real_name"
                        class="form-control" data-bind="value: skeleton.real_name, attr:{placeholder: pageFromData.placeholders.real_name}">
                 <span data-bind="text: errorsByField.real_name"></span>
             </div>
@@ -23,7 +24,7 @@
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.password"></label>
 
             <div class="col-lg-4">
-                <input type="password"
+                <input type="password" name="password"
                        class="form-control" data-bind="value: skeleton.password, attr:{placeholder: pageFromData.placeholders.password}">
                 <span data-bind="text: errorsByField.password"></span>
             </div>
@@ -33,7 +34,7 @@
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.email"></label>
 
             <div class="col-lg-4">
-                <input type="email" class="form-control" data-bind="value: skeleton.email, attr:{placeholder: pageFromData.placeholders.email}">
+                <input type="email" class="form-control" name="email" data-bind="value: skeleton.email, attr:{placeholder: pageFromData.placeholders.email}">
                 <span data-bind="text: errorsByField.email"></span>
             </div>
         </div>
@@ -42,7 +43,7 @@
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.selected_lang"></label>
 
             <div class="col-lg-4">
-                <select class="form-control" data-bind="options: backEndConfig.language.languages,
+                <select class="form-control" name="selected_lang"  data-bind="options: backEndConfig.language.languages,
                                optionsText: 'full_name',
                                value: skeleton.selected_lang,
                                optionsCaption: pageFromData.placeholders.selected_lang,
@@ -55,8 +56,35 @@
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.info"></label>
 
             <div class="col-lg-4">
-                <textarea class="form-control" rows="3" data-bind="value: skeleton.info, attr:{placeholder: pageFromData.placeholders.info}"></textarea>
+                <textarea class="form-control" rows="3" name="info"
+                          data-bind="value: skeleton.info, attr:{placeholder: pageFromData.placeholders.info}"></textarea>
                 <span data-bind="text: errorsByField.info"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.pic"></label>
+
+            <div class="col-lg-4">
+                <div>
+                    <div class="thumbnail" style="width: 200px; height: 150px;overflow: hidden;">
+                        <img data-bind="attr: {src: skeleton.pic_src}" id="image_thumbnail" style="width: 200px; height: 140px;">
+                    </div>
+
+                    <div>
+                        <span class="btn btn-file btn-primary">
+                            <label for="input_file" data-bind="text: image.buttons[0].name, visible: image.buttons[0].visible"></label>
+                            <label for="input_file" data-bind="text: image.buttons[1].name, visible: image.buttons[1].visible"></label>
+
+                            <input type="file" data-bind="event: { change: image.updateThumb }" name="pic" style="display: none" id="input_file">
+                        </span>
+
+                        <a class="btn btn-danger" data-bind="text: image.buttons[2].name, visible: image.buttons[2].visible, click: image.removeThumb">
+
+                        </a>
+                    </div>
+                </div>
+                <span data-bind="text: errorsByField.pic"></span>
             </div>
         </div>
 

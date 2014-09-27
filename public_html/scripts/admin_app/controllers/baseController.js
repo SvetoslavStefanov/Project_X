@@ -83,7 +83,7 @@ define([
             }
 
             return observables;
-        }
+        };
     }
 
     return BaseController;

@@ -11,7 +11,9 @@ define(['knockout', 'controllers/BaseController'], function (ko, BaseController)
             password: '',
             email: '',
             selected_lang: '',
-            real_name: ''
+            real_name: '',
+            pic: '',
+            pic_src: ''
         };
 
         this.errorsByField = {};

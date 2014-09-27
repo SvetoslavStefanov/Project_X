@@ -21,12 +21,25 @@ class admin_UserController extends admin_BaseController {
 
     public function indexAction() {
         $this->data['users'] = $this->user->findAll(array('sort' => 'username DESC'));
+
+        foreach ($this->data['users'] as $user) {
+            $user->attributes['pic_src'] = $user->getUserImage();
+        }
     }
 
     public function updateAction() {
         $this->user->originalPassword = $this->user->password;
 
-        if ($this->user->save($_POST)) {
+        if (!empty($_FILES)) {
+            $attachments = new Attachments('user');
+            $attachments->setTable($this->user);
+            $_POST['pic'] = $attachments->uploadImage($_FILES, [
+                0 => '0x0',
+                1 => '150x150'
+            ]);
+        }
+
+        if (count(Validator::$errors) < 1 && $this->user->save($_POST)) {
             $this->data['result'] = true;
             $this->user->attributes['password'] = 'no way !';
             $this->data['userId'] = $this->user->id;
@@ -62,12 +75,15 @@ class admin_UserController extends admin_BaseController {
             $this->user->attributes['last_login_full'] = date('d.m.Y H:i', $this->user->attributes['last_login']);
         }
 
+        $this->user->attributes['pic_src'] = $this->user->getUserImage();
     }
 
     public function editAction() {
         $this->user->attributes['password'] = '';
         $this->data['user'] = $this->user;
         $this->data['user']->attributes['info'] = htmlspecialchars_decode($this->data['user']->attributes['info'], ENT_QUOTES);
+
+        $this->user->attributes['pic_src'] = $this->user->getUserImage();
     }
 
     public function changeLanguageAction() {
@@ -110,3 +126,7 @@ class admin_UserController extends admin_BaseController {
         }
     }
 }
+/*
+ * TODO:
+ * Ъплоад на няколко снимки
+ */

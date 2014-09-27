@@ -10,8 +10,9 @@
  *
  * @author svetlio
  */
-class Attachments extends \ActiveRecord{
-    public $default_dir = 'user_files';
+class Attachments extends ActiveRecord{
+    public $default_dir;
+    private $baseDir = 'attachments';
     public $dir;
     public $object;
     static $table;
@@ -22,12 +23,13 @@ class Attachments extends \ActiveRecord{
         'thumb'
     );
 
-    public function __construct(){
+    public function __construct($default_dir = 'user_files'){
+        $this->default_dir = $default_dir;
         $this->generateDir();
         parent::__construct();
     }
 
-    public function setTable (\ActiveRecord $object){
+    public function setTable (ActiveRecord $object){
         $this->object = $object;
         $class = get_class($object);
         self::$table = $class::$table . "_attachments";
@@ -37,25 +39,21 @@ class Attachments extends \ActiveRecord{
         $time = getdate();
         $this->dir = $this->default_dir . '/' . $time['mon'].$time['year'];
 
-        if(!is_dir($this->dir)){
-            mkdir(PUBLIC_BASE_DIR . "/" . $this->dir, 0777, true);
+        if(!is_dir($this->baseDir . '/' . $this->dir)){
+            mkdir($this->baseDir . '/' . $this->dir, 0777, true);
         }
     }
 
-    public function upload(\ActiveRecord $object, $file, $options = null,  $id = 0){
-        $error = array_shift($file['error']);
-
-        if(!is_array($file) || !empty($error)){
+    protected function upload($file, $options = null,  $id = 0){
+        if(!is_array($file)){
             return false;
         }
 
-        //$this->setTable($object);
         $this->generateDir();
+        $file = array_shift($file);
 
-        $file = \array_map("array_shift", $file);
-
-        if(!$src = Upload::file($file, $this->dir, $options)){
-            \Validator::addError("Възникна грешка при качването на файла");
+        if(!$src = Upload::file($file, $this->baseDir . '/' . $this->dir, $options)){
+            Validator::addError("Възникна грешка при качването на файла");
             return false;
         }
 
@@ -63,7 +61,23 @@ class Attachments extends \ActiveRecord{
             $this->delete($id);
         }
 
-        return $this->saveFromForm($src, 1);
+        $needThumb = 0;
+        if ($options !== null && is_array($options) && isset($options['image'])) {
+            foreach ($options['image'] as $key => $val) {
+                if ($val !== '0x0') {
+                    $needThumb = 1;
+                    break;
+                }
+            }
+        }
+
+        return $this->saveFromForm($src, $needThumb);
+    }
+
+    public function uploadImage($file, $imageOptions, $id = 0) {
+        $types = ['image' => $imageOptions];
+
+        return $this->upload($file, $types, $id);
     }
 
     public function saveFromForm($src, $thumb = 0){
@@ -109,8 +123,6 @@ class Attachments extends \ActiveRecord{
         //$main_dir = "/" . $this->dir . "/";
         $main_dir = "/" . join("/", $src) . "/";
 
-        return $thumb ? $main_dir . "thumb_" . $file : $main_dir . $file;
+        return ATTACHMENTS_DIR . ($thumb ? $main_dir . "thumb_" . $file : $main_dir . $file);
     }
 }
-
-?>

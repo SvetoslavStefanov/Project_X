@@ -61,6 +61,8 @@ function d ()
             echo htmlspecialchars($variable);
         }
 
+        echo ' --- on line ' . $debugTrace[0]['line'];
+
         echo "\n ---- \n";
     }
 

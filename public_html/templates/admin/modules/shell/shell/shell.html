@@ -55,7 +55,7 @@
 <div id="left" data-bind="visible: isUserLogged">
     <div class="media user-media well-small">
         <a class="user-link" href="#">
-            <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif" />
+            <img class="media-object img-thumbnail user-img" data-bind="attr: {src: backEndConfig.currentUser.attributes.pic_src}, click: goToUserProfile" />
         </a>
         <br />
         <div class="media-body">

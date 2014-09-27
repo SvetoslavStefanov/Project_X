@@ -183,7 +183,7 @@ class Upload {
 
         // set file name if needed
         if (!$fname) {
-            $fname = self::filename($file['tmp_name'], $directory);
+            $fname = self::filename($file['name'], $directory);
         }
 
         // upload file
@@ -253,12 +253,7 @@ class Upload {
             // what we need to with the image
             if ($width != 0 || $height != 0) {
                 $src = self::resize($tempfile, "{$directory}/{$prefix}{$fname}", $width, $height);
-                /*  these 3 lines below may provoke an unusual actions
-                 *  becouse of second uploading issue in admin_country while uploading two attachments at once
-                 *  this code adds prefix before the main file's name 
-                 */
-                if (count($options) == 1)
-                    $fname = $prefix . $fname;
+                $fname = $prefix . $fname;
             } else {
                 $src = "{$directory}/{$prefix}{$fname}";
                 if (copy($tempfile, $src)) {

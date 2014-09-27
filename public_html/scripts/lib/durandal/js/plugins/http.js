@@ -9,15 +9,17 @@
  * @requires jquery
  * @requires knockout
  */
-define(['knockout', 'plugins/router', 'scripts/config.js', 'durandal/app'], function (ko, router, config, app) {
+define(['knockout', 'plugins/router', 'durandal/app'], function (ko, router, app) {
     /**
      * @class HTTPModule
      * @static
      */
-    function errorsBehavior (data){
-        if (!_.isUndefined(data.status)){
-            switch (data.status){
-                case 401: router.navigate('sign/signIn'); break;
+    function errorsBehavior(data) {
+        if (!_.isUndefined(data.status)) {
+            switch (data.status) {
+                case 401:
+                    router.navigate('sign/signIn');
+                    break;
                 case 550:
 //                    router.navigateBack();
                     app.trigger('no_permission');
@@ -40,12 +42,22 @@ define(['knockout', 'plugins/router', 'scripts/config.js', 'durandal/app'], func
          * @param {object} [query] An optional key/value object to transform into query string parameters.
          * @return {Promise} A promise of the get response data.
          */
-        get: function (url, query) {
-            if (config.is_in_admin === true) {
-                url = config.admin_prefix + "/" + url;
+        get: function (url, query, options) {
+            if (backEndConfig.config.isInAdmin === true) {
+                url = backEndConfig.config.adminPrefix + "/" + url;
             }
 
-            var promise = $.ajax(url, { data: query, contentType: 'application/json', dataType: 'json' });
+            var ajaxConfig = {
+                data: query,
+                contentType: 'application/json',
+                dataType: 'json'
+            };
+
+            if (!_.isUndefined(options)) {
+                ajaxConfig = ko.utils.extend(ajaxConfig, options);
+            }
+
+            var promise = $.ajax(url, ajaxConfig);
 
             promise.fail(errorsBehavior);
 
@@ -85,17 +97,23 @@ define(['knockout', 'plugins/router', 'scripts/config.js', 'durandal/app'], func
          * @param {object} data The data to post. It will be converted to JSON. If the data contains Knockout observables, they will be converted into normal properties before serialization.
          * @return {Promise} A promise of the response data.
          */
-        post: function (url, data) {
-            if (config.is_in_admin === true) {
-                url = config.admin_prefix + "/" + url;
+        post: function (url, data, options) {
+            if (backEndConfig.config.isInAdmin === true) {
+                url = backEndConfig.config.adminPrefix + "/" + url;
             }
 
-            var promise = $.ajax({
+            var ajaxConfig = {
                 url: url,
                 data: data,
                 type: 'POST',
                 dataType: 'json'
-            });
+            };
+
+            if (!_.isUndefined(options)) {
+                ajaxConfig = ko.utils.extend(ajaxConfig, options);
+            }
+
+            var promise = $.ajax(ajaxConfig);
 
             promise.fail(errorsBehavior);
 

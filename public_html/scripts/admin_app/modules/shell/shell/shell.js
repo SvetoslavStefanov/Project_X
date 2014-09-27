@@ -221,6 +221,10 @@ define([
                     });
                 }.bind(this));
             };
+
+            this.goToUserProfile = function () {
+                router.navigate('user/show/' + backEndConfig.currentUser.id);
+            };
         };
 
         Shell.prototype = new ShellController();

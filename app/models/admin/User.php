@@ -15,7 +15,8 @@ class admin_User extends \ActiveRecord {
         'last_login',
         'info',
         'selected_lang',
-        'permissions'
+        'permissions',
+        'pic'
     );
 
     public $originalPassword = null;
@@ -84,5 +85,22 @@ class admin_User extends \ActiveRecord {
 
     public function getPermissions() {
         return json_decode($this->permissions, true);
+    }
+
+    public function getUserImage() {
+        $attachments = new Attachments('user');
+        $attachments->setTable($this);
+
+        if ($this->pic === 0) {
+            $userPic = Constants::get('defaultUserPic');
+        } else {
+            $userPic = $attachments->getAttachment($this->pic);
+        }
+
+        if ($userPic === false) {
+            $userPic = Constants::get('defaultUserPic');
+        }
+
+        return $userPic;
     }
 }

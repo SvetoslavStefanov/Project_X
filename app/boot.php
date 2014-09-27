@@ -24,16 +24,20 @@ define('MODELS_DIR',		ROOT_DIR . '/models');
 define('CONTROLLERS_DIR',	ROOT_DIR . '/controllers');
 define('ADMIN_DIR',                         'admin');
 define('PLUGINS_DIR',                       ROOT_DIR.'/Plugins');
-define('COMPONENTS_DIR',                    ROOT_DIR.'/Components');
 
 $config = include ROOT_DIR . '/config.php';
 
 // constansts from the config
-define('ENVIROMENT', 	'development');
+define('ENVIROMENT', 'development');
 define("PUBLIC_DIR", $config['publicDir']);
-define('PUBLIC_BASE_DIR', 	realpath(ROOT_DIR . '/../' . $config['publicDir']));
-define('BASEURL',		$config['baseurl']);
-define('SITE_URL',                          $config['site_url']);
+define('PUBLIC_BASE_DIR', realpath(ROOT_DIR . '/../' . $config['publicDir']));
+define('BASEURL', $config['baseurl']);
+define('SITE_URL', $config['site_url']);
+define('ATTACHMENTS_DIR', $config['attachmentsDir']);
+
+$publicConfig = json_decode(file_get_contents((ROOT_DIR . '/config.json')), true);
+$publicConfig['defaultUserPic'] = PUBLIC_DIR . '/' . ATTACHMENTS_DIR . $publicConfig['defaultUserPic'];
+
 // load basic libs
 require LIB_DIR . '/AutoLoader.php';
 require LIB_DIR . '/functions.php';
@@ -47,6 +51,7 @@ AutoLoader::register(array(LIB_DIR, MODELS_DIR, CONTROLLERS_DIR, PLUGINS_DIR, AD
 
 // connect active record with database
 ActiveRecord::$db = new SqlHandler($config['database']);
+$constants = new Constants($publicConfig);
 // clear the config value
 unset($config);
 setlocale(LC_ALL, 'bg_BG.UTF-8');

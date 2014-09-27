@@ -166,7 +166,8 @@
                 "email": "Email",
                 "selected_lang": "User's default language",
                 "real_name": "Real name",
-                "info": "User's description"
+                "info": "User's description",
+                "pic": "Profile picture"
             },
             "save": "Save"
         },
@@ -190,6 +191,13 @@
                 "show": "Show user's info",
                 "destroy": "Delete user"
             }
+        }
+    },
+    "imageHelper": {
+        "buttons": {
+            "selectImage": "Select Image",
+            "change": "Change",
+            "remove": "Remove"
         }
     }
 }

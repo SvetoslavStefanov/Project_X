@@ -43,12 +43,12 @@ requirejs.config({
 });
 
 define([
-    'durandal/app', 'durandal/viewLocator', 'plugins/widget', 'require', 'helper/viewHelper', 'scripts/config.js', 'plugins/router', 'knockout',
+    'durandal/app', 'durandal/viewLocator', 'plugins/widget', 'require', 'helper/viewHelper', 'plugins/router', 'knockout',
     'ckeditor'
-], function (app, viewLocator, widget, require, viewHelper, config, router, ko, editor) {
+], function (app, viewLocator, widget, require, viewHelper, router, ko, editor) {
 
-    viewHelper.config = config;
-    viewHelper.config.is_in_admin = isInAdmin();
+    viewHelper.config = backEndConfig.config;
+    viewHelper.config.isInAdmin = isInAdmin();
 
     viewLocator.convertModuleIdToViewId = function (moduleId) {
         var controllerName = {name: ''},

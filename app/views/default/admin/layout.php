@@ -19,6 +19,7 @@
         backEndConfig.currentUser = <?php echo json_encode($currentUser) ?>;
         backEndConfig.translations = <?php echo json_encode($translations) ?>;
         backEndConfig.constants = <?php echo json_encode($constants) ?>;
+        backEndConfig.config = <?php echo json_encode($publicConfig) ?>;
     </script>
 </head>
 <body class="padTop53 ">

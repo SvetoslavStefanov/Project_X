@@ -10,4 +10,5 @@ return array(
         'database' => 'project_x'
     ),
     'site_url' => 'http://localhost/Project_X/public_html',
+    'attachmentsDir' => 'attachments/'
 );

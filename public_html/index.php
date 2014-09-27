@@ -41,7 +41,8 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
     }
 
     if (isset($_SESSION['isAdmin'])) {
-        $currentUser = Sign::find(array('where' => array('id' => $_SESSION['isAdmin'])));
+        $currentUser = admin_User::find(array('where' => array('id' => $_SESSION['isAdmin'])));
+        $currentUser->attributes['pic_src'] = $currentUser->getUserImage();
         $currentUser->attributes['password'] = 'no way !';
         $defaultLangId = $currentUser->attributes['selected_lang'];
     } else {
@@ -61,6 +62,7 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
 
     $translations = json_decode(file_get_contents(('scripts/translations/' . $languageConfig['default']['name'] . '.json')));
     $constants = json_decode(file_get_contents((ROOT_DIR . '/constants.json')), true);
+    $publicConfig = Constants::getAll();
 
     require loadLayout();
 }

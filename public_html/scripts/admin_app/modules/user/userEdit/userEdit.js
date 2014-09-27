@@ -2,13 +2,14 @@
  * Created by SveXteZ on 14-8-7.
  */
 define([
-    'plugins/http', 'knockout', 'plugins/router', 'controllers/UserController', 'ckeditor'
-], function (http, ko, router, UserController, ckeditor) {
+    'plugins/http', 'knockout', 'plugins/router', 'controllers/UserController', 'ckeditor', 'helper/imageHelper'
+], function (http, ko, router, UserController, ckeditor, imageHelper) {
     "use strict";
 
     function UserEdit() {
         this.userId = 0;
         this.isEditingUser = true;
+        this.image = new imageHelper();
 
         this.activate = function (userId) {
             var that = this;
@@ -26,14 +27,17 @@ define([
             return promise;
         };
 
-        this.saveUser = function () {
-            var response, params = {},
-                that = this;
+        this.saveUser = function (formElement) {
+            var response,
+                that = this,
+                formData = new FormData(formElement);
 
-            params = this.transformSkeletonFromObservables(this.skeleton);
-            params.id = this.userId;
+            formData.append('id', this.userId);
 
-            response = http.post('user/update', params);
+            response = http.post('user/update', formData, {
+                contentType: false,
+                processData: false
+            });
 
             response.then(function (response) {
                 if (response.result === true) {
@@ -41,7 +45,6 @@ define([
                 } else {
                     that.matchErrors(response.errors);
                 }
-
             });
 
             response.fail(function (data) {
