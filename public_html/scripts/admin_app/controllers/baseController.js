@@ -10,6 +10,7 @@ define([
         var that = this;
         this.translations = backEndConfig.translations;
         this.currentTranslationData = {};
+        this.widgetsPath = viewHelper.defaultPaths.widgetsPath;
 
         this.setTranslationData = function (controllerName, fileName) {
             if (_.isUndefined(controllerName)) {

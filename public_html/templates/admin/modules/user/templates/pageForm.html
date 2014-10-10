@@ -43,7 +43,7 @@
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.selected_lang"></label>
 
             <div class="col-lg-4">
-                <select class="form-control" name="selected_lang"  data-bind="options: backEndConfig.language.languages,
+                <select class="form-control" name="selected_lang" data-bind="options: backEndConfig.language.languages,
                                optionsText: 'full_name',
                                value: skeleton.selected_lang,
                                optionsCaption: pageFromData.placeholders.selected_lang,
@@ -66,25 +66,30 @@
             <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.pic"></label>
 
             <div class="col-lg-4">
-                <div>
-                    <div class="thumbnail" style="width: 200px; height: 150px;overflow: hidden;">
-                        <img data-bind="attr: {src: skeleton.pic_src}" id="image_thumbnail" style="width: 200px; height: 140px;">
-                    </div>
-
-                    <div>
-                        <span class="btn btn-file btn-primary">
-                            <label for="input_file" data-bind="text: image.buttons[0].name, visible: image.buttons[0].visible"></label>
-                            <label for="input_file" data-bind="text: image.buttons[1].name, visible: image.buttons[1].visible"></label>
-
-                            <input type="file" data-bind="event: { change: image.updateThumb }" name="pic" style="display: none" id="input_file">
-                        </span>
-
-                        <a class="btn btn-danger" data-bind="text: image.buttons[2].name, visible: image.buttons[2].visible, click: image.removeThumb">
-
-                        </a>
-                    </div>
-                </div>
+                <!-- ko widget: {kind: 'imageUploader', data: {inputName: 'pic', defaultThumb: skeleton.pic_src}} -->
+                <!-- /ko -->
                 <span data-bind="text: errorsByField.pic"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.list_gallery"></label>
+
+            <div class="col-lg-6">
+                <!-- ko widget: {kind: 'imageScroller', data: {images: skeleton.listGallery()}} -->
+                <!-- /ko -->
+
+                <span data-bind="text: errorsByField.gallery"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" data-bind="text: pageFromData.labels.gallery"></label>
+
+            <div class="col-lg-6">
+                <!-- ko widget: {kind: 'imageUploader', data: {inputName: 'gallery', isMultiple: true, visibleThumbnails: 3}} -->
+                <!-- /ko -->
+                <span data-bind="text: errorsByField.gallery"></span>
             </div>
         </div>
 

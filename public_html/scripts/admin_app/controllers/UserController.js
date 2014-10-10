@@ -13,7 +13,8 @@ define(['knockout', 'controllers/BaseController'], function (ko, BaseController)
             selected_lang: '',
             real_name: '',
             pic: '',
-            pic_src: ''
+            pic_src: '',
+            listGallery: ''
         };
 
         this.errorsByField = {};

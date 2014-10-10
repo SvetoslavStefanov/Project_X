@@ -1,0 +1,12 @@
+<div class="imageScroller">
+    <button data-bind="css: {inActiveArrow: !activeLeftArrow(), left_arrow: true}, visible: showArrows, click: scrollLeft"></button>
+
+    <!-- ko foreach: images -->
+        <div class="thumbnail" style="width: 200px; height: 150px;overflow: hidden; float: left" data-bind="visible: isVisible">
+            <img data-bind="attr: {src: src}" style="width: 200px; height: 140px;">
+        </div>
+    <!-- /ko -->
+
+    <button data-bind="visible: showArrows, click: scrollRight, css: {inActiveArrow: !activeRightArrow(), right_arrow: true}"></button>
+    <div class="clear"></div>
+</div>

@@ -103,4 +103,23 @@ class admin_User extends \ActiveRecord {
 
         return $userPic;
     }
+
+    public function getGalleryImages() {
+        $attachments = new Attachments('user');
+        $attachments->setTable($this);
+
+        $imagesObject = $attachments->findAll(array('where' => array('relation_id' => $this->id)));
+        $images = [];
+
+        foreach ($imagesObject as $key => $image) {
+            if ($image->id === $this->pic) {
+                unset($images[$key]);
+                continue;
+            }
+
+            array_push($images, 'attachments/' . $image->attributes['src']);
+        }
+
+        return $images;
+    }
 }

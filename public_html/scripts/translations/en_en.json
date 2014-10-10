@@ -167,7 +167,9 @@
                 "selected_lang": "User's default language",
                 "real_name": "Real name",
                 "info": "User's description",
-                "pic": "Profile picture"
+                "pic": "Profile picture",
+                "gallery": "Pictures for gallery",
+                "list_gallery": "List gallery's images"
             },
             "save": "Save"
         },

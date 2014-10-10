@@ -9,7 +9,6 @@ define([
     function UserEdit() {
         this.userId = 0;
         this.isEditingUser = true;
-        this.image = new imageHelper();
 
         this.activate = function (userId) {
             var that = this;

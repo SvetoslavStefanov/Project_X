@@ -50,7 +50,6 @@ class Attachments extends ActiveRecord{
         }
 
         $this->generateDir();
-        $file = array_shift($file);
 
         if(!$src = Upload::file($file, $this->baseDir . '/' . $this->dir, $options)){
             Validator::addError("Възникна грешка при качването на файла");
@@ -78,6 +77,29 @@ class Attachments extends ActiveRecord{
         $types = ['image' => $imageOptions];
 
         return $this->upload($file, $types, $id);
+    }
+
+    public function uploadMultipleImages($files, $imageOptions) {
+        $result = [];
+        $separateFiles = [];
+
+        foreach($files as $property => $value) {
+            $counter = 0;
+
+            foreach ($value as $val) {
+                $separateFiles[$counter][$property] = $val;
+                $counter++;
+            }
+        }
+
+        foreach ($separateFiles as $file) {
+            if($file['name'] !== '') {
+                $this->id = 0;
+                $result[] = $this->uploadImage($file, $imageOptions, 0);
+            }
+        }
+
+        return $result;
     }
 
     public function saveFromForm($src, $thumb = 0){

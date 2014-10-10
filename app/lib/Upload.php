@@ -159,12 +159,12 @@ class Upload {
         if (!is_array($file) || !empty($file['error']) || empty($file['name']) || strlen($file['name']) == 0) {
             return false;
         }
-        
+
         // validate 2nd level: file type
         if ($types) {
             // if types['image'] is definded and file is an image
             if (is_array($types) && isset($types['image'])) {
-                // check if this is image if so, preccess image by Upload::image
+                // check if this is image if so, process image by Upload::image
                 if (self::is($file['tmp_name'], 'image')) {
                     return self::image($file, $directory, $types['image']);
                 }

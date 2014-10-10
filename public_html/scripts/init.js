@@ -59,7 +59,7 @@ define([
 
     //convert widget's name to widget's path
     widget.convertKindToModulePath = function (widgetName) {
-        return viewHelper.defaultPaths.widgetsPath + widgetName + "/" + widgetName;
+        return viewHelper.defaultPaths.widgetsPath + "/" + widgetName;
     };
 
     //convert widget's name to widget's views path

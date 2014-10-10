@@ -33,7 +33,14 @@ class admin_UserController extends admin_BaseController {
         if (!empty($_FILES)) {
             $attachments = new Attachments('user');
             $attachments->setTable($this->user);
-            $_POST['pic'] = $attachments->uploadImage($_FILES, [
+            if ($_FILES['pic']['name'] !== '') {
+                $_POST['pic'] = $attachments->uploadImage($_FILES['pic'], [
+                    0 => '0x0',
+                    1 => '150x150'
+                ]);
+            }
+
+            $attachments->uploadMultipleImages($_FILES['gallery'], [
                 0 => '0x0',
                 1 => '150x150'
             ]);
@@ -84,6 +91,7 @@ class admin_UserController extends admin_BaseController {
         $this->data['user']->attributes['info'] = htmlspecialchars_decode($this->data['user']->attributes['info'], ENT_QUOTES);
 
         $this->user->attributes['pic_src'] = $this->user->getUserImage();
+        $this->user->attributes['listGallery'] = $this->user->getGalleryImages();
     }
 
     public function changeLanguageAction() {
@@ -126,7 +134,3 @@ class admin_UserController extends admin_BaseController {
         }
     }
 }
-/*
- * TODO:
- * Ъплоад на няколко снимки
- */

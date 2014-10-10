@@ -1,0 +1,20 @@
+<div>
+    <div data-bind="visible: isVisible">
+        <div class="thumbnail" style="width: 200px; height: 150px;overflow: hidden;">
+            <img data-bind="attr: {src: imageSrc()}" style="width: 200px; height: 140px;">
+        </div>
+
+        <div>
+        <span class="btn btn-file btn-primary">
+            <label data-bind="text: imageHelper.buttons[0].name, visible: imageHelper.buttons[0].visible, attr: {for: inputId}"></label>
+            <label data-bind="text: imageHelper.buttons[1].name, visible: imageHelper.buttons[1].visible, attr: {for: inputId}"></label>
+
+            <input type="file"
+                   data-bind="event: {change: $parent.picChanged}, attr: {name: name, multiple: isMultiple, id: inputId}" style="display: none"/>
+        </span>
+
+            <a class="btn btn-danger" data-bind="text: imageHelper.buttons[2].name, visible: imageHelper.buttons[2].visible, click: $parent.removeThumb">
+            </a>
+        </div>
+    </div>
+</div>

@@ -2650,3 +2650,27 @@ fieldset[disabled] .btn-grad.btn-metis-6.active {
     -webkit-border-radius:5px;
     -moz-border-radius: 5px;
 }
+
+.left_arrow {
+    height: 150px;
+    float: left;
+    width: 60px;
+    background: url('../assets/img/arrow-left.png');
+    margin-right:10px;
+    border: none;
+    outline: none;
+}
+
+.right_arrow {
+    height: 150px;
+    float: left;
+    width: 60px;
+    background: url('../assets/img/arrow-right.png');
+    margin-left:10px;
+    border: none;
+    outline: none;
+}
+
+.inActiveArrow {
+    opacity: 0.3;
+}

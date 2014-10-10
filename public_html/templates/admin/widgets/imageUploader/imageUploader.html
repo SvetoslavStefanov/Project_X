@@ -1,0 +1,10 @@
+<div class="imageUploader">
+    <button data-bind="css: {inActiveArrow: !activeLeftArrow(), left_arrow: true}, visible: showArrows, click: scrollLeft"></button>
+
+    <!-- ko foreach: images -->
+    <div data-bind="compose: {view: $parent.templatePath}" style="float: left;"></div>
+    <!-- /ko -->
+    <button data-bind="visible: showArrows, click: scrollRight, css: {inActiveArrow: !activeRightArrow(), right_arrow: true}"></button>
+
+    <div class="clear"></div>
+</div>
