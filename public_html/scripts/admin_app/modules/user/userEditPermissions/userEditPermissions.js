@@ -25,6 +25,9 @@ define([
                 that.permissions(that.setPermissions(response.permissions));
             });
 
+//            this.pageFromData = this.translations[this.getControllerName()]['pageFromTemplate'];1
+            this.setTranslationData();
+
             return query;
         };
 
@@ -55,7 +58,7 @@ define([
             return result;
         };
 
-        this.getPermissions = function() {
+        this.getPermissions = function () {
             var permissions = koMapping.toJS(that.permissions()),
                 result = {},
                 controllerName, actionName;
@@ -193,6 +196,31 @@ define([
             }
 
             that.buttons()[0].active(false);
+        };
+
+        this.getTabName = function (controllerName) {
+            if (_.isUndefined(this.currentTranslationData[controllerName])) {
+                return 'unknown';
+            } else {
+                return this.currentTranslationData[controllerName].name;
+            }
+        };
+
+        this.getActionName = function (actionName) {
+            var controllerName = this.selectedTab().name,
+                i;
+
+            if (_.isUndefined(this.currentTranslationData[controllerName])) {
+                return 'unknown';
+            } else {
+                for (i in this.currentTranslationData[controllerName].permissions) {
+                    if (i === actionName) {
+                        return this.currentTranslationData[controllerName].permissions[i];
+                    }
+                }
+
+                return 'unknown';
+            }
         };
 
         this.buttons([

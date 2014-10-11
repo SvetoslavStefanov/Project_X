@@ -8,7 +8,7 @@
                             <li data-bind="attr: {class: $parent.isTabSelected($data.name) + ' pointer'}, click: $parent.changeCurrentTab">
                                 <a id="wizardV-t-0">
                                     <span class="number" data-bind="text: $data.number"></span>
-                                    <span data-bind="text: $data.name"></span>
+                                    <span data-bind="text: $parent.getTabName($data.name)"></span>
                                 </a>
                             </li>
                         </ul>
@@ -17,12 +17,10 @@
                         <section class="body">
                             <form data-bind="foreach: permissions()[selectedTab().name]">
                                 <div class="form-group">
-                                    <label data-bind="text: $data.actionName" style="text-transform: uppercase; margin-right: 30px;"></label>
-
                                     <div class="make-switch has-switch" data-bind="click: $parent.switchCheckboxValue">
                                         <div data-bind="visible: $data.value, css: {'switch-animate': true, 'switch-on': true, isVisible: $data.value}">
-                                                <span class="switch-left">ON</span>
-                                                <label style="margin-bottom: auto">&nbsp;</label>
+                                            <span class="switch-left">ON</span>
+                                            <label style="margin-bottom: auto">&nbsp;</label>
                                         </div>
 
                                         <div data-bind="visible: !$data.value, css: {'switch-animate': true, 'switch-on': true, isVisible: !$data.value}">
@@ -30,6 +28,10 @@
                                             <span class="switch-right">OFF</span>
                                         </div>
                                     </div>
+
+                                    <!--<label data-bind="text: $data.actionName" style="text-transform: uppercase; margin-right: 30px;"></label>-->
+                                    <label data-bind="text: $parent.getActionName($data.actionName)"
+                                           style="text-transform: capitalize; margin-left: 30px;"></label>
                                 </div>
 
                             </form>

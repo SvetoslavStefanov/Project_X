@@ -180,18 +180,71 @@
         },
         "userEdit": {
             "editPermissions": "Edit User's Permissions"
-        }
-    },
-    "permissions": {
-        "ProjectController": {
-            "name": "Projects",
-            "permissions": {
-                "create": "Create user",
-                "index": "View all users",
-                "edit": "View User's edit page",
-                "update": "Edit user",
-                "show": "Show user's info",
-                "destroy": "Delete user"
+        },
+        "userEditPermissions": {
+            "ProjectController": {
+                "name": "Projects",
+                "permissions": {
+                    "create": "Create project",
+                    "new": "View page for creating new project",
+                    "index": "View list of all projects",
+                    "edit": "View page for editing projects",
+                    "update": "Editing projects",
+                    "show": "View projects",
+                    "destroy": "Delete projects"
+                }
+            },
+            "UserController": {
+                "name": "Users",
+                "permissions": {
+                    "create": "Create user",
+                    "new": "View page for creating new user",
+                    "index": "View list of all users",
+                    "edit": "View page for editing users",
+                    "update": "Editing users",
+                    "show": "View user profile",
+                    "destroy": "Delete users",
+                    "changeLanguage": "Change Language",
+                    "getPermissions": "Get permissions",
+                    "editPermissions": "View page for user's editing permissions",
+                    "updatePermissions": "Update user permissions"
+                }
+            },
+            "InfopageController": {
+                "name": "Info Pages",
+                "permissions": {
+                    "create": "Create info page",
+                    "new": "View page for creating new info pages",
+                    "index": "View list of all info pages",
+                    "edit": "View page for editing info pages",
+                    "update": "Editing pages",
+                    "show": "View info page",
+                    "destroy": "Delete info pages"
+                }
+            },
+            "SignController": {
+                "name": "Login / Logout",
+                "permissions": {
+                    "out": "Logout",
+                    "login": "Login"
+                }
+            },
+            "LanguageController": {
+                "name": "Languages",
+                "permissions": {
+                    "create": "Create Language",
+                    "new": "View page for creating new language",
+                    "index": "View list of all languages",
+                    "edit": "View page for editing languages",
+                    "destroy": "Delete language"
+                }
+            },
+            "ContactController": {
+                "name": "Contacts",
+                "permissions": {
+                    "index": "View list of all messages",
+                    "destroy": "Delete message"
+                }
             }
         }
     },
