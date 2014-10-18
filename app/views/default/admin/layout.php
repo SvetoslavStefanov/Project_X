@@ -22,15 +22,18 @@
         backEndConfig.config = <?php echo json_encode($publicConfig) ?>;
     </script>
 </head>
-<body class="padTop53 ">
+<body class="padTop53">
 <div id="wrap">
     <div class="splash">
-        <div class="message">
-            Durandal Starter Project
+        <div class="loading_message">
+
         </div>
-        <i class="icon-spinner icon-2x icon-spin active"></i>
+        <div class="active loading_animation"></div>
     </div>
 </div>
 <script src="scripts/lib/require/require.js" data-main="scripts/init"></script>
+<script type="text/javascript">
+    document.getElementsByClassName('loading_message')[0].innerHTML = backEndConfig.translations.common.load_message;
+</script>
 </body>
 </html>

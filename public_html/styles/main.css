@@ -2674,3 +2674,20 @@ fieldset[disabled] .btn-grad.btn-metis-6.active {
 .inActiveArrow {
     opacity: 0.3;
 }
+
+.loading_animation {
+    background: url('../assets/img/loading.gif')  no-repeat;
+    width: 210px;
+    height: 200px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+
+.splash .loading_message {
+    font-size: 30px;
+    margin: 0 auto;
+    position: absolute;
+    left: 35%;
+    top: 55%;
+}

@@ -269,5 +269,8 @@
         "textChars": "Invalid characters",
         "user_taken": "Username is already in use",
         "email_taken": "Email is already in use"
+    },
+    "common": {
+        "load_message": "Loading Page, Please wait ..."
     }
 }

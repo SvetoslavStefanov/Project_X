@@ -265,5 +265,8 @@
         "textChars": "Invalid characters",
         "user_taken": "Потребителското име е заето",
         "email_taken": "Имейлът е зает"
+    },
+    "common": {
+        "load_message": "Страницата се зарежда, моля изчакайте ..."
     }
 }
