@@ -250,5 +250,20 @@
             "change": "Промени",
             "remove": "Премахни"
         }
+    },
+    "validation": {
+        "captcha": "Кода от картинката не е верен",
+        "isCoordinate": "Моля въведете истински координати",
+        "isUrl": "Невалиден адрес",
+        "isPhone": "Невалиден телефонен номер",
+        "address": "Невалиден адрес",
+        "min_length": "Минимум символи: ",
+        "max_length": "Максимум символи: ",
+        "required": "This field is required",
+        "testMail": "Invalid email address",
+        "testChars": "Invalid characters",
+        "textChars": "Invalid characters",
+        "user_taken": "Потребителското име е заето",
+        "email_taken": "Имейлът е зает"
     }
 }

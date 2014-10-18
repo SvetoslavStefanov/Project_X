@@ -254,5 +254,20 @@
             "change": "Change",
             "remove": "Remove"
         }
+    },
+    "validation" : {
+        "captcha": "The code from captcha isn't correct",
+        "isCoordinate": "Please enter real coordinates",
+        "isUrl": "Not valid Url",
+        "isPhone": "Invalid phone number",
+        "address": "Invalid Address",
+        "min_length": "Minimum symbols: ",
+        "max_length": "Maximum symbols: ",
+        "required": "This field is required",
+        "testMail": "Invalid email address",
+        "testChars": "Invalid characters",
+        "textChars": "Invalid characters",
+        "user_taken": "Username is already in use",
+        "email_taken": "Email is already in use"
     }
 }

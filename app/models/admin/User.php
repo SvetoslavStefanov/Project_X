@@ -4,7 +4,7 @@
  *
  * @author svetlio
  */
-class admin_User extends \ActiveRecord {
+class admin_User extends ActiveRecord {
     public static $table = 'user';
     static $columns = array(
         'username',
@@ -60,12 +60,12 @@ class admin_User extends \ActiveRecord {
             $obj_username = $this->find(array('where' => array('username' => $this->username)));
 
             if ($obj_username) {
-                Validator::addError("username", "Името е заето");
+                Validator::addError("username", Validator::getTranslationByName("user_taken"));
             }
         }
 
         if ($this->find(array('where' => array('email' => $this->email)))) {
-            Validator::addError("email", "Имейлът е регистриран");
+            Validator::addError("username", Validator::getTranslationByName("email_taken"));
         }
 
         if (empty(Validator::$errors) && $this->password != null) {

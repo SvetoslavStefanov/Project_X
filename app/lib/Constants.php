@@ -20,4 +20,8 @@ class Constants {
     public static function getAll() {
         return self::$constants;
     }
+
+    public static function setConstant($property, $data) {
+        self::$constants[$property] = $data;
+    }
 } 

@@ -1,7 +1,6 @@
 <?php
 
-abstract class ActiveRecord
-{
+abstract class ActiveRecord {
 
     static $db;
     static $table;
@@ -12,8 +11,7 @@ abstract class ActiveRecord
     public $captcha;
     public $validation_form = true;
 
-    public function __construct ()
-    {
+    public function __construct() {
         $this->id = 0;
 
         foreach (static::$columns as $column) {
@@ -21,13 +19,11 @@ abstract class ActiveRecord
         }
     }
 
-    public function __isset ($key)
-    {
+    public function __isset($key) {
         return isset($this->$key);
     }
 
-    public function __get ($key)
-    {
+    public function __get($key) {
         if (!in_array($key, static::$columns)) {
             throw new Exception("Invalid column name - {$key} given for " . get_class($this));
         }
@@ -35,8 +31,7 @@ abstract class ActiveRecord
         return $this->$key;
     }
 
-    public function __set ($key, $value)
-    {
+    public function __set($key, $value) {
 //        if (!in_array($key, static::$columns)) {
 //            throw new Exception("Invalid column name - {$key} given for " . get_class($this));
 //        }
@@ -48,13 +43,11 @@ abstract class ActiveRecord
      * Check if this row is new
      * @return type
      */
-    public function isNew ()
-    {
+    public function isNew() {
         return $this->id === 0;
     }
 
-    protected function validate ()
-    {
+    protected function validate() {
 
     }
 
@@ -62,8 +55,7 @@ abstract class ActiveRecord
      * Execute validations from form_validations table and default validation funcions in models
      * @return type
      */
-    public function isValid ()
-    {
+    public function isValid() {
         if ($this->validate == null) {
             $this->validate();
         } else {
@@ -81,8 +73,7 @@ abstract class ActiveRecord
      * @param string $validate
      * @return boolean
      */
-    public function save ($attributes = null, $keys = null, $validate = null)
-    {
+    public function save($attributes = null, $keys = null, $validate = null) {
         $this->validate = $validate != null ? $validate : null;
 
         if (is_array($attributes)) {
@@ -95,11 +86,11 @@ abstract class ActiveRecord
             }
         }
 
-        if (!$this->isValid()){
+        if (!$this->isValid()) {
             return false;
         }
 
-        if ($this->beforeSave() === false){
+        if ($this->beforeSave() === false) {
             return false;
         }
 
@@ -118,24 +109,21 @@ abstract class ActiveRecord
      * Execute this fuction before inserting / updating record in DB
      * Note: All validations are passed before calling this func
      */
-    protected function beforeSave ()
-    {
+    protected function beforeSave() {
 
     }
 
     /**
      * Execute this function after inserting / updating record in DB
      */
-    protected function afterSave ()
-    {
+    protected function afterSave() {
 
     }
 
     /**
      * Execute this function before deleting record in DB
      */
-    protected function beforeDestroy ()
-    {
+    protected function beforeDestroy() {
 
     }
 
@@ -143,8 +131,7 @@ abstract class ActiveRecord
      * Delete record in DB
      * @return boolean
      */
-    public function destroy ()
-    {
+    public function destroy() {
         if ($this->isNew()) {
             return false;
         }
@@ -163,8 +150,7 @@ abstract class ActiveRecord
      * @param array $where
      * @return ActiveRecord object or null
      */
-    public static function count ($where)
-    {
+    public static function count($where) {
         return self::$db->count(static::$table, $where, 'id');
     }
 
@@ -173,8 +159,7 @@ abstract class ActiveRecord
      * @param array $where
      * @return ActiveRecord object or null
      */
-    public static function exists ($where)
-    {
+    public static function exists($where) {
         return self::$db->exists(static::$table, $where);
     }
 
@@ -184,8 +169,7 @@ abstract class ActiveRecord
      * @return ActiveRecord object or null
      * @throws NotFoundException
      */
-    public static function get ($id)
-    {
+    public static function get($id) {
         if (!$id = (int) $id) {
             throw new NotFoundException('Invalid id for ' . get_called_class() . '.');
         }
@@ -202,8 +186,7 @@ abstract class ActiveRecord
      * @param int $id
      * @return ActiveRecord object or null
      */
-    public static function findById ($id)
-    {
+    public static function findById($id) {
         return self::find(array('where' => array('id' => $id)));
     }
 
@@ -212,8 +195,7 @@ abstract class ActiveRecord
      * @param type $options
      * @return ActiveRecord object or null
      */
-    public static function find ($options = array())
-    {
+    public static function find($options = array()) {
         $options = (array) $options;
         $options['limit'] = 1;
 
@@ -229,8 +211,7 @@ abstract class ActiveRecord
      * @param type $options
      * @return ActiveRecord object or null
      */
-    public static function findAll ($options = array())
-    {
+    public static function findAll($options = array()) {
         $records = array();
         foreach (self::$db->select(static::$table, $options) as $row) {
             $records[] = self::buildFromRow($row);
@@ -244,8 +225,7 @@ abstract class ActiveRecord
      * @param array $options
      * @return void
      */
-    public static function destroyAll ($options = array())
-    {
+    public static function destroyAll($options = array()) {
         foreach (self::findAll($options) as $record) {
             $record->destroy();
         }
@@ -256,8 +236,7 @@ abstract class ActiveRecord
      * @param array $row
      * @return ActiveRecord object
      */
-    protected static function buildFromRow ($row)
-    {
+    protected static function buildFromRow($row) {
         $class = get_called_class();
         $record = new $class();
         $record->id = array_cut($row, 'id');
@@ -272,7 +251,7 @@ abstract class ActiveRecord
     protected function getProperties() {
         $properties = [];
 
-        foreach(static::$columns as $column) {
+        foreach (static::$columns as $column) {
             $properties[$column] = $this->$column;
         }
 
