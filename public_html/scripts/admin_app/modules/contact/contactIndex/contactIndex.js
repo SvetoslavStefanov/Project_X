@@ -47,7 +47,7 @@ define(['plugins/http', 'durandal/app', 'knockout', 'controllers/ContactControll
             this.handleAction = function(action) {
                 switch (action) {
                     case 'destroyed':
-                        this.actionMessage(that.currentTranslationData.actionMessage.destroyed);
+                        this.actionMessage(that.currentTranslationData.actionMessages.destroyed);
                         break;
                 }
 

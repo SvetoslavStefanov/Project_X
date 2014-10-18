@@ -225,6 +225,10 @@ define([
             this.goToUserProfile = function () {
                 router.navigate('user/show/' + backEndConfig.currentUser.id);
             };
+
+            this.logoutUser = function () {
+                router.navigate('sign/signOut');
+            };
         };
 
         Shell.prototype = new ShellController();

@@ -34,7 +34,7 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
     $langs = $language->findAll();
 
     foreach ($langs as $lang) {
-        $newObj = $lang->attributes;
+        $newObj = get_object_vars($lang);
         $newObj['id'] = $lang->id;
 
         array_push($languageConfig['languages'], $newObj);
@@ -42,9 +42,9 @@ if (($_SERVER['REQUEST_URI'] !== PUBLIC_DIR . "/") && ($_SERVER['REQUEST_URI'] !
 
     if (isset($_SESSION['isAdmin'])) {
         $currentUser = admin_User::find(array('where' => array('id' => $_SESSION['isAdmin'])));
-        $currentUser->attributes['pic_src'] = $currentUser->getUserImage();
-        $currentUser->attributes['password'] = 'no way !';
-        $defaultLangId = $currentUser->attributes['selected_lang'];
+        $currentUser->pic_src = $currentUser->getUserImage();
+        $currentUser->password = 'no way !';
+        $defaultLangId = $currentUser->selected_lang;
     } else {
         foreach ($languageConfig['languages'] as $lang) {
             if ($lang['is_default'] == 1) {

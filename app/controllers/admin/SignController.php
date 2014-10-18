@@ -33,7 +33,7 @@ class admin_SignController extends admin_BaseController
             $this->setUserCookie();
             $this->sign->setAfterLoginData();
             $this->data['isUserLogged'] = true;
-            $this->sign->attributes['password'] = 'no way !';
+            $this->sign->password = 'no way !';
             $this->data['currentUser'] = $this->sign;
         } else {
             $this->data['errors'] = Validator::$errors;

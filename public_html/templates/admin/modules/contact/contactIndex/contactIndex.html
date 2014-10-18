@@ -27,11 +27,11 @@
                                     <a class="pointer btn-flat icon-remove"
                                        data-bind="attr: {title: $parent.currentTranslationData.actions.destroy}, click: $parent.deleteItem">&nbsp;</a>
                                 </td>
-                                <td data-bind="text: new Date($data.attributes.created*1000).toLocaleString()"></td>
-                                <td data-bind="text: $data.attributes.subject"></td>
-                                <td data-bind="text: $data.attributes.email"></td>
-                                <td data-bind="text: $data.attributes.content"></td>
-                                <td data-bind="text: $data.attributes.ip"></td>
+                                <td data-bind="text: new Date($data.created*1000).toLocaleString()"></td>
+                                <td data-bind="text: $data.subject"></td>
+                                <td data-bind="text: $data.email"></td>
+                                <td data-bind="text: $data.content"></td>
+                                <td data-bind="text: $data.ip"></td>
                             </tr>
                             <!-- /ko -->
                             </tbody>

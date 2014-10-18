@@ -49,15 +49,14 @@ class admin_User extends \ActiveRecord {
 
     protected function createValidate() {
         Validator::validate($this->username, "username", ['required' => true, 'min_length' => 6]);
-        Validator::validate($this->email, "email", ['required' => true, 'min_length' => 8, "isMail" => true]);
-        Validator::validate($this->permissions, "permissions", ['required' => true]);
+        Validator::validate($this->email, "email", ["testMail" => true, 'required' => true, 'min_length' => 8]);
         Validator::validate($this->password, "password", ['required' => false, 'min_length' => 6]);
-        Validator::validate($this->info, "info", array("textChars" => "\'\",0-9.\-()!?<>"));
+        Validator::validate($this->info, "info", array("textChars" => "\\'\",0-9.\\-()!?<>"));
         Validator::validate($this->real_name, 'real_name', array("required" => true, "textChars" => '\,\.()0-9-\_\:\'\"'));
 
         $this->setPermissions($this->permissions);
 
-        if (empty(\Validator::$errors) && strlen($this->username) > 1) {
+        if (empty(Validator::$errors) && strlen($this->username) > 1) {
             $obj_username = $this->find(array('where' => array('username' => $this->username)));
 
             if ($obj_username) {
@@ -74,7 +73,7 @@ class admin_User extends \ActiveRecord {
         }
 
         $this->last_login = 0;
-        $this->real_name = \htmlentities($this->real_name, ENT_QUOTES | ENT_IGNORE, "UTF-8");
+        $this->real_name = htmlentities($this->real_name, ENT_QUOTES | ENT_IGNORE, "UTF-8");
     }
 
     public function setPermissions($newPermissions) {
@@ -117,7 +116,7 @@ class admin_User extends \ActiveRecord {
                 continue;
             }
 
-            array_push($images, 'attachments/' . $image->attributes['src']);
+            array_push($images, 'attachments/' . $image->src);
         }
 
         return $images;

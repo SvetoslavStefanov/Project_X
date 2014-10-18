@@ -8,25 +8,22 @@ abstract class ActiveRecord
     static $columns;
     static $accessible = true;
     public $id;
-    public $attributes;
     protected $validate;
     public $captcha;
-    public $plugin = array();
     public $validation_form = true;
 
     public function __construct ()
     {
         $this->id = 0;
-        $this->attributes = array();
 
         foreach (static::$columns as $column) {
-            $this->attributes[$column] = '';
+            $this->$column = '';
         }
     }
 
     public function __isset ($key)
     {
-        return isset($this->attributes[$key]);
+        return isset($this->$key);
     }
 
     public function __get ($key)
@@ -34,16 +31,17 @@ abstract class ActiveRecord
         if (!in_array($key, static::$columns)) {
             throw new Exception("Invalid column name - {$key} given for " . get_class($this));
         }
-        return $this->attributes[$key];
+
+        return $this->$key;
     }
 
     public function __set ($key, $value)
     {
-        if (!in_array($key, static::$columns)) {
-            throw new Exception("Invalid column name - {$key} given for " . get_class($this));
-        }
+//        if (!in_array($key, static::$columns)) {
+//            throw new Exception("Invalid column name - {$key} given for " . get_class($this));
+//        }
 
-        return $this->attributes[$key] = $value;
+        return $this->$key = $value;
     }
 
     /**
@@ -91,10 +89,12 @@ abstract class ActiveRecord
             if ($keys === null) {
                 $keys = static::$accessible === true ? static::$columns : static::$accessible;
             }
+
             foreach (Validator::filterArray($attributes, (array) $keys) as $key => $value) {
                 $this->$key = $value;
             }
         }
+
         if (!$this->isValid()){
             return false;
         }
@@ -104,9 +104,9 @@ abstract class ActiveRecord
         }
 
         if ($this->isNew()) {
-            $this->id = self::$db->insert(static::$table, $this->attributes);
+            $this->id = self::$db->insert(static::$table, $this->getProperties());
         } else {
-            self::$db->update(static::$table, $this->attributes, array('id' => $this->id));
+            self::$db->update(static::$table, $this->getProperties(), array('id' => $this->id));
         }
 
         $this->afterSave();
@@ -253,7 +253,7 @@ abstract class ActiveRecord
 
     /**
      * Create a Model object with data $row
-     * @param aray $row
+     * @param array $row
      * @return ActiveRecord object
      */
     protected static function buildFromRow ($row)
@@ -261,8 +261,24 @@ abstract class ActiveRecord
         $class = get_called_class();
         $record = new $class();
         $record->id = array_cut($row, 'id');
-        $record->attributes = $row;
+
+        foreach ($row as $key => $val) {
+            $record->$key = $val;
+        }
+
         return $record;
+    }
+
+    protected function getProperties() {
+        $properties = [];
+
+        foreach(static::$columns as $column) {
+            $properties[$column] = $this->$column;
+        }
+
+        $properties['id'] = $this->id;
+
+        return $properties;
     }
 
 }

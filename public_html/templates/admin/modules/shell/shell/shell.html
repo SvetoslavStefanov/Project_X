@@ -12,42 +12,43 @@
         <!-- END LOGO SECTION -->
         <ul class="nav navbar-top-links navbar-right">
 
-        <!--ADMIN SETTINGS SECTIONS -->
+            <!--ADMIN SETTINGS SECTIONS -->
 
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
-            </a>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
+                </a>
 
-            <ul class="dropdown-menu dropdown-user">
-                <li>
-                    <a href="login.html"><i class="icon-signout"></i> Logout </a>
-                </li>
-            </ul>
-        </li>
+                <ul class="dropdown-menu dropdown-user">
+                    <li>
+                        <a data-bind="click: logoutUser" class="pointer">
+                            <i class="icon-signout"></i>
+                            <span data-bind="text: currentTranslationData.routes.signOut"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="icon-flag"></i>&nbsp; <i class="icon-chevron-down"></i>
-            </a>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="icon-flag"></i>&nbsp; <i class="icon-chevron-down"></i>
+                </a>
 
-            <ul class="dropdown-menu" data-bind="foreach: backEndConfig.language.languages">
-                <li>
-                    <a data-bind="click: $parent.changeLanguage" class="pointer">
-                        <span data-bind="text: $data.full_name"></span>
-                        <span class="icon-ok" data-bind="visible: backEndConfig.language.default.id === $data.id"></span>
-                    </a>
-                </li>
-            </ul>
+                <ul class="dropdown-menu" data-bind="foreach: backEndConfig.language.languages">
+                    <li>
+                        <a data-bind="click: $parent.changeLanguage" class="pointer">
+                            <span data-bind="text: $data.full_name"></span>
+                            <span class="icon-ok" data-bind="visible: backEndConfig.language.default.id === $data.id"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-        </li>
-
-        <li class="loader" data-bind="visible: router.isNavigating" style="margin-left: 15px">
-            <i class="icon-spinner icon-2x icon-spin"></i>
-        </li>
-        <!--END ADMIN SETTINGS -->
-    </ul>
-
+            <li class="loader" data-bind="visible: router.isNavigating" style="margin-left: 15px">
+                <i class="icon-spinner icon-2x icon-spin"></i>
+            </li>
+            <!--END ADMIN SETTINGS -->
+        </ul>
     </nav>
 </div>
 
@@ -55,24 +56,25 @@
 <div id="left" data-bind="visible: isUserLogged">
     <div class="media user-media well-small">
         <a class="user-link" href="#">
-            <img class="media-object img-thumbnail user-img" data-bind="attr: {src: backEndConfig.currentUser.attributes.pic_src}, click: goToUserProfile" />
+            <img class="media-object img-thumbnail user-img" data-bind="attr: {src: backEndConfig.currentUser.pic_src}, click: goToUserProfile"/>
         </a>
-        <br />
+        <br/>
+
         <div class="media-body">
             <h5 class="media-heading"></h5>
         </div>
-        <br />
+        <br/>
     </div>
 
     <ul id="menu" class="collapse" data-bind="foreach: router.navigationModel">
         <li data-bind="css: {active: isActive, panel: true, pointer: true}">
-            <a class="accordion-toggle"  data-bind="click: $parent.menuItemClicked">
+            <a class="accordion-toggle" data-bind="click: $parent.menuItemClicked">
                 <i data-bind="attr: {class: $data.icon}"></i> <span data-bind="html: title"></span>
 
                 <span class="pull-right" data-bind="click: $parent.expandSubMenu, visible: $data.settings.subRoutes.length > 0">
                   <i class="icon-angle-left"></i>
                 </span>
-               &nbsp;
+                &nbsp;
                 <span class="label label-default" data-bind="text: $data.activeSubRoutes, visible: $data.activeSubRoutes > 0"></span>
                 &nbsp;
             </a>

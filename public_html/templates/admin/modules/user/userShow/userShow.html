@@ -2,9 +2,9 @@
     <div class="col-lg-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <span data-bind="text: $data.attributes.username"></span>
+                <span data-bind="text: $data.username"></span>
                 &nbsp;&nbsp; | &nbsp;&nbsp;
-                <span data-bind="text: $data.attributes.real_name"></span>
+                <span data-bind="text: $data.real_name"></span>
 
                 <div style="float: right">
                     <a class="btn btn-default btn-flat icon-edit"
@@ -17,7 +17,7 @@
 
             <div class="panel-body">
                 <div class="col-lg-4">
-                    <img data-bind="attr: {src: $data.attributes['pic_src']}" style="height: 200px; width: 60%; display: block;">
+                    <img data-bind="attr: {src: $data.pic_src}" style="height: 200px; width: 60%; display: block;">
                 </div>
 
                 <div class="col-lg-4">
@@ -27,7 +27,7 @@
                                 <tr>
                                     <td style="border-top: none; ">
                                         <strong>Email:</strong>
-                                        <span data-bind="text: $data.attributes.email"></span>
+                                        <span data-bind="text: $data.email"></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>
                                         <strong>Last Login:</strong>
-                                        <span data-bind="text: $data.attributes.last_login_full"></span>
+                                        <span data-bind="text: $data.last_login_full"></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="col-lg-12">
-                        <p data-bind="html: $data.attributes.info"></p>
+                        <p data-bind="html: $data.info"></p>
                 </div>
             </div>
         </div>

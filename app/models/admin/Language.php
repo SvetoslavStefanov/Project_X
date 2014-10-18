@@ -9,7 +9,6 @@
 class admin_Language extends ActiveRecord{
     static $table = 'language';
     static $columns = array(
-        'id',
         'name',
         'full_name',
         'is_default'

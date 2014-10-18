@@ -32,7 +32,7 @@ class admin_ProjectController extends admin_BaseController{
         $this->data['projects'] = $this->project->findAll(array('sort' => 'id DESC'));
 
         foreach ($this->data['projects'] as &$data){
-             $data->attributes['small_content'] = mb_strcut($data->attributes['content'], 0, 150) . "...";
+             $data->small_content = mb_strcut($data->content, 0, 150) . "...";
          }
 
     }

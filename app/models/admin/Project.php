@@ -2,8 +2,7 @@
 class admin_Project extends ActiveRecord {
       static $table = "project";
       static $columns = array(
-         'id'
-         , 'title'
+          'title'
          , 'content'
      );
 

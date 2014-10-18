@@ -15,7 +15,7 @@ define([
             this.pageId = pageId;
 
             var promise = http.get('infoPage/edit', {id: pageId}).then(function (response) {
-                that.skeleton = that.transformSkeletonToObservables(response.pageData.attributes);
+                that.skeleton = that.transformSkeletonToObservables(response.pageData);
             });
 
             this.setTranslationData();
@@ -28,8 +28,8 @@ define([
             var response, params = {},
                 that = this;
 
+            params = this.transformSkeletonFromObservables(this.skeleton);
             params.id = this.pageId;
-            params.attributes = this.transformSkeletonFromObservables(this.skeleton);
 
             response = http.post('infoPage/update', params);
 

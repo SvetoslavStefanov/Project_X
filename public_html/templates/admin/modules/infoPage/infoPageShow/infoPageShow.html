@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <span data-bind="text: $data.attributes.title"></span>
+                <span data-bind="text: $data.title"></span>
 
                 <div style="float: right">
                     <a class="btn btn-default btn-flat icon-edit" data-bind="attr: {title: $parent.currentTranslationData.edit}, click: $parent.editPage"></a>
@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="panel-body">
-                <p data-bind="html: $data.attributes.content"></p>
+                <p data-bind="html: $data.content"></p>
             </div>
 
             <div class="panel-footer" style="padding: 0">

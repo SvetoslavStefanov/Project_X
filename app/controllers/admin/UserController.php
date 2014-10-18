@@ -23,7 +23,7 @@ class admin_UserController extends admin_BaseController {
         $this->data['users'] = $this->user->findAll(array('sort' => 'username DESC'));
 
         foreach ($this->data['users'] as $user) {
-            $user->attributes['pic_src'] = $user->getUserImage();
+            $user->pic_src = $user->getUserImage();
         }
     }
 
@@ -48,7 +48,7 @@ class admin_UserController extends admin_BaseController {
 
         if (count(Validator::$errors) < 1 && $this->user->save($_POST)) {
             $this->data['result'] = true;
-            $this->user->attributes['password'] = 'no way !';
+            $this->user->password = 'no way !';
             $this->data['userId'] = $this->user->id;
         } else {
             $this->data['result'] = false;
@@ -61,11 +61,9 @@ class admin_UserController extends admin_BaseController {
     }
 
     public function createAction() {
-        $_POST['permissions'] = $this->getPermissionsAction();
-
         if ($this->user->save($_POST, null, 'create')) {
             $this->data['result'] = true;
-            $this->user->attributes['password'] = 'no way !';
+            $this->user->password = 'no way !';
             $this->data['userId'] = $this->user->id;
         } else {
             $this->data['result'] = false;
@@ -74,24 +72,24 @@ class admin_UserController extends admin_BaseController {
     }
 
     public function showAction() {
-        $this->user->attributes['password'] = '';
+        $this->user->password = '';
         $this->data['user'] = $this->user;
-        if ($this->user->attributes['last_login'] == 0) {
-            $this->user->attributes['last_login_full'] = 'Never';
+        if ($this->user->last_login == 0) {
+            $this->user->last_login_full = 'Never';
         } else {
-            $this->user->attributes['last_login_full'] = date('d.m.Y H:i', $this->user->attributes['last_login']);
+            $this->user->last_login_full = date('d.m.Y H:i', $this->user->last_login);
         }
 
-        $this->user->attributes['pic_src'] = $this->user->getUserImage();
+        $this->user->pic_src = $this->user->getUserImage();
     }
 
     public function editAction() {
-        $this->user->attributes['password'] = '';
+        $this->user->password = '';
         $this->data['user'] = $this->user;
-        $this->data['user']->attributes['info'] = htmlspecialchars_decode($this->data['user']->attributes['info'], ENT_QUOTES);
+        $this->data['user']->info = htmlspecialchars_decode($this->data['user']->info, ENT_QUOTES);
 
-        $this->user->attributes['pic_src'] = $this->user->getUserImage();
-        $this->user->attributes['listGallery'] = $this->user->getGalleryImages();
+        $this->user->pic_src = $this->user->getUserImage();
+        $this->user->listGallery = $this->user->getGalleryImages();
     }
 
     public function changeLanguageAction() {
@@ -126,7 +124,7 @@ class admin_UserController extends admin_BaseController {
         if ($this->user->setPermissions($_POST['permissions'])) {
             $this->user->save();
             $this->data['result'] = true;
-            $this->user->attributes['password'] = 'no way !';
+            $this->user->password = 'no way !';
             $this->data['userId'] = $this->user->id;
         } else {
             $this->data['result'] = false;

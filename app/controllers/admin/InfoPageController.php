@@ -19,7 +19,7 @@ class admin_InfopageController extends admin_BaseController
     }
 
     public function createAction(){
-        if($this->page->save($_POST['attributes'])){
+        if($this->page->save($_POST)){
             $this->data['result'] = true;
         }else{
             $this->data['result'] = false;
@@ -28,16 +28,16 @@ class admin_InfopageController extends admin_BaseController
 
     public function showAction(){
         $this->data['pageData'] = $this->page;
-        $this->data['pageData']->attributes['content'] = html_entity_decode($this->data['pageData']->attributes['content']);
+        $this->data['pageData']->content = html_entity_decode($this->data['pageData']->content);
     }
 
     public function editAction(){
         $this->data['pageData'] = $this->page;
-        $this->data['pageData']->attributes['content'] = html_entity_decode($this->data['pageData']->attributes['content']);
+        $this->data['pageData']->content = html_entity_decode($this->data['pageData']->content);
     }
 
     public function updateAction(){
-        if($this->page->save($_POST['attributes'])){
+        if($this->page->save($_POST)){
             $this->data['result'] = true;
         }else{
             $this->data['result'] = false;

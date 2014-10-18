@@ -176,7 +176,7 @@ class Validator
 
     protected static function min_length ($value, $rule)
     {
-        self::$message = "Minimum " . $rule . " symbols�";
+        self::$message = "Minimum " . $rule . " symbols";
         return !(mb_strlen($value) < $rule);
     }
 

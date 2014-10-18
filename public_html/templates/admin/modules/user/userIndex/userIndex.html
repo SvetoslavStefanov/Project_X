@@ -3,12 +3,12 @@
 <div class="row" data-bind="foreach: users">
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail"  style="height: 420px">
-            <img data-bind="attr: {src: $data.attributes['pic_src']}" style="height: 200px; width: 90%; display: block;">
+            <img data-bind="attr: {src: $data.pic_src}" style="height: 200px; width: 90%; display: block;">
 
             <div class="caption">
-                <h3 data-bind="text: $data.attributes.real_name"></h3>
+                <h3 data-bind="text: $data.real_name"></h3>
 
-                <p data-bind="html: $data.attributes.info"></p>
+                <p data-bind="html: $data.info"></p>
 
                 <p>
                     <a data-bind="click: $parent.openUserProfile, text: $parent.currentTranslationData.buttons.viewMore" class="btn btn-primary"></a>

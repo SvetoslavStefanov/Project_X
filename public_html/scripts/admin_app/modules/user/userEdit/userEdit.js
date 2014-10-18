@@ -16,7 +16,7 @@ define([
             this.userId = userId;
 
             var promise = http.get('User/edit', {id: userId}).then(function (response) {
-                that.skeleton = that.transformSkeletonToObservables(response.user.attributes);
+                that.skeleton = that.transformSkeletonToObservables(response.user);
             })
 
             this.setTranslationData();

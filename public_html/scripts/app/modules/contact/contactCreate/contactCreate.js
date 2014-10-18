@@ -36,7 +36,7 @@ define(['plugins/http', 'knockout', 'plugins/router', 'controllers/ContactContro
 
         this.submitForm = function () {
             var params = {}, response, that = this;
-            params.attributes = this.skeleton;
+            params = this.skeleton;
 
             response = http.post('contact/create', params);
 
